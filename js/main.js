@@ -25,16 +25,17 @@ const VIEWS = {
 };
 
 const NOW_PARAM = new URLSearchParams(location.search).get('now');
-const state = { data: null, viewDate: null };
+const state = { data: null, viewDate: null, view: 'lich-trinh', ui: { pastOpen: false } };
 const app = document.getElementById('app');
 
 function render() {
   const now = bjNow(NOW_PARAM);
   const route = parseHash(location.hash);
   const view = enabledTabs(FEATURES).includes(route.view) && VIEWS[route.view] ? route.view : 'lich-trinh';
+  state.view = view;
   state.viewDate ||= defaultViewDate(state.data.tour, now);
   const ctx = {
-    data: state.data, now, viewDate: state.viewDate, route, features: FEATURES,
+    data: state.data, now, viewDate: state.viewDate, route, features: FEATURES, ui: state.ui,
     setViewDate: d => { const y = scrollY; state.viewDate = d; render(); scrollTo(0, y); },
   };
   const [r, m] = VIEWS[view];
@@ -68,7 +69,9 @@ async function boot() {
   notifyVersion(state.data.version, bar);
   addEventListener('hashchange', () => { if (!overlayOpen()) { render(); scrollTo(0, 0); } });
   const tick = () => {
-    if (overlayOpen() || parseHash(location.hash).view !== 'lich-trinh') return;
+    if (overlayOpen() || state.view !== 'lich-trinh') return;
+    const ae = document.activeElement;
+    if (ae && ae !== app && ae !== document.body && app.contains(ae)) return;
     const y = scrollY; render(); scrollTo(0, y);
   };
   setInterval(tick, 60_000);

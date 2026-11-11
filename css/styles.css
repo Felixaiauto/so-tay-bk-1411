@@ -44,7 +44,7 @@ img{display:block;max-width:100%}
 .hero-zh{font-size:16px;opacity:.92}
 .hero-sub{font-size:14px;opacity:.95}
 .hero-tz{font-size:12px;opacity:.78;margin-top:2px}
-.hero-cta{margin-top:8px;background:var(--gold-hi);color:var(--ink);font-weight:600;font-size:14px;padding:10px 16px;border-radius:99px;text-decoration:none}
+.hero-cta{display:inline-flex;align-items:center;min-height:44px;margin-top:8px;background:var(--gold-hi);color:var(--ink);font-weight:600;font-size:14px;padding:10px 16px;border-radius:99px;text-decoration:none}
 
 /* dải ngày — giữ y nguyên kiểu A */
 .days{position:sticky;top:0;z-index:4;background:var(--paper);padding:12px 16px 8px}
