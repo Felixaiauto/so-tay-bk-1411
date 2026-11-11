@@ -165,9 +165,6 @@ body.has-bar{padding-top:var(--bar-h,0px)}
 /* chân trang + thanh tab (cao ~64px, nút giữa nhô thêm ~30px) */
 .foot{max-width:560px;margin:0 auto;padding:8px 16px calc(100px + var(--safe-b));font-size:13px;color:var(--muted);display:flex;flex-direction:column;gap:4px;text-align:center}
 .foot [hidden]{display:none}
-.foot summary{cursor:pointer;font-weight:600;min-height:44px;display:flex;align-items:center;justify-content:center}
-.foot ul{display:flex;flex-direction:column;gap:6px;text-align:left;padding-left:18px;list-style:disc}
-.foot a{overflow-wrap:anywhere}
 .tabbar{position:fixed;left:0;right:0;bottom:0;z-index:10}
 .tabbar ul{display:grid;grid-auto-flow:column;grid-auto-columns:1fr;align-items:end;max-width:560px;margin:0 auto;background:var(--ink);border-radius:20px 20px 0 0;padding:6px 4px calc(6px + var(--safe-b));box-shadow:0 -6px 20px rgba(30,26,22,.18)}
 .tabbar a{display:flex;flex-direction:column;align-items:center;justify-content:flex-end;gap:3px;min-height:52px;padding:4px 0;text-decoration:none;color:#BFB3A0;font-size:12px;font-weight:500;line-height:1.2;white-space:nowrap}

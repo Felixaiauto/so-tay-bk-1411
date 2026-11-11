@@ -1,7 +1,6 @@
 import { bjNow } from './time.js';
 import { parseHash } from './router.js';
 import { overlayOpen } from './overlay.js';
-import { esc } from './dom.js';
 import { renderItinerary, mountItinerary, defaultViewDate } from './views/lich-trinh.js';
 import { renderPrep, mountPrep } from './views/chuan-bi.js';
 import { renderHelp, mountHelp } from './views/tro-giup.js';
@@ -66,10 +65,6 @@ function renderChrome(data) {
     `<li${v === 'chup-anh' ? ' class="tab-main"' : ''}><a href="#${v}" data-v="${v}">${v === 'chup-anh' ? '<span class="fab">' : ''}<svg viewBox="0 0 24 24" aria-hidden="true">${ICONS[v]}</svg>${v === 'chup-anh' ? '</span>' : ''}${LABELS[v]}</a></li>`).join('');
   const [y, m, d] = data.tour.checkedOn.split('-');
   document.getElementById('checkedOn').textContent = `Giờ mở cửa và giá vé kiểm tra ngày ${+d}/${+m}/${y}. Xem lại trên kênh chính thức trước khi đi.`;
-  // Ảnh nhỏ của quán ăn là ảnh minh họa món, không phải ảnh chính quán: ghi chú ở nguồn ảnh.
-  const dish = new Set(data.days.flatMap(d => d.stops).filter(x => x.thumb && x.thumbNote).map(x => x.thumb));
-  document.getElementById('credList').innerHTML = data.credits.map(c =>
-    `<li>${dish.has(c.file) ? 'Ảnh minh họa món · ' : ''}${esc(c.title)} · ${esc(c.author || 'không rõ tác giả')} · ${esc(c.license)}${c.personalUseOnly && !/dùng cá nhân/i.test(c.license) ? ' · chỉ dùng cá nhân' : ''} · <a href="${esc(c.url)}" target="_blank" rel="noopener">${c.url.includes('wikimedia') ? 'Wikimedia Commons' : 'Nguồn'}</a></li>`).join('');
 }
 
 async function boot() {

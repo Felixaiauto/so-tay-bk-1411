@@ -81,11 +81,10 @@ test('mục dự phòng ngày 18 có nhãn và không là đang diễn ra', asyn
   await expect(page.locator('.stop.is-now')).toHaveCount(0);
 });
 
-test('ảnh món ghi "minh họa" ở nguồn ảnh, không ở hàng; sân bay lấy từ contacts', async ({ page }) => {
+test('ảnh món có thumbnail, không ghi chú ở hàng; sân bay lấy từ contacts', async ({ page }) => {
   await go(page, '2026-11-14T08:00');
   await expect(page.locator('.stop', { hasText: 'Đô Nhất Xứ' }).locator('.stop-thumb')).toHaveCount(1);
   await expect(page.locator('.stop', { hasText: 'Đô Nhất Xứ' })).not.toContainText('Ảnh minh họa món');
-  await expect(page.locator('#credList li', { hasText: 'Shaomai' })).toContainText('Ảnh minh họa món');
   await page.locator('.day[data-date="2026-11-18"]').click();
   await expect(page.locator('.stop', { hasText: 'Lên xe ra sân bay' }).locator('.stop-sub')).toHaveText('Sân bay PEK hoặc PKX tùy vé');
 });
