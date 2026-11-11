@@ -18,6 +18,6 @@ export function renderPhotos(ctx) {
 
 export function mountPhotos(root, ctx) {
   for (const b of root.querySelectorAll('[data-open-story]')) {
-    b.addEventListener('click', () => openStory(ctx.data.places.find(p => p.id === b.dataset.openStory), 0));
+    b.addEventListener('click', () => { b.focus(); openStory(ctx.data.places.find(p => p.id === b.dataset.openStory), 0); });
   }
 }

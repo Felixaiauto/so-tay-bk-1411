@@ -1,4 +1,7 @@
 import { test, expect } from '@playwright/test';
+import fs from 'node:fs';
+import http from 'node:http';
+import path from 'node:path';
 
 const savedAndControlled = async page => {
   await expect(page.locator('#offline-bar')).toContainText('Đã lưu ✓', { timeout: 45_000 });
@@ -129,4 +132,105 @@ test('tour.json trả về trang lạ (portal wifi) thì dùng bản đã lưu, 
     return (await (await (await caches.open(k)).match('./data/tour.json')).json()).version;
   });
   expect(typeof v).toBe('string');
+});
+
+// Giả lập đăng bản mới bằng máy chủ riêng (trình duyệt tự kiểm tra sw.js không đi qua context.route):
+// khi bật v2, sw.js có thêm một dòng (khác byte) và assets.js đổi media.version (kho media mới).
+const MIME = { '.js': 'text/javascript', '.json': 'application/json', '.webp': 'image/webp', '.woff2': 'font/woff2', '.png': 'image/png', '.html': 'text/html', '.css': 'text/css', '.webmanifest': 'application/manifest+json', '.mp4': 'video/mp4' };
+const NEW_MEDIA = 'zz-update-test';
+async function startSite() {
+  const root = path.resolve(import.meta.dirname, '../..');
+  const state = { v2: false, fail: null };
+  const server = http.createServer((req, res) => {
+    let p = decodeURIComponent(req.url.split('?')[0]);
+    if (p === '/so-tay') p = '/';
+    else if (p.startsWith('/so-tay/')) p = p.slice('/so-tay'.length);
+    else { res.writeHead(404); return res.end(); }
+    if (p.endsWith('/')) p += 'index.html';
+    const f = path.join(root, p);
+    const rel = '.' + p;
+    if (!f.startsWith(root) || !fs.existsSync(f) || !fs.statSync(f).isFile() || (state.v2 && state.fail === rel)) { res.writeHead(404); return res.end('x'); }
+    let body = fs.readFileSync(f);
+    if (state.v2 && p === '/sw.js') body = Buffer.concat([body, Buffer.from('\n// v2\n')]);
+    if (state.v2 && p === '/assets.js') body = Buffer.from(body.toString('utf8').replace(/("media":\s*\{\s*"version":\s*")[^"]*/, `$1${NEW_MEDIA}`));
+    res.writeHead(200, { 'Content-Type': MIME[path.extname(f)] || 'application/octet-stream', 'Cache-Control': 'no-store' });
+    res.end(body);
+  });
+  await new Promise(r => server.listen(0, '127.0.0.1', r));
+  return { state, url: `http://127.0.0.1:${server.address().port}/so-tay/`, close: () => server.close() };
+}
+// Chạy reg.update() rồi trả trạng thái cuối của bản đang cài: 'redundant' (hủy) hoặc 'activated'.
+const runUpdate = page => page.evaluate(async () => {
+  const reg = await navigator.serviceWorker.getRegistration();
+  const done = new Promise(res => reg.addEventListener('updatefound', () => {
+    const w = reg.installing;
+    w.addEventListener('statechange', () => { if (w.state === 'redundant' || w.state === 'activated') res(w.state); });
+  }, { once: true }));
+  await reg.update();
+  return Promise.race([done, new Promise(res => setTimeout(() => res('timeout'), 50_000))]);
+});
+const cacheKeys = page => page.evaluate(() => caches.keys());
+
+test('cập nhật nền thiếu một tệp media thì hủy cài, giữ nguyên bản cũ và vẫn chạy offline', async ({ page, context }) => {
+  const site = await startSite();
+  await page.goto(site.url);
+  await savedAndControlled(page);
+  const before = (await cacheKeys(page)).sort();
+  expect(before.some(k => k.includes(NEW_MEDIA))).toBe(false);
+  Object.assign(site.state, { v2: true, fail: './img/thien-dan-900.webp' });
+  expect(await runUpdate(page)).toBe('redundant');
+  // Kho cũ còn nguyên (activate không chạy nên không xóa gì), bản cũ vẫn là bản đang chạy.
+  const after = await cacheKeys(page);
+  for (const k of before) expect(after).toContain(k);
+  expect(await page.evaluate(async () => { const r = await navigator.serviceWorker.getRegistration(); return [!!r.active, !r.waiting]; })).toEqual([true, true]);
+  await context.setOffline(true);
+  await page.reload();
+  await expect(page.locator('.hero-title')).toBeVisible();
+  const w = await page.locator('.hero-img').evaluate(i => i.complete && i.naturalWidth);
+  expect(w).toBeGreaterThan(0);
+  await context.setOffline(false);
+  site.close();
+});
+
+test('cập nhật nền đủ tệp thì kích hoạt, dọn kho cũ; trang chỉ nạp lại khi hiện lại và không mở thẻ', async ({ page }) => {
+  const site = await startSite();
+  await page.goto(site.url);
+  await savedAndControlled(page);
+  const before = (await cacheKeys(page)).filter(k => /-media-/.test(k));
+  site.state.v2 = true;
+  await page.locator('#tabs a[data-v="tro-giup"]').click();
+  await page.locator('[data-embassy]').click();
+  await expect(page.getByRole('dialog')).toBeVisible();
+  await page.evaluate(() => {
+    window.__marker = 1; window.__cc = false;
+    navigator.serviceWorker.addEventListener('controllerchange', () => { window.__cc = true; });
+  });
+  expect(await runUpdate(page)).toBe('activated');
+  await page.waitForFunction(() => window.__cc === true, null, { timeout: 10_000 });
+  const keys = await cacheKeys(page);
+  expect(keys.some(k => k.includes(NEW_MEDIA))).toBe(true);
+  for (const k of before) expect(keys).not.toContain(k);
+  // Đang mở thẻ: dù trang hiện lại cũng chưa nạp lại.
+  await page.evaluate(() => document.dispatchEvent(new Event('visibilitychange')));
+  await page.waitForTimeout(800);
+  expect(await page.evaluate(() => window.__marker)).toBe(1);
+  // Đóng thẻ rồi trang hiện lại: nạp lại đúng một lần.
+  await page.locator('.ov-close').click();
+  await expect(page.getByRole('dialog')).toHaveCount(0);
+  await Promise.all([
+    page.waitForNavigation(),
+    page.evaluate(() => document.dispatchEvent(new Event('visibilitychange'))),
+  ]);
+  await expect(page.locator('#tabs a').first()).toBeVisible();
+  expect(await page.evaluate(() => window.__marker)).toBeUndefined();
+  site.close();
+});
+
+test('lần cài đầu không nạp lại trang khi bản mới nhận quyền điều khiển', async ({ page }) => {
+  await page.goto('./');
+  await page.evaluate(() => { window.__marker = 1; });
+  await savedAndControlled(page);
+  await page.evaluate(() => document.dispatchEvent(new Event('visibilitychange')));
+  await page.waitForTimeout(800);
+  expect(await page.evaluate(() => window.__marker)).toBe(1);
 });

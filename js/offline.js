@@ -1,3 +1,5 @@
+import { overlayOpen } from './overlay.js';
+
 const BAR_OK_MS = 4000;
 const RETRY_STALL_MS = 20_000;
 let hideTimer = null;
@@ -73,6 +75,22 @@ export function initOffline(bar) {
       else await sw.register('./sw.js', { updateViaCache: 'none' }); // cài lần đầu hỏng sẽ xóa đăng ký: cài lại, tiếp tục từ phần đã lưu
     } catch { /* đồng hồ 20 giây sẽ hiện lại nút */ }
   };
+  // Bản mới vừa nhận quyền điều khiển: nạp lại trang để dùng mã mới, nhưng không giật màn hình đang xem.
+  // Chờ lần trang hiện lại (visibilitychange) hoặc chuyển tab (hashchange); đang mở thẻ thì chờ tiếp; chỉ nạp một lần.
+  let hadController = !!sw.controller;
+  let wantReload = false;
+  let reloaded = false;
+  const maybeReload = () => {
+    if (!wantReload || reloaded || document.visibilityState !== 'visible' || overlayOpen()) return;
+    reloaded = true;
+    location.reload();
+  };
+  sw.addEventListener('controllerchange', () => {
+    if (!hadController) { hadController = true; return; } // lần cài đầu: bản đầu tiên nhận quyền, không cần nạp lại
+    wantReload = true;
+  });
+  document.addEventListener('visibilitychange', maybeReload);
+  addEventListener('hashchange', maybeReload);
   sw.addEventListener('message', e => {
     const m = e.data || {};
     if (m.type === 'progress') {
@@ -106,5 +124,5 @@ export function notifyVersion(v, bar) {
   const K = 'bk-tour-version';
   let prev = null;
   try { prev = localStorage.getItem(K); localStorage.setItem(K, v); } catch { /* bỏ qua */ }
-  if (prev && prev !== v) flash(bar, 'Đã cập nhật lịch');
+  if (prev && prev !== v) flash(bar, 'Đã cập nhật sổ tay');
 }

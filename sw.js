@@ -1,4 +1,4 @@
-// version: 57c88d2c5c-d7deb510d2
+// version: 1533ab8567-d7deb510d2
 /* Service worker sổ tay Bắc Kinh. Đường dẫn tương đối theo vị trí sw.js. */
 importScripts('./assets.js', './sw-range.js');
 
@@ -49,14 +49,17 @@ async function fillAll() {
   if (failed.length) await report({ type: 'partial', done: TOTAL - failed.length, total: TOTAL, failed });
   else await post({ type: 'saved', total: TOTAL });
   if (appFailed.length) throw new Error('Thiếu tệp app: ' + appFailed.join(', '));
+  return failed;
 }
 
 let filling = null; // chặn hai lượt lưu chạy chồng nhau (cài đặt + bấm Thử lại)
 const fillAllOnce = () => (filling ||= fillAll().finally(() => { filling = null; loud = false; }));
 
 self.addEventListener('install', e => {
-  loud = !self.registration.active; // chưa có bản nào đang chạy = cài lần đầu
-  e.waitUntil(fillAllOnce().then(() => self.skipWaiting()));
+  const isUpdate = !!self.registration.active;
+  loud = !isUpdate; // chưa có bản nào đang chạy = cài lần đầu
+  // Cập nhật: thiếu bất kỳ tệp nào thì hủy cài, giữ nguyên bản cũ (lần mở sau sẽ cài tiếp phần còn thiếu).
+  e.waitUntil(fillAllOnce().then(failed => { if (isUpdate && failed.length) throw new Error('Cập nhật chưa đủ tệp'); }).then(() => self.skipWaiting()));
 });
 
 self.addEventListener('activate', e => {

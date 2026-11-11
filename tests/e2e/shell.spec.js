@@ -31,3 +31,10 @@ test('chân trang có ngày kiểm tra giá vé và nguồn ảnh', async ({ pag
   await page.locator('.foot summary').click();
   await expect(page.locator('#credList li').first()).toContainText('Wikimedia Commons');
 });
+
+test('nguồn ảnh: không lặp "dùng cá nhân" khi giấy phép đã ghi sẵn', async ({ page }) => {
+  await page.goto('./');
+  const items = await page.locator('#credList li').allTextContents();
+  for (const t of items) expect(t.match(/dùng cá nhân/g)?.length ?? 0).toBeLessThanOrEqual(1);
+  expect(items.some(t => /không rõ \(dùng cá nhân\) · (?!chỉ dùng)/.test(t))).toBe(true);
+});

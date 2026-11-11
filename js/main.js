@@ -66,7 +66,7 @@ function renderChrome(data) {
   const [y, m, d] = data.tour.checkedOn.split('-');
   document.getElementById('checkedOn').textContent = `Giờ mở cửa và giá vé kiểm tra ngày ${+d}/${+m}/${y}. Xem lại trên kênh chính thức trước khi đi.`;
   document.getElementById('credList').innerHTML = data.credits.map(c =>
-    `<li>${esc(c.title)} · ${esc(c.author || 'không rõ tác giả')} · ${esc(c.license)}${c.personalUseOnly ? ' · chỉ dùng cá nhân' : ''} · <a href="${esc(c.url)}" target="_blank" rel="noopener">${c.url.includes('wikimedia') ? 'Wikimedia Commons' : 'Nguồn'}</a></li>`).join('');
+    `<li>${esc(c.title)} · ${esc(c.author || 'không rõ tác giả')} · ${esc(c.license)}${c.personalUseOnly && !/dùng cá nhân/i.test(c.license) ? ' · chỉ dùng cá nhân' : ''} · <a href="${esc(c.url)}" target="_blank" rel="noopener">${c.url.includes('wikimedia') ? 'Wikimedia Commons' : 'Nguồn'}</a></li>`).join('');
 }
 
 async function boot() {

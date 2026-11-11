@@ -87,3 +87,26 @@ test('tab Chụp ảnh: thư viện 9 dáng, 10 bộ ảnh theo ngày, mở stor
   await expect(page).toHaveURL(/#dd-co-cung\/chup-anh$/);
   await expect(page.locator('[data-sec="chup-anh"] .psec-h')).toBeInViewport();
 });
+
+test('Chụp ảnh: Esc đóng story, focus trở về ảnh bìa đã chạm', async ({ page }) => {
+  await page.goto('./?now=2026-11-17T09:40#chup-anh');
+  const cover = page.locator('.pcover-img').first();
+  await cover.click();
+  await expect(page.locator('.story')).toBeVisible();
+  await page.keyboard.press('Escape');
+  await expect(page.locator('.story')).toHaveCount(0);
+  await expect(cover).toBeFocused();
+});
+
+test('story trên màn hình thấp: ‹ › nằm trên khối chữ và vẫn bấm được', async ({ page }) => {
+  await page.setViewportSize({ width: 360, height: 520 });
+  await page.goto(PLACE);
+  await page.locator('.psec-strip button').first().click();
+  await expect(page.locator('.story .st-hd span')).toHaveText('Cố Cung · Khung 1/3');
+  const bt = await page.locator('.st-bt').evaluate(e => ({ h: e.getBoundingClientRect().height, vh: innerHeight, over: getComputedStyle(e).overflowY }));
+  expect(bt.h).toBeLessThanOrEqual(bt.vh * 0.55 + 1);
+  expect(bt.over).toBe('auto');
+  await page.locator('.st-next').click({ trial: true }); // báo lỗi nếu có phần tử khác che
+  await page.locator('.st-next').click();
+  await expect(page.locator('.story .st-hd span')).toHaveText('Cố Cung · Khung 2/3');
+});

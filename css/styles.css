@@ -227,10 +227,10 @@ body.has-bar{padding-top:var(--bar-h,0px)}
 .st-prog i.on{background:#fff}
 .st-hd{position:absolute;top:18px;left:14px;right:8px;z-index:2;display:flex;justify-content:space-between;align-items:center;font-size:14px;font-weight:600}
 .st-x{width:48px;height:48px;border-radius:50%;background:rgba(0,0,0,.4);color:#fff;font-size:26px}
-.st-nav{position:absolute;top:40%;z-index:2;width:44px;height:64px;border-radius:12px;background:rgba(0,0,0,.25);color:#fff;font-size:30px}
+.st-nav{position:absolute;top:40%;z-index:3;width:44px;height:64px;border-radius:12px;background:rgba(0,0,0,.25);color:#fff;font-size:30px}
 .st-nav[disabled]{opacity:.25}
 .st-prev{left:6px}.st-next{right:6px}
-.st-bt{position:absolute;left:16px;right:16px;bottom:calc(20px + var(--safe-b));z-index:2;display:flex;flex-direction:column;gap:8px}
+.st-bt{position:absolute;left:16px;right:16px;bottom:calc(20px + var(--safe-b));z-index:2;display:flex;flex-direction:column;gap:8px;max-height:55%;overflow:auto}
 .st-h{font:700 26px/1.12 var(--f-display)}
 .st-dl{display:grid;grid-template-columns:64px 1fr;gap:4px 10px;font-size:14px}
 .st-dl dt{font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--gold-hi);font-weight:700;padding-top:2px}
