@@ -71,7 +71,7 @@ async function boot() {
   const tick = () => {
     if (overlayOpen() || state.view !== 'lich-trinh') return;
     const ae = document.activeElement;
-    if (ae && ae !== app && ae !== document.body && app.contains(ae)) return;
+    if (ae && ae !== app && app.contains(ae) && ae.matches(':focus-visible')) return;
     const y = scrollY; render(); scrollTo(0, y);
   };
   setInterval(tick, 60_000);

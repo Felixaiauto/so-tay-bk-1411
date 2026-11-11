@@ -40,14 +40,37 @@ test('"Đã qua" giữ trạng thái mở sau khi vẽ lại', async ({ page }) 
   await go(page, '2026-11-17T12:40');
   await page.locator('details.past summary').click();
   await expect(page.locator('details.past')).toHaveAttribute('open', '');
-  // Clicking the summary focuses it, and the tick skips re-render while focus is inside #app; blur so the re-render really happens.
   await page.evaluate(() => {
-    document.activeElement?.blur();
     document.querySelector('details.past').dataset.old = '1';
     document.dispatchEvent(new Event('visibilitychange'));
   });
   await expect(page.locator('details.past[data-old]')).toHaveCount(0); // node was replaced
   await expect(page.locator('details.past')).toHaveAttribute('open', '');
+});
+
+test('chạm nút ngày rồi quay lại tab: vẫn vẽ lại (không kẹt vì focus do chạm)', async ({ page }) => {
+  await go(page, '2026-11-17T09:40');
+  await page.locator('.day[data-date="2026-11-16"]').click();
+  await page.locator('.day[data-date="2026-11-17"]').click();
+  await page.evaluate(() => {
+    document.querySelector('.hero').dataset.old = '1';
+    document.dispatchEvent(new Event('visibilitychange'));
+  });
+  await expect(page.locator('.hero[data-old]')).toHaveCount(0);
+  await expect(page.locator('.live')).toHaveText('Đang diễn ra · còn 1 giờ 35 phút');
+});
+
+test('focus bàn phím trong #app được giữ khi vẽ lại định kỳ', async ({ page }) => {
+  await go(page, '2026-11-14T08:00');
+  await page.locator('[data-driver="d14-3"]').focus();
+  await page.keyboard.press('Shift'); // keyboard input makes the focus ring (:focus-visible) apply
+  await expect(page.locator('[data-driver="d14-3"]')).toBeFocused();
+  await page.evaluate(() => {
+    document.querySelector('.hero').dataset.old = '1';
+    document.dispatchEvent(new Event('visibilitychange'));
+  });
+  await expect(page.locator('.hero[data-old]')).toHaveCount(1); // no re-render
+  await expect(page.locator('[data-driver="d14-3"]')).toBeFocused();
 });
 
 test('mục dự phòng ngày 18 có nhãn và không là đang diễn ra', async ({ page }) => {
