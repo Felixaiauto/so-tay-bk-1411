@@ -15,6 +15,7 @@ function airportSub(data) {
 function stopRow(data, s, ctx, status, isNow) {
   const p = s.place ? data.places.find(x => x.id === s.place) : null;
   const sub = s.airport ? airportSub(data) : s.sub;
+  const placeCard = !!(p && !ctx.features.places && p.addressZh); // đợt 1: chưa có trang địa điểm, mở thẻ tài xế của địa điểm
   const flags = (s.optional ? '<span class="pill">Dự phòng</span>' : '') + (s.flag ? `<span class="pill">${esc(s.flag)}</span>` : '');
   const inner = `<span class="stop-t">${esc(s.s)}${s.e ? `<small>${esc(s.e)}</small>` : ''}</span>
     <span class="stop-b">
@@ -24,11 +25,12 @@ function stopRow(data, s, ctx, status, isNow) {
       ${sub ? `<span class="stop-sub">${esc(sub)}</span>` : ''}
       ${s.thumb && s.thumbNote ? `<span class="stop-note">${esc(s.thumbNote)}</span>` : ''}
       ${flags ? `<span class="stop-flags">${flags}</span>` : ''}
-      ${s.addressZh ? '<span class="stop-drv">Thẻ tài xế ›</span>' : ''}
+      ${s.addressZh || placeCard ? '<span class="stop-drv">Thẻ tài xế ›</span>' : ''}
     </span>
     ${s.thumb ? imgTag(s.thumb, 160, '', 'stop-thumb') : '<span></span>'}`;
   let row;
   if (p && ctx.features.places) row = `<a class="stop-row" href="#dd-${esc(p.id)}">${inner}</a>`;
+  else if (placeCard && !s.addressZh) row = `<button type="button" class="stop-row" data-driver-place="${esc(p.id)}">${inner}</button>`;
   else if (s.addressZh) row = `<button type="button" class="stop-row" data-driver="${esc(s.id)}">${inner}</button>`;
   else row = `<div class="stop-row">${inner}</div>`;
   const cls = `stop stop-${s.k}${status === 'past' ? ' is-past' : ''}${isNow ? ' is-now' : ''}`;
@@ -75,6 +77,9 @@ export function mountItinerary(root, ctx) {
   for (const b of root.querySelectorAll('.day')) b.addEventListener('click', () => ctx.setViewDate(b.dataset.date));
   const past = root.querySelector('details.past');
   if (past && ctx.ui) past.addEventListener('toggle', () => { ctx.ui.pastOpen = past.open; });
+  for (const b of root.querySelectorAll('[data-driver-place]')) {
+    b.addEventListener('click', () => openDriverCard(ctx.data.places.find(x => x.id === b.dataset.driverPlace), ctx.data.contacts.hotel));
+  }
   for (const b of root.querySelectorAll('[data-driver]')) {
     b.addEventListener('click', () => {
       const s = ctx.data.days.flatMap(d => d.stops).find(x => x.id === b.dataset.driver);

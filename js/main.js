@@ -25,7 +25,7 @@ const VIEWS = {
 };
 
 const NOW_PARAM = new URLSearchParams(location.search).get('now');
-const state = { data: null, viewDate: null, view: 'lich-trinh', ui: { pastOpen: false } };
+const state = { data: null, viewDate: null, defDate: null, view: 'lich-trinh', ui: { pastOpen: false } };
 const app = document.getElementById('app');
 
 function render() {
@@ -33,7 +33,9 @@ function render() {
   const route = parseHash(location.hash);
   const view = enabledTabs(FEATURES).includes(route.view) && VIEWS[route.view] ? route.view : 'lich-trinh';
   state.view = view;
-  state.viewDate ||= defaultViewDate(state.data.tour, now);
+  // Ngày khách tự chọn được giữ cho tới khi ngày mặc định (theo giờ Bắc Kinh) đổi, ví dụ qua nửa đêm.
+  const def = defaultViewDate(state.data.tour, now);
+  if (state.defDate !== def) { state.defDate = def; state.viewDate = def; state.ui.pastOpen = false; }
   const ctx = {
     data: state.data, now, viewDate: state.viewDate, route, features: FEATURES, ui: state.ui,
     setViewDate: d => { const y = scrollY; state.viewDate = d; render(); scrollTo(0, y); },

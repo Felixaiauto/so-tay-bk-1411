@@ -72,3 +72,61 @@ test('Thử lại cài lại SW khi lần cài đầu hỏng vì thiếu tệp a
   await bar.locator('[data-retry]').click();
   await expect(bar).toContainText('Đã lưu ✓', { timeout: 30_000 });
 });
+
+test('thanh lưu không che thẻ tài xế và không đè dải ngày', async ({ page, context }) => {
+  await context.route('**/img/olympic-160.webp', r => r.fulfill({ status: 404, body: 'x' }));
+  await page.goto('./?now=2026-11-14T08:00');
+  const bar = page.locator('#offline-bar');
+  await expect(bar).toContainText('Lưu chưa xong', { timeout: 45_000 });
+  // Thanh đang hiện: dải ngày dính nằm dưới thanh, không bị che.
+  await page.evaluate(() => scrollTo(0, 700));
+  const { barBottom, daysTop } = await page.evaluate(() => ({
+    barBottom: document.getElementById('offline-bar').getBoundingClientRect().bottom,
+    daysTop: document.querySelector('.days').getBoundingClientRect().top,
+  }));
+  expect(daysTop).toBeGreaterThanOrEqual(barBottom - 1);
+  // Mở thẻ tài xế: thanh phải ẩn, nút × bấm được.
+  await page.locator('[data-driver="d14-3"]').click();
+  await expect(page.getByRole('dialog')).toBeVisible();
+  await expect(bar).toBeHidden();
+  await page.locator('.ov-close').click();
+  await expect(page.getByRole('dialog')).toHaveCount(0);
+  await expect(bar).toBeVisible(); // đóng thẻ xong thanh hiện lại
+});
+
+test('đã lưu sẵn + chạy như app cài: báo "Đã lưu ✓" một lần khi mở lại', async ({ page }) => {
+  await page.addInitScript(() => {
+    const mm = window.matchMedia.bind(window);
+    window.matchMedia = q => (String(q).includes('display-mode: standalone') ? { matches: true, media: q, addEventListener() {}, removeEventListener() {} } : mm(q));
+  });
+  await page.goto('./');
+  await savedAndControlled(page);
+  await page.reload();
+  const bar = page.locator('#offline-bar');
+  await expect(bar).toBeVisible();
+  await expect(bar).toContainText('Đã lưu ✓');
+  await expect(bar).toBeHidden({ timeout: 8000 }); // tự tắt sau vài giây
+});
+
+test('đã lưu sẵn nhưng mở trong trình duyệt thường: không báo gì', async ({ page }) => {
+  await page.goto('./');
+  await savedAndControlled(page);
+  await page.reload();
+  await expect(page.locator('.hero-title')).toBeVisible();
+  await page.waitForTimeout(1500);
+  await expect(page.locator('#offline-bar')).toBeHidden();
+});
+
+test('tour.json trả về trang lạ (portal wifi) thì dùng bản đã lưu, không ghi đè kho', async ({ page, context }) => {
+  await page.goto('./');
+  await savedAndControlled(page);
+  await context.route('**/data/tour.json', r => r.fulfill({ status: 200, contentType: 'text/html', body: '<html>wifi login</html>' }));
+  await page.reload();
+  await expect(page.locator('.hero-title')).toBeVisible();
+  await expect(page.locator('.day')).toHaveCount(5);
+  const v = await page.evaluate(async () => {
+    const k = (await caches.keys()).find(n => /-app-/.test(n));
+    return (await (await (await caches.open(k)).match('./data/tour.json')).json()).version;
+  });
+  expect(typeof v).toBe('string');
+});

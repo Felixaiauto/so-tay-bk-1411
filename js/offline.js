@@ -6,16 +6,31 @@ let stallTimer = null;
 // Tiền tố tên kho theo thư mục của trang (trùng với phạm vi SW). Giữ đồng bộ với hằng P trong sw.js.
 export const cachePrefix = () => 'bk' + new URL('./', location.href).pathname.replace(/[^a-z0-9]/gi, '-') + '-';
 
+// Thanh cố định ở đầu màn hình: khi hiện, đẩy nội dung và dải ngày dính xuống dưới thanh (class has-bar + biến --bar-h).
+let watching = false;
+function sync(bar) {
+  const vis = !bar.hidden;
+  document.body.classList.toggle('has-bar', vis);
+  if (!vis) document.body.style.setProperty('--bar-h', '0px');
+  else if (bar.offsetHeight) document.body.style.setProperty('--bar-h', bar.offsetHeight + 'px'); // đang bị ẩn do mở thẻ thì offsetHeight = 0: giữ nguyên
+  if (!watching && typeof ResizeObserver === 'function') {
+    watching = true;
+    new ResizeObserver(() => sync(bar)).observe(bar);
+  }
+}
 function show(bar, html, cls = '') {
   clearTimeout(hideTimer);
   bar.className = `offline-bar ${cls}`;
   bar.innerHTML = html;
   bar.hidden = false;
+  sync(bar);
 }
 function flash(bar, text, cls = 'ok') {
   show(bar, `<span>${text}</span>`, cls);
-  hideTimer = setTimeout(() => { bar.hidden = true; }, BAR_OK_MS);
+  hideTimer = setTimeout(() => { bar.hidden = true; sync(bar); }, BAR_OK_MS);
 }
+const isStandalone = () => !!(matchMedia?.('(display-mode: standalone)').matches || navigator.standalone);
+const SAVED_TEXT = 'Đã lưu ✓ dùng được khi không có mạng';
 
 export async function checkSaved(A = self.ASSETS) {
   if (!('caches' in self) || !A || !A.app.files.length) return { state: 'unsupported', done: 0, total: 0 };
@@ -65,7 +80,8 @@ export function initOffline(bar) {
       show(bar, `<span>Đang lưu ${m.done}/${m.total}…</span><progress max="${m.total}" value="${m.done}"></progress>`);
     } else if (m.type === 'saved') {
       clearTimeout(stallTimer); stallTimer = null;
-      flash(bar, 'Đã lưu ✓ dùng được khi không có mạng');
+      flash(bar, SAVED_TEXT);
+      navigator.storage?.persist?.().catch?.(() => {}); // xin giữ dữ liệu, kết quả không cần dùng
     } else if (m.type === 'partial') {
       clearTimeout(stallTimer); stallTimer = null;
       showPartial(m.done, m.total);
@@ -79,6 +95,7 @@ export function initOffline(bar) {
       return; // lần cài đầu: tin nhắn tiến độ sẽ tới
     }
     const s = await checkSaved();
+    if (s.state === 'saved') { if (isStandalone()) flash(bar, SAVED_TEXT); return; } // mở lại app đã cài: báo một lần mỗi lần mở trang
     if (s.state !== 'missing') return;
     if (navigator.onLine) reg.active.postMessage({ type: 'retry' });
     else show(bar, `<span>Lưu chưa đủ · ${s.done}/${s.total} · cần mạng</span>`, 'warn');

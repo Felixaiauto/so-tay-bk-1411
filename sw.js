@@ -1,4 +1,4 @@
-// version: 9721350304-c1e853b2cf
+// version: 8e86498b04-c1e853b2cf
 /* Service worker sổ tay Bắc Kinh. Đường dẫn tương đối theo vị trí sw.js. */
 importScripts('./assets.js', './sw-range.js');
 
@@ -15,21 +15,28 @@ async function post(msg) {
   for (const c of cs) c.postMessage(msg);
 }
 
+const FETCH_MS = 15_000; // tối đa mỗi lần tải một tệp, quá hạn thì bỏ và thử lại
+// Chỉ báo tiến độ/"lưu chưa xong" khi cài lần đầu hoặc khi khách bấm Thử lại; cập nhật nền thì im lặng (trừ "saved").
+let loud = false;
+const report = msg => (loud ? post(msg) : Promise.resolve());
+
 async function fill(name, files, counter) {
   const cache = await caches.open(name);
   const failed = [];
   for (const f of files) {
     let ok = !!(await cache.match(f));
     for (let i = 0; i < 3 && !ok; i++) {
+      const ctl = new AbortController();
+      const timer = setTimeout(() => ctl.abort(), FETCH_MS);
       try {
-        const r = await fetch(f, { cache: 'reload' });
+        const r = await fetch(f, { cache: 'reload', signal: ctl.signal });
         if (r.ok) { await cache.put(f, r); ok = true; }
         else await r.arrayBuffer(); // phải đọc hết thân phản hồi lỗi, nếu không Chromium treo các fetch kế tiếp trong SW
-      } catch (e) { /* thử lại */ }
+      } catch (e) { /* hết hạn hoặc lỗi mạng: thử lại */ } finally { clearTimeout(timer); }
     }
     counter.done++;
     if (!ok) failed.push(f);
-    post({ type: 'progress', done: counter.done, total: TOTAL });
+    await report({ type: 'progress', done: counter.done, total: TOTAL }); // chờ gửi xong để không có tin tiến độ nào đến sau 'saved'
   }
   return failed;
 }
@@ -39,14 +46,16 @@ async function fillAll() {
   const appFailed = await fill(APP, A.app.files, counter);
   const mediaFailed = await fill(MEDIA, A.media.files, counter);
   const failed = appFailed.concat(mediaFailed);
-  await post(failed.length ? { type: 'partial', done: TOTAL - failed.length, total: TOTAL, failed } : { type: 'saved', total: TOTAL });
+  if (failed.length) await report({ type: 'partial', done: TOTAL - failed.length, total: TOTAL, failed });
+  else await post({ type: 'saved', total: TOTAL });
   if (appFailed.length) throw new Error('Thiếu tệp app: ' + appFailed.join(', '));
 }
 
 let filling = null; // chặn hai lượt lưu chạy chồng nhau (cài đặt + bấm Thử lại)
-const fillAllOnce = () => (filling ||= fillAll().finally(() => { filling = null; }));
+const fillAllOnce = () => (filling ||= fillAll().finally(() => { filling = null; loud = false; }));
 
 self.addEventListener('install', e => {
+  loud = !self.registration.active; // chưa có bản nào đang chạy = cài lần đầu
   e.waitUntil(fillAllOnce().then(() => self.skipWaiting()));
 });
 
@@ -58,7 +67,7 @@ self.addEventListener('activate', e => {
 });
 
 self.addEventListener('message', e => {
-  if (e.data && e.data.type === 'retry') e.waitUntil(fillAllOnce().catch(() => {}));
+  if (e.data && e.data.type === 'retry') { loud = true; e.waitUntil(fillAllOnce().catch(() => {})); }
 });
 
 async function networkFirst(req, ms) {
@@ -69,8 +78,10 @@ async function networkFirst(req, ms) {
       fetch(req, { cache: 'no-store' }),
       new Promise((_, rej) => { timer = setTimeout(() => rej(new Error('timeout')), ms); }),
     ]);
-    if (r.ok) { await cache.put('./data/tour.json', r.clone()); return r; }
-    await r.arrayBuffer().catch(() => {}); // đọc bỏ thân phản hồi lỗi
+    // Chỉ nhận bản mạng nếu đúng là tour.json (JSON có trường version); trang lỗi/portal wifi trả 200 thì bỏ.
+    const valid = r.ok && await r.clone().json().then(j => !!j && typeof j.version === 'string', () => false);
+    if (valid) { await cache.put('./data/tour.json', r.clone()); return r; }
+    await r.arrayBuffer().catch(() => {}); // đọc bỏ thân phản hồi không dùng
   } catch (e) { /* mạng chậm/bị chặn: dùng bản đã lưu */ } finally { clearTimeout(timer); }
   return (await cache.match('./data/tour.json')) || new Response('{}', { status: 503, headers: { 'Content-Type': 'application/json' } });
 }
