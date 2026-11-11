@@ -1,0 +1,14 @@
+{
+  "name": "so-tay-bac-kinh",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node --test tests/unit/",
+    "test:py": "python -m unittest discover -s tests/py -v",
+    "e2e": "playwright test",
+    "serve": "python tools/serve.py 8765"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.65.0"
+  }
+}
