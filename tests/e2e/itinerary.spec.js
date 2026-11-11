@@ -95,11 +95,15 @@ test('quán có địa chỉ mở thẻ tài xế', async ({ page }) => {
   await expect(page.getByRole('dialog')).toHaveCount(0);
 });
 
-test('điểm đến không có đường dẫn đợt 2 vẫn mở được thẻ tài xế từ địa điểm', async ({ page }) => {
+test('dòng địa điểm là liên kết sang trang địa điểm, không có gợi ý thẻ tài xế', async ({ page }) => {
   await go(page, '2026-11-17T09:40');
-  const row = page.locator('[data-driver-place="co-cung"]');
-  await expect(row.locator('.stop-drv')).toHaveText('Thẻ tài xế ›');
+  const row = page.locator('a.stop-row[href="#dd-co-cung"]');
+  await expect(row.locator('.stop-drv')).toHaveCount(0);
+  await expect(page.locator('[data-driver-place]')).toHaveCount(0);
   await row.click();
+  await expect(page).toHaveURL(/#dd-co-cung$/);
+  await expect(page.locator('.hero-title')).toHaveText('Cố Cung');
+  await page.locator('[data-driver-place]').click();
   await expect(page.getByRole('dialog')).toContainText('故宫博物院');
   await expect(page.getByRole('dialog')).toContainText('北京市东城区景山前街4号');
   await page.goBack();

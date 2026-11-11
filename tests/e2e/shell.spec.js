@@ -19,9 +19,11 @@ test('đợt 1: 3 tab, chuyển tab theo hash, đánh dấu tab hiện tại', a
   await expect(page.locator('h1')).toHaveText('Trợ giúp');
 });
 
-test('hash địa điểm khi chưa bật đợt 2 → về Lịch trình', async ({ page }) => {
+test('hash địa điểm mở trang địa điểm; thanh dưới vẫn 3 tab, không tab nào được đánh dấu', async ({ page }) => {
   await page.goto('./?now=2026-11-17T09:40#dd-co-cung');
-  await expect(page.locator('#tabs a[data-v="lich-trinh"]')).toHaveAttribute('aria-current', 'page');
+  await expect(page.locator('.hero-title')).toHaveText('Cố Cung');
+  await expect(page.locator('#tabs a')).toHaveCount(3);
+  await expect(page.locator('#tabs a[aria-current="page"]')).toHaveCount(0);
 });
 
 test('chân trang có ngày kiểm tra giá vé và nguồn ảnh', async ({ page }) => {

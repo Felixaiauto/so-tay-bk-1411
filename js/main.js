@@ -5,9 +5,11 @@ import { esc } from './dom.js';
 import { renderItinerary, mountItinerary, defaultViewDate } from './views/lich-trinh.js';
 import { renderPrep, mountPrep } from './views/chuan-bi.js';
 import { renderHelp, mountHelp } from './views/tro-giup.js';
+import './copy.js';
+import { renderPlaces, renderPlace, mountPlace } from './views/dia-diem.js';
 import { initOffline, notifyVersion } from './offline.js';
 
-export const FEATURES = { places: false, photos: false, afterTour: false };
+export const FEATURES = { places: true, photos: false, afterTour: false };
 export const enabledTabs = f => ['lich-trinh', ...(f.places && f.photos ? ['dia-diem', 'chup-anh'] : []), 'chuan-bi', 'tro-giup'];
 
 const ICONS = {
@@ -22,6 +24,8 @@ const VIEWS = {
   'lich-trinh': [renderItinerary, mountItinerary],
   'chuan-bi': [renderPrep, mountPrep],
   'tro-giup': [renderHelp, mountHelp],
+  'dia-diem': [renderPlaces, () => {}],
+  'place': [renderPlace, mountPlace],
 };
 
 const NOW_PARAM = new URLSearchParams(location.search).get('now');
@@ -31,7 +35,11 @@ const app = document.getElementById('app');
 function render() {
   const now = bjNow(NOW_PARAM);
   const route = parseHash(location.hash);
-  const view = enabledTabs(FEATURES).includes(route.view) && VIEWS[route.view] ? route.view : 'lich-trinh';
+  const tabs = enabledTabs(FEATURES);
+  const view = route.view === 'place'
+    ? (FEATURES.places ? 'place' : 'lich-trinh')
+    : (tabs.includes(route.view) || (route.view === 'dia-diem' && FEATURES.places)) && VIEWS[route.view] ? route.view : 'lich-trinh';
+  const current = view === 'place' ? 'dia-diem' : view;
   state.view = view;
   // Ngày khách tự chọn được giữ cho tới khi ngày mặc định (theo giờ Bắc Kinh) đổi, ví dụ qua nửa đêm.
   const def = defaultViewDate(state.data.tour, now);
@@ -46,7 +54,7 @@ function render() {
   app.innerHTML = r(ctx);
   m(app, ctx);
   for (const a of document.querySelectorAll('#tabs a')) {
-    if (a.dataset.v === view) a.setAttribute('aria-current', 'page'); else a.removeAttribute('aria-current');
+    if (a.dataset.v === current) a.setAttribute('aria-current', 'page'); else a.removeAttribute('aria-current');
   }
 }
 
