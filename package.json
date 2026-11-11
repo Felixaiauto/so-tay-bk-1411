@@ -3,7 +3,7 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "test": "node --test tests/unit/",
+    "test": "node --test \"tests/unit/*.test.js\"",
     "test:py": "python -m unittest discover -s tests/py -v",
     "e2e": "playwright test",
     "serve": "python tools/serve.py 8765"
