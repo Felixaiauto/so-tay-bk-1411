@@ -1,6 +1,6 @@
 """Ảnh → WebP 2 cỡ.
   python tools/img.py <tep-anh> <ten>        : một ảnh có sẵn
-  python tools/img.py --commons              : tải lại toàn bộ ảnh trong credits (Wikimedia) rồi chuyển
+  python tools/img.py --commons              : tải lại ảnh Wikimedia trong credits (bỏ qua nguồn "chỉ dùng cá nhân" và URL không phải /wiki/File:) rồi chuyển
 Tệp tải về đặt trong thư mục tạm riêng (dữ liệu không tin cậy), không đặt trong repo."""
 import json
 import os
@@ -26,10 +26,13 @@ def make(src, name):
     print(name, big.size)
 
 
-def commons():
-    data = json.load(open(os.path.join(ROOT, "data", "tour.json"), encoding="utf-8"))
+def commons(data=None):
+    if data is None:
+        data = json.load(open(os.path.join(ROOT, "data", "tour.json"), encoding="utf-8"))
     base = os.path.join(tempfile.gettempdir(), "so-tay-raw")
     for c in data["credits"]:
+        if c.get("personalUseOnly") or "/wiki/File:" not in c.get("url", ""):
+            continue
         title = urllib.parse.unquote(c["url"].split("/wiki/File:", 1)[1])
         url = "https://commons.wikimedia.org/wiki/Special:FilePath/" + urllib.parse.quote(title) + "?width=1400"
         d = os.path.join(base, c["file"])

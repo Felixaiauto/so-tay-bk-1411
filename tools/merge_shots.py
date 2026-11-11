@@ -10,6 +10,8 @@ import img  # noqa: E402  (tools/img.py)
 ROOT = os.path.dirname(HERE)
 STAGE = os.path.join(ROOT, ".superpowers", "staging2")
 DATA = os.path.join(ROOT, "data", "tour.json")
+# Ghi chú quy trình trong trường author của manifest: không đưa vào chân trang công khai.
+NOTES = ("via", "bing", "anonymous", "uncredited", "unknown", "poster")
 
 
 def main():
@@ -23,13 +25,18 @@ def main():
             continue
         img.make(os.path.join(STAGE, m["file"]), m["id"])
         shots[m["id"]]["img"] = m["id"]
-        credits.append({"file": m["id"], "title": m.get("site", "") or "Ảnh sưu tầm", "author": m.get("author", ""),
+        author = m.get("author", "")
+        if any(k in author.lower() for k in NOTES):
+            author = ""
+        credits.append({"file": m["id"], "title": m.get("site", "") or "Ảnh sưu tầm", "author": author,
                         "license": "không rõ (dùng cá nhân)", "url": m.get("sourcePage", ""), "personalUseOnly": True})
         used += 1
     data["credits"] = credits
     with open(DATA, "w", encoding="utf-8") as f:
         json.dump(data, f, ensure_ascii=False, indent=2)
         f.write("\n")
+    if hasattr(sys.stdout, "reconfigure"):
+        sys.stdout.reconfigure(encoding="utf-8")
     print(f"Đã gộp {used}/{len(shots)} ảnh mẫu")
 
 
