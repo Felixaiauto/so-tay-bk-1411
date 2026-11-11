@@ -28,5 +28,5 @@ export function photoSectionHtml(place) {
 }
 
 export function mountPhotoSection(root, place) {
-  for (const b of root.querySelectorAll('[data-story]')) b.addEventListener('click', () => openStory(place, +b.dataset.story));
+  for (const b of root.querySelectorAll('[data-story]')) b.addEventListener('click', () => { b.focus(); openStory(place, +b.dataset.story); });
 }

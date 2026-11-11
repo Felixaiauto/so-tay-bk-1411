@@ -218,7 +218,7 @@ body.has-bar{padding-top:var(--bar-h,0px)}
 @media (max-width:380px){.pcols{grid-template-columns:1fr}}
 /* story */
 .ov-story{background:#000}
-.story{position:relative;height:100%;min-height:100vh;color:#fff;overflow:hidden;outline:none}
+.story{position:relative;height:100%;color:#fff;overflow:hidden;outline:none}
 .st-img{position:absolute;inset:0}
 .st-img img{width:100%;height:100%;object-fit:cover}
 .st-img::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.5) 0%,rgba(0,0,0,0) 20%,rgba(0,0,0,0) 42%,rgba(10,7,4,.92) 100%);transition:opacity .2s}
@@ -236,6 +236,6 @@ body.has-bar{padding-top:var(--bar-h,0px)}
 .st-dl dt{font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--gold-hi);font-weight:700;padding-top:2px}
 .st-pills{display:flex;gap:8px;flex-wrap:wrap}
 .st-pills a,.st-pills button{display:inline-flex;align-items:center;min-height:44px;padding:0 14px;border-radius:99px;font-size:14px;font-weight:600;color:#fff;text-decoration:none;background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.3)}
-.story.is-clean .st-bt,.story.is-clean .st-hd span,.story.is-clean .st-nav{opacity:0;pointer-events:none}
+.story.is-clean .st-bt,.story.is-clean .st-hd span,.story.is-clean .st-nav{opacity:0;pointer-events:none;visibility:hidden}
 .story.is-clean .st-img::after{opacity:0}
 @media (prefers-reduced-motion:reduce){.st-img::after{transition:none}}

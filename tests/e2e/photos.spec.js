@@ -62,3 +62,16 @@ test('#dd-…/chup-anh cuộn thẳng tới mục chụp ảnh', async ({ page }
   await page.goto('./?now=2026-11-17T09:40#dd-co-cung/chup-anh');
   await expect(page.locator('[data-sec="chup-anh"] .psec-h')).toBeInViewport();
 });
+
+test('story: sau khi chuyển khung, Shift+Tab không thoát khỏi overlay', async ({ page }) => {
+  await page.goto(PLACE);
+  await page.locator('.psec-strip button').first().click();
+  await expect(page.locator('.story .st-hd span')).toHaveText('Cố Cung · Khung 1/3');
+  await page.keyboard.press('ArrowRight');
+  await expect(page.locator('.story .st-hd span')).toHaveText('Cố Cung · Khung 2/3');
+  await page.keyboard.press('Shift+Tab');
+  expect(await page.evaluate(() => document.querySelector('.overlay').contains(document.activeElement))).toBe(true);
+  await page.keyboard.press('ArrowLeft');
+  await page.keyboard.press('Tab');
+  expect(await page.evaluate(() => document.querySelector('.overlay').contains(document.activeElement))).toBe(true);
+});

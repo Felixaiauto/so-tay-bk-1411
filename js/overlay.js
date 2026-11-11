@@ -37,6 +37,7 @@ document.addEventListener('keydown', ev => {
   const f = [...top.querySelectorAll(FOCUSABLE)];
   if (!f.length) return;
   const first = f[0], last = f[f.length - 1];
-  if (ev.shiftKey && document.activeElement === first) { ev.preventDefault(); last.focus(); }
-  else if (!ev.shiftKey && document.activeElement === last) { ev.preventDefault(); first.focus(); }
+  const a = document.activeElement, inside = f.includes(a);
+  if (ev.shiftKey && (!inside || a === first)) { ev.preventDefault(); last.focus(); }
+  else if (!ev.shiftKey && (!inside || a === last)) { ev.preventDefault(); first.focus(); }
 });
