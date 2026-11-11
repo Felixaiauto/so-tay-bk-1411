@@ -1,0 +1,1992 @@
+{
+  "version": "2026-11-12a",
+  "tour": {
+    "id": "bac-kinh-2026-11",
+    "title": "Bắc Kinh",
+    "start": "2026-11-14",
+    "end": "2026-11-18",
+    "brand": "Landtour Mẫu",
+    "checkedOn": "2026-11-11"
+  },
+  "contacts": {
+    "hotel": {
+      "name": "",
+      "zh": "",
+      "addressZh": "",
+      "addressVi": "",
+      "lat": null,
+      "lng": null,
+      "phone": ""
+    },
+    "driver": {
+      "name": "",
+      "phone": "",
+      "plate": ""
+    },
+    "hotline": "",
+    "zalo": "",
+    "flightBack": {
+      "airport": "",
+      "time": ""
+    },
+    "embassy": {
+      "name": "Đại sứ quán Việt Nam",
+      "zh": "越南大使馆",
+      "addressZh": "北京市朝阳区光华路32号",
+      "addressVi": "Số 32 đường Quang Hoa, quận Triều Dương",
+      "lat": null,
+      "lng": null,
+      "phone": ""
+    }
+  },
+  "days": [
+    {
+      "date": "2026-11-14",
+      "lo": 1,
+      "hi": 15,
+      "wx": "Nắng",
+      "heroPlace": "thien-dan",
+      "stops": [
+        {
+          "id": "d14-1",
+          "s": "08:30",
+          "e": "",
+          "k": "move",
+          "kind": "",
+          "title": "Hạ cánh Bắc Kinh",
+          "zh": "",
+          "sub": "",
+          "place": "",
+          "flag": "",
+          "optional": false,
+          "airport": false,
+          "thumb": "",
+          "thumbNote": "",
+          "addressZh": "",
+          "addressVi": "",
+          "lat": null,
+          "lng": null
+        },
+        {
+          "id": "d14-2",
+          "s": "09:00",
+          "e": "11:30",
+          "k": "move",
+          "kind": "",
+          "title": "Nhập cảnh, di chuyển vào trung tâm",
+          "zh": "",
+          "sub": "",
+          "place": "",
+          "flag": "",
+          "optional": false,
+          "airport": false,
+          "thumb": "",
+          "thumbNote": "",
+          "addressZh": "",
+          "addressVi": "",
+          "lat": null,
+          "lng": null
+        },
+        {
+          "id": "d14-3",
+          "s": "11:45",
+          "e": "12:45",
+          "k": "meal",
+          "kind": "Ăn trưa",
+          "title": "Đô Nhất Xứ · thiêu mại",
+          "zh": "都一处烧麦馆",
+          "sub": "Thiêu mại tôm, thiêu mại thịt, bánh hấp · 前门大街38号 (Tiền Môn)",
+          "place": "",
+          "flag": "",
+          "optional": false,
+          "airport": false,
+          "thumb": "thieu-mai",
+          "thumbNote": "Ảnh minh họa món",
+          "addressZh": "北京市东城区前门大街38号",
+          "addressVi": "Số 38 phố Tiền Môn, quận Đông Thành",
+          "lat": null,
+          "lng": null
+        },
+        {
+          "id": "d14-4",
+          "s": "13:15",
+          "e": "14:30",
+          "k": "sight",
+          "kind": "",
+          "title": "Thiên Đàn",
+          "zh": "",
+          "sub": "",
+          "place": "thien-dan",
+          "flag": "",
+          "optional": false,
+          "airport": false,
+          "thumb": "thien-dan",
+          "thumbNote": "",
+          "addressZh": "",
+          "addressVi": "",
+          "lat": null,
+          "lng": null
+        },
+        {
+          "id": "d14-5",
+          "s": "14:45",
+          "e": "15:15",
+          "k": "cafe",
+          "kind": "Cà phê",
+          "title": "Quán Đàn GUANTAN",
+          "zh": "观坛",
+          "sub": "Góc nhìn sang Thiên Đàn. Dự phòng: Soloist Coffee ở 杨梅竹斜街",
+          "place": "",
+          "flag": "",
+          "optional": false,
+          "airport": false,
+          "thumb": "",
+          "thumbNote": "",
+          "addressZh": "",
+          "addressVi": "",
+          "lat": null,
+          "lng": null
+        },
+        {
+          "id": "d14-6",
+          "s": "15:30",
+          "e": "17:00",
+          "k": "sight",
+          "kind": "",
+          "title": "Bảo tàng Lịch sử Tự nhiên",
+          "zh": "",
+          "sub": "",
+          "place": "bao-tang-tu-nhien",
+          "flag": "Nếu vé và giờ cho phép",
+          "optional": false,
+          "airport": false,
+          "thumb": "tu-nhien",
+          "thumbNote": "",
+          "addressZh": "",
+          "addressVi": "",
+          "lat": null,
+          "lng": null
+        },
+        {
+          "id": "d14-7",
+          "s": "17:15",
+          "e": "19:30",
+          "k": "sight",
+          "kind": "",
+          "title": "Phố Tiền Môn",
+          "zh": "",
+          "sub": "",
+          "place": "tien-mon",
+          "flag": "",
+          "optional": false,
+          "airport": false,
+          "thumb": "ngo-duong-mai-truc",
+          "thumbNote": "",
+          "addressZh": "",
+          "addressVi": "",
+          "lat": null,
+          "lng": null
+        },
+        {
+          "id": "d14-8",
+          "s": "17:45",
+          "e": "19:00",
+          "k": "meal",
+          "kind": "Ăn tối",
+          "title": "Tứ Quý Dân Phúc · vịt quay",
+          "zh": "四季民福烤鸭店",
+          "sub": "Vịt quay Bắc Kinh, rau xào, canh · chi nhánh Tiền Môn",
+          "place": "",
+          "flag": "Chưa chốt chi nhánh",
+          "optional": false,
+          "airport": false,
+          "thumb": "",
+          "thumbNote": "",
+          "addressZh": "",
+          "addressVi": "",
+          "lat": null,
+          "lng": null
+        },
+        {
+          "id": "d14-9",
+          "s": "19:30",
+          "e": "20:00",
+          "k": "cafe",
+          "kind": "Cà phê",
+          "title": "Soloist Coffee",
+          "zh": "",
+          "sub": "Tùy sức, có thể bỏ qua để về nghỉ sớm",
+          "place": "",
+          "flag": "",
+          "optional": false,
+          "airport": false,
+          "thumb": "",
+          "thumbNote": "",
+          "addressZh": "",
+          "addressVi": "",
+          "lat": null,
+          "lng": null
+        }
+      ]
+    },
+    {
+      "date": "2026-11-15",
+      "lo": 2,
+      "hi": 13,
+      "wx": "Có mây",
+      "heroPlace": "universal",
+      "stops": [
+        {
+          "id": "d15-1",
+          "s": "07:45",
+          "e": "09:00",
+          "k": "move",
+          "kind": "",
+          "title": "Xe đưa đi Universal",
+          "zh": "",
+          "sub": "",
+          "place": "",
+          "flag": "",
+          "optional": false,
+          "airport": false,
+          "thumb": "",
+          "thumbNote": "",
+          "addressZh": "",
+          "addressVi": "",
+          "lat": null,
+          "lng": null
+        },
+        {
+          "id": "d15-2",
+          "s": "09:00",
+          "e": "12:00",
+          "k": "sight",
+          "kind": "",
+          "title": "Universal Bắc Kinh · buổi sáng",
+          "zh": "",
+          "sub": "Chơi các trò đông khách trước",
+          "place": "universal",
+          "flag": "",
+          "optional": false,
+          "airport": false,
+          "thumb": "universal",
+          "thumbNote": "",
+          "addressZh": "",
+          "addressVi": "",
+          "lat": null,
+          "lng": null
+        },
+        {
+          "id": "d15-3",
+          "s": "12:00",
+          "e": "13:00",
+          "k": "meal",
+          "kind": "Ăn trưa",
+          "title": "Nhà hàng trong Universal",
+          "zh": "",
+          "sub": "Cơm gà, mì, món hấp · chọn quán tại khu đang chơi",
+          "place": "",
+          "flag": "",
+          "optional": false,
+          "airport": false,
+          "thumb": "",
+          "thumbNote": "",
+          "addressZh": "",
+          "addressVi": "",
+          "lat": null,
+          "lng": null
+        },
+        {
+          "id": "d15-4",
+          "s": "13:00",
+          "e": "17:30",
+          "k": "sight",
+          "kind": "",
+          "title": "Universal Bắc Kinh · buổi chiều",
+          "zh": "",
+          "sub": "Tham quan, xem show, chơi tiếp",
+          "place": "universal",
+          "flag": "",
+          "optional": false,
+          "airport": false,
+          "thumb": "",
+          "thumbNote": "",
+          "addressZh": "",
+          "addressVi": "",
+          "lat": null,
+          "lng": null
+        },
+        {
+          "id": "d15-5",
+          "s": "17:30",
+          "e": "18:00",
+          "k": "cafe",
+          "kind": "Cà phê",
+          "title": "Quán đồ uống tại CityWalk",
+          "zh": "",
+          "sub": "Chọn quán theo vị trí ra cổng",
+          "place": "",
+          "flag": "",
+          "optional": false,
+          "airport": false,
+          "thumb": "",
+          "thumbNote": "",
+          "addressZh": "",
+          "addressVi": "",
+          "lat": null,
+          "lng": null
+        },
+        {
+          "id": "d15-6",
+          "s": "18:00",
+          "e": "19:00",
+          "k": "meal",
+          "kind": "Ăn tối",
+          "title": "Bubba Gump Shrimp",
+          "zh": "阿甘虾餐厅",
+          "sub": "Tôm, hải sản, salad · 环球城市大道 (CityWalk)",
+          "place": "",
+          "flag": "",
+          "optional": false,
+          "airport": false,
+          "thumb": "",
+          "thumbNote": "",
+          "addressZh": "",
+          "addressVi": "",
+          "lat": null,
+          "lng": null
+        },
+        {
+          "id": "d15-7",
+          "s": "19:00",
+          "e": "20:15",
+          "k": "move",
+          "kind": "",
+          "title": "Xe đưa về khách sạn",
+          "zh": "",
+          "sub": "",
+          "place": "",
+          "flag": "",
+          "optional": false,
+          "airport": false,
+          "thumb": "",
+          "thumbNote": "",
+          "addressZh": "",
+          "addressVi": "",
+          "lat": null,
+          "lng": null
+        }
+      ]
+    },
+    {
+      "date": "2026-11-16",
+      "lo": -2,
+      "hi": 4,
+      "wx": "Rét đậm, sáng sớm có thể mưa tuyết",
+      "heroPlace": "mo-dien-du",
+      "stops": [
+        {
+          "id": "d16-1",
+          "s": "07:00",
+          "e": "09:00",
+          "k": "move",
+          "kind": "",
+          "title": "Xe đưa đi Mộ Điền Dụ",
+          "zh": "",
+          "sub": "",
+          "place": "",
+          "flag": "",
+          "optional": false,
+          "airport": false,
+          "thumb": "",
+          "thumbNote": "",
+          "addressZh": "",
+          "addressVi": "",
+          "lat": null,
+          "lng": null
+        },
+        {
+          "id": "d16-2",
+          "s": "09:00",
+          "e": "11:45",
+          "k": "sight",
+          "kind": "",
+          "title": "Vạn Lý Trường Thành · Mộ Điền Dụ",
+          "zh": "",
+          "sub": "Lên bằng cáp treo",
+          "place": "mo-dien-du",
+          "flag": "",
+          "optional": false,
+          "airport": false,
+          "thumb": "mo-dien-du",
+          "thumbNote": "",
+          "addressZh": "",
+          "addressVi": "",
+          "lat": null,
+          "lng": null
+        },
+        {
+          "id": "d16-3",
+          "s": "11:45",
+          "e": "12:30",
+          "k": "meal",
+          "kind": "Ăn trưa",
+          "title": "Hâm Song Tuyền · quán nông gia",
+          "zh": "鑫双泉农家院",
+          "sub": "Gà hầm, rau, canh · khu Hoài Nhu",
+          "place": "",
+          "flag": "Cần xác minh chi nhánh",
+          "optional": false,
+          "airport": false,
+          "thumb": "",
+          "thumbNote": "",
+          "addressZh": "",
+          "addressVi": "",
+          "lat": null,
+          "lng": null
+        },
+        {
+          "id": "d16-4",
+          "s": "12:30",
+          "e": "14:45",
+          "k": "move",
+          "kind": "",
+          "title": "Xe về lại thành phố",
+          "zh": "",
+          "sub": "",
+          "place": "",
+          "flag": "",
+          "optional": false,
+          "airport": false,
+          "thumb": "",
+          "thumbNote": "",
+          "addressZh": "",
+          "addressVi": "",
+          "lat": null,
+          "lng": null
+        },
+        {
+          "id": "d16-5",
+          "s": "14:45",
+          "e": "16:30",
+          "k": "sight",
+          "kind": "",
+          "title": "Di Hòa Viên",
+          "zh": "",
+          "sub": "Khu ngoài trời",
+          "place": "di-hoa-vien",
+          "flag": "",
+          "optional": false,
+          "airport": false,
+          "thumb": "di-hoa-vien",
+          "thumbNote": "",
+          "addressZh": "",
+          "addressVi": "",
+          "lat": null,
+          "lng": null
+        },
+        {
+          "id": "d16-6",
+          "s": "16:30",
+          "e": "17:00",
+          "k": "cafe",
+          "kind": "Cà phê",
+          "title": "Cà phê gần Tây Uyển",
+          "zh": "",
+          "sub": "Nếu kịp giờ",
+          "place": "",
+          "flag": "Chưa chốt quán",
+          "optional": false,
+          "airport": false,
+          "thumb": "",
+          "thumbNote": "",
+          "addressZh": "",
+          "addressVi": "",
+          "lat": null,
+          "lng": null
+        },
+        {
+          "id": "d16-7",
+          "s": "17:30",
+          "e": "19:00",
+          "k": "meal",
+          "kind": "Ăn tối",
+          "title": "Nhà hàng khu Tây Uyển",
+          "zh": "",
+          "sub": "Mì bò, rau, món hấp",
+          "place": "",
+          "flag": "Chưa chốt quán",
+          "optional": false,
+          "airport": false,
+          "thumb": "",
+          "thumbNote": "",
+          "addressZh": "",
+          "addressVi": "",
+          "lat": null,
+          "lng": null
+        }
+      ]
+    },
+    {
+      "date": "2026-11-17",
+      "lo": -4,
+      "hi": 10,
+      "wx": "Nắng",
+      "heroPlace": "co-cung",
+      "stops": [
+        {
+          "id": "d17-1",
+          "s": "08:30",
+          "e": "11:15",
+          "k": "sight",
+          "kind": "",
+          "title": "Cố Cung",
+          "zh": "",
+          "sub": "",
+          "place": "co-cung",
+          "flag": "",
+          "optional": false,
+          "airport": false,
+          "thumb": "co-cung",
+          "thumbNote": "",
+          "addressZh": "",
+          "addressVi": "",
+          "lat": null,
+          "lng": null
+        },
+        {
+          "id": "d17-2",
+          "s": "11:15",
+          "e": "11:45",
+          "k": "cafe",
+          "kind": "Cà phê",
+          "title": "Cà phê Giác Lâu",
+          "zh": "故宫角楼咖啡",
+          "sub": "Cà phê chủ đề Cố Cung, có thể phải xếp hàng",
+          "place": "",
+          "flag": "",
+          "optional": false,
+          "airport": false,
+          "thumb": "",
+          "thumbNote": "",
+          "addressZh": "",
+          "addressVi": "",
+          "lat": null,
+          "lng": null
+        },
+        {
+          "id": "d17-3",
+          "s": "11:45",
+          "e": "12:30",
+          "k": "meal",
+          "kind": "Ăn trưa",
+          "title": "Phúc Vinh Ký",
+          "zh": "福荣记",
+          "sub": "Dimsum, bánh cuốn, món hấp · 宝钞胡同63号",
+          "place": "",
+          "flag": "Cần xác minh địa chỉ",
+          "optional": false,
+          "airport": false,
+          "thumb": "dimsum",
+          "thumbNote": "Ảnh minh họa món",
+          "addressZh": "",
+          "addressVi": "",
+          "lat": null,
+          "lng": null
+        },
+        {
+          "id": "d17-4",
+          "s": "12:30",
+          "e": "13:15",
+          "k": "sight",
+          "kind": "",
+          "title": "Công viên Cảnh Sơn",
+          "zh": "",
+          "sub": "",
+          "place": "canh-son",
+          "flag": "",
+          "optional": false,
+          "airport": false,
+          "thumb": "canh-son",
+          "thumbNote": "",
+          "addressZh": "",
+          "addressVi": "",
+          "lat": null,
+          "lng": null
+        },
+        {
+          "id": "d17-5",
+          "s": "13:15",
+          "e": "14:15",
+          "k": "move",
+          "kind": "",
+          "title": "Di chuyển lên khu Olympic",
+          "zh": "",
+          "sub": "",
+          "place": "",
+          "flag": "",
+          "optional": false,
+          "airport": false,
+          "thumb": "",
+          "thumbNote": "",
+          "addressZh": "",
+          "addressVi": "",
+          "lat": null,
+          "lng": null
+        },
+        {
+          "id": "d17-6",
+          "s": "14:15",
+          "e": "16:15",
+          "k": "sight",
+          "kind": "",
+          "title": "Bảo tàng Khoa học",
+          "zh": "",
+          "sub": "",
+          "place": "bao-tang-khoa-hoc",
+          "flag": "Kiểm tra ngày mở cửa",
+          "optional": false,
+          "airport": false,
+          "thumb": "khoa-hoc",
+          "thumbNote": "",
+          "addressZh": "",
+          "addressVi": "",
+          "lat": null,
+          "lng": null
+        },
+        {
+          "id": "d17-7",
+          "s": "16:30",
+          "e": "17:15",
+          "k": "sight",
+          "kind": "",
+          "title": "Khu Olympic",
+          "zh": "",
+          "sub": "",
+          "place": "khu-olympic",
+          "flag": "",
+          "optional": false,
+          "airport": false,
+          "thumb": "olympic",
+          "thumbNote": "",
+          "addressZh": "",
+          "addressVi": "",
+          "lat": null,
+          "lng": null
+        },
+        {
+          "id": "d17-8",
+          "s": "17:30",
+          "e": "19:00",
+          "k": "meal",
+          "kind": "Ăn tối",
+          "title": "Kim Đỉnh Hiên",
+          "zh": "金鼎轩",
+          "sub": "Há cảo, sườn hấp, cháo, rau · khu Bắc Thần",
+          "place": "",
+          "flag": "Chưa chốt chi nhánh",
+          "optional": false,
+          "airport": false,
+          "thumb": "",
+          "thumbNote": "",
+          "addressZh": "",
+          "addressVi": "",
+          "lat": null,
+          "lng": null
+        }
+      ]
+    },
+    {
+      "date": "2026-11-18",
+      "lo": -2,
+      "hi": 8,
+      "wx": "Nắng",
+      "heroPlace": "tien-mon",
+      "stops": [
+        {
+          "id": "d18-1",
+          "s": "08:30",
+          "e": "10:00",
+          "k": "sight",
+          "kind": "",
+          "title": "Bảo tàng Lịch sử Tự nhiên",
+          "zh": "",
+          "sub": "",
+          "place": "bao-tang-tu-nhien",
+          "flag": "Nếu ngày 14 chưa đi",
+          "optional": true,
+          "airport": false,
+          "thumb": "tu-nhien",
+          "thumbNote": "",
+          "addressZh": "",
+          "addressVi": "",
+          "lat": null,
+          "lng": null
+        },
+        {
+          "id": "d18-2",
+          "s": "10:15",
+          "e": "11:15",
+          "k": "sight",
+          "kind": "",
+          "title": "Dạo khu trung tâm, mua quà",
+          "zh": "",
+          "sub": "",
+          "place": "tien-mon",
+          "flag": "",
+          "optional": false,
+          "airport": false,
+          "thumb": "ngo-duong-mai-truc",
+          "thumbNote": "",
+          "addressZh": "",
+          "addressVi": "",
+          "lat": null,
+          "lng": null
+        },
+        {
+          "id": "d18-3",
+          "s": "11:30",
+          "e": "12:45",
+          "k": "meal",
+          "kind": "Ăn trưa",
+          "title": "Đô Nhất Xứ · thiêu mại",
+          "zh": "都一处烧麦馆",
+          "sub": "Thiêu mại, món hấp, canh · 前门大街38号",
+          "place": "",
+          "flag": "",
+          "optional": false,
+          "airport": false,
+          "thumb": "thieu-mai",
+          "thumbNote": "Ảnh minh họa món",
+          "addressZh": "北京市东城区前门大街38号",
+          "addressVi": "Số 38 phố Tiền Môn, quận Đông Thành",
+          "lat": null,
+          "lng": null
+        },
+        {
+          "id": "d18-4",
+          "s": "13:00",
+          "e": "14:00",
+          "k": "cafe",
+          "kind": "Cà phê",
+          "title": "Soloist Coffee Co.",
+          "zh": "",
+          "sub": "Ngõ 杨梅竹斜街. Dự phòng: quán gần Tiền Môn, ngồi tới 15:00",
+          "place": "",
+          "flag": "",
+          "optional": false,
+          "airport": false,
+          "thumb": "",
+          "thumbNote": "",
+          "addressZh": "",
+          "addressVi": "",
+          "lat": null,
+          "lng": null
+        },
+        {
+          "id": "d18-5",
+          "s": "15:00",
+          "e": "16:00",
+          "k": "move",
+          "kind": "",
+          "title": "Lên xe ra sân bay",
+          "zh": "",
+          "sub": "",
+          "place": "",
+          "flag": "",
+          "optional": false,
+          "airport": true,
+          "thumb": "",
+          "thumbNote": "",
+          "addressZh": "",
+          "addressVi": "",
+          "lat": null,
+          "lng": null
+        },
+        {
+          "id": "d18-6",
+          "s": "17:30",
+          "e": "18:15",
+          "k": "meal",
+          "kind": "Ăn nhẹ",
+          "title": "Ăn nhẹ tại sân bay",
+          "zh": "",
+          "sub": "Mì, cơm gà, bánh bao",
+          "place": "",
+          "flag": "",
+          "optional": false,
+          "airport": false,
+          "thumb": "",
+          "thumbNote": "",
+          "addressZh": "",
+          "addressVi": "",
+          "lat": null,
+          "lng": null
+        },
+        {
+          "id": "d18-7",
+          "s": "20:30",
+          "e": "",
+          "k": "move",
+          "kind": "",
+          "title": "Bay về Việt Nam",
+          "zh": "",
+          "sub": "",
+          "place": "",
+          "flag": "",
+          "optional": false,
+          "airport": false,
+          "thumb": "",
+          "thumbNote": "",
+          "addressZh": "",
+          "addressVi": "",
+          "lat": null,
+          "lng": null
+        }
+      ]
+    }
+  ],
+  "places": [
+    {
+      "id": "thien-dan",
+      "name": "Thiên Đàn",
+      "zh": "天坛",
+      "zhFull": "天坛公园",
+      "pinyin": "Tiāntán Gōngyuán",
+      "tag": "Đàn tế trời của hoàng đế Minh, Thanh",
+      "hero": "thien-dan",
+      "heroAlt": "Kỳ Niên Điện, Thiên Đàn",
+      "dur": "75 phút",
+      "ticket": "10–28 tệ",
+      "req": "Mua vé",
+      "buy": "WeChat 天坛公园 hoặc quầy vé",
+      "addressZh": "北京市东城区天坛东里甲1号",
+      "addressVi": "Số 1A Thiên Đàn Đông Lý, quận Đông Thành",
+      "dropOffZh": "请在天坛东门下车",
+      "dropOffVi": "Cho tôi xuống ở cổng Đông Thiên Đàn",
+      "lat": null,
+      "lng": null,
+      "story": [
+        "Thiên Đàn xây năm 1420 dưới thời Vĩnh Lạc, cùng đợt với Cố Cung. Mỗi năm vào ngày đông chí, hoàng đế rời cung ra đây tế trời và cầu mùa màng. Dân thường không được bước vào cho tới năm 1918.",
+        "Công trình chính là Kỳ Niên Điện: tòa điện tròn ba tầng mái ngói lam, cao 38 mét, dựng bằng gỗ ghép mộng. 28 cây cột bên trong có ý nghĩa riêng: 4 cột giữa là bốn mùa, 12 cột vòng trong là 12 tháng, 12 cột vòng ngoài là 12 canh giờ. Tòa điện hiện nay được dựng lại cuối thế kỷ 19 sau một trận sét đánh.",
+        "Hình tròn tượng trưng cho trời, hình vuông cho đất. Vì vậy tường phía bắc của khuôn viên uốn cong, tường phía nam vuông góc."
+      ],
+      "route": [
+        "Vào cổng Đông (东门), đi dọc Trường Lang 72 gian, nơi người già Bắc Kinh ngồi đánh bài và hát.",
+        "Tới Kỳ Niên Điện (祈年殿), đi một vòng quanh nền đá ba tầng. 25–30 phút.",
+        "Đi theo Đan Bệ Kiều, con đường lát đá cao dài 360 mét, về phía nam.",
+        "Hoàng Khung Vũ và Hồi Âm Bích: bức tường tròn truyền tiếng nói từ đầu này sang đầu kia.",
+        "Hoàn Khâu: đàn tế lộ thiên ba tầng, số phiến đá mỗi vòng đều là bội số của 9. Ra cổng Nam."
+      ],
+      "wear": "Mái ngói lam và trời xanh làm nền, nên áo khoác đỏ, trắng kem hoặc be sẽ nổi nhất. Tránh xanh dương vì dễ chìm vào nền.",
+      "wearSwatches": [
+        {
+          "hex": "#B4301C",
+          "name": "Đỏ"
+        },
+        {
+          "hex": "#F4EEDF",
+          "name": "Trắng kem"
+        },
+        {
+          "hex": "#D8C3A0",
+          "name": "Be"
+        }
+      ],
+      "notes": [
+        "Khu công viên mở tới tối, nhưng các điện chính đóng lúc 17:00 và ngừng bán vé sớm hơn khoảng một tiếng.",
+        "Chốt với tài xế cổng đón trước khi vào, vì cổng Đông và cổng Nam cách nhau khá xa."
+      ],
+      "photo": {
+        "headline": "Ba tầng mái lam giữa trời đông",
+        "bestTime": "13:30–14:30, nắng chiếu thẳng mặt chính Kỳ Niên Điện.",
+        "shots": [
+          {
+            "id": "thien-dan-1",
+            "title": "Toàn thân với Kỳ Niên Điện",
+            "img": "",
+            "where": "Chính giữa lối đá phía nam, cách bậc thềm khoảng 30 mét.",
+            "camera": "Máy dọc, hạ ngang hông và ngửa nhẹ để mái điện vươn cao.",
+            "pose": "Bước chậm về phía điện rồi ngoái đầu qua vai. Chụp liên tiếp khi đang bước.",
+            "poseKey": "ngoai",
+            "clip": "",
+            "clipDur": "",
+            "clipTitle": "",
+            "searchZh": "天坛 祈年殿 拍照 机位"
+          },
+          {
+            "id": "thien-dan-2",
+            "title": "Bán thân, điện lệch một bên",
+            "img": "",
+            "where": "Góc tây nam của sân, nơi ít người đi ngang.",
+            "camera": "Máy ngang tầm mắt. Người chụp lùi xa rồi zoom 2x để điện to ra sau lưng.",
+            "pose": "Xoay người 45°, một tay giữ khăn quàng, mắt nhìn về phía điện.",
+            "poseKey": "dung",
+            "clip": "",
+            "clipDur": "",
+            "clipTitle": "",
+            "searchZh": "天坛 祈年殿 人像"
+          },
+          {
+            "id": "thien-dan-3",
+            "title": "Con đường Đan Bệ Kiều",
+            "img": "",
+            "where": "Giữa đường lát đá, hai hàng bách ở hai bên.",
+            "camera": "Máy dọc, hạ thấp gần mặt đất để con đường hút về xa.",
+            "pose": "Dang hai tay, mặt hơi ngửa lên trời. Hợp với ảnh quay lưng.",
+            "poseKey": "dangtay",
+            "clip": "",
+            "clipDur": "",
+            "clipTitle": "",
+            "searchZh": "天坛 丹陛桥 拍照"
+          }
+        ]
+      }
+    },
+    {
+      "id": "bao-tang-tu-nhien",
+      "name": "Bảo tàng Lịch sử Tự nhiên",
+      "zh": "国家自然博物馆",
+      "zhFull": "国家自然博物馆",
+      "pinyin": "Guójiā Zìrán Bówùguǎn",
+      "tag": "Khủng long và hóa thạch, ngay cạnh Thiên Đàn",
+      "hero": "tu-nhien",
+      "heroAlt": "Hóa thạch khủng long trong Bảo tàng Lịch sử Tự nhiên",
+      "dur": "90 phút",
+      "ticket": "Miễn phí khu thường",
+      "req": "Phải đặt lịch",
+      "buy": "Trang chính thức hoặc WeChat 国家自然博物馆, đặt trước 1–3 ngày",
+      "addressZh": "北京市东城区天桥南大街126号",
+      "addressVi": "Số 126 phố Thiên Kiều Nam, quận Đông Thành",
+      "dropOffZh": "",
+      "dropOffVi": "",
+      "lat": null,
+      "lng": null,
+      "story": [
+        "Đây là bảo tàng tự nhiên cấp quốc gia của Trung Quốc, tiền thân thành lập năm 1951 và mang tên hiện nay từ năm 2023. Bảo tàng nằm sát cổng Tây của Thiên Đàn nên rất tiện ghép chung một buổi.",
+        "Phần được xem nhiều nhất là sảnh bò sát cổ, với bộ xương khủng long Mã Môn Khê dài hơn 20 mét cùng các hóa thạch tìm thấy ở Trung Quốc. Các tầng còn lại kể về động vật, thực vật và nguồn gốc loài người."
+      ],
+      "route": [
+        "Qua cổng soát vé bằng hộ chiếu, đúng khung giờ đã đặt.",
+        "Đi thẳng tới sảnh bò sát cổ xem khủng long trước khi đông. 30–40 phút.",
+        "Xem tiếp sảnh động vật và sảnh nguồn gốc loài người.",
+        "Còn giờ thì ghé sảnh thực vật trước khi ra."
+      ],
+      "wear": "Trong bảo tàng sưởi ấm. Mặc nhiều lớp mỏng để cởi áo khoác cầm tay.",
+      "wearSwatches": [],
+      "notes": [
+        "Đóng cửa thứ Hai. Mở 9:00–17:00, ngừng nhận khách lúc 16:30.",
+        "Đặt chỗ theo tên thật và khung giờ, mỗi khách một suất gắn với số hộ chiếu."
+      ],
+      "photo": {
+        "headline": "Nhỏ bé bên bộ xương khủng long",
+        "bestTime": "Vào sảnh bò sát cổ ngay khi qua cổng, trước khi đông.",
+        "shots": [
+          {
+            "id": "bao-tang-tu-nhien-1",
+            "title": "Nhỏ bé bên bộ xương khủng long",
+            "img": "",
+            "where": "Đứng sát chân bệ trưng bày, lệch về một đầu của bộ xương.",
+            "camera": "Máy ngang, hạ thấp và ngửa lên để thấy độ cao. Tắt flash.",
+            "pose": "Một tay chỉ lên cao, mặt ngước theo tay.",
+            "poseKey": "giotay",
+            "clip": "",
+            "clipDur": "",
+            "clipTitle": "",
+            "searchZh": "国家自然博物馆 恐龙 拍照"
+          },
+          {
+            "id": "bao-tang-tu-nhien-2",
+            "title": "Ngắm hiện vật qua tủ kính",
+            "img": "",
+            "where": "Đứng nghiêng cạnh tủ kính có đèn.",
+            "camera": "Máy dọc, chụp ngang từ bên hông để ánh đèn tủ chiếu lên mặt.",
+            "pose": "Hơi cúi về phía tủ kính, tay đặt hờ lên mép tủ, không nhìn máy.",
+            "poseKey": "quaylung",
+            "clip": "",
+            "clipDur": "",
+            "clipTitle": "",
+            "searchZh": "国家自然博物馆 拍照"
+          }
+        ]
+      }
+    },
+    {
+      "id": "tien-mon",
+      "name": "Phố Tiền Môn",
+      "zh": "前门大街",
+      "zhFull": "前门大街",
+      "pinyin": "Qiánmén Dàjiē",
+      "tag": "Phố đi bộ cổ ngay phía nam Thiên An Môn",
+      "hero": "ngo-duong-mai-truc",
+      "heroAlt": "Ngõ Dương Mai Trúc, khu Tiền Môn",
+      "dur": "Tự do",
+      "ticket": "Miễn phí",
+      "req": "Không cần mua vé",
+      "buy": "",
+      "addressZh": "北京市东城区前门大街",
+      "addressVi": "Phố Tiền Môn, quận Đông Thành",
+      "dropOffZh": "请在前门箭楼附近下车",
+      "dropOffVi": "Cho tôi xuống gần lầu Tiễn Lâu, đầu phố Tiền Môn",
+      "lat": null,
+      "lng": null,
+      "story": [
+        "Tiền Môn là tên dân gian của Chính Dương Môn, cổng chính phía nam của nội thành Bắc Kinh, xây năm 1419. Con phố chạy từ cổng về phía nam từng là khu buôn bán sầm uất nhất kinh thành, vì quan lại và thương nhân vào thành đều qua đây.",
+        "Nhiều cửa hiệu trên phố có tuổi đời vài trăm năm. Quán thiêu mại Đô Nhất Xứ mở năm 1738, tương truyền được vua Càn Long ban tên. Tiệm thuốc Đồng Nhân Đường có từ năm 1669.",
+        "Rẽ vào các ngõ nhỏ như Đại Sách Lan và Dương Mai Trúc Tà Nhai sẽ thấy không khí khác hẳn: nhà thấp, quán cà phê nhỏ và tiệm sách."
+      ],
+      "route": [
+        "Bắt đầu từ lầu Tiễn Lâu ở đầu phố phía bắc, đi dọc phố đi bộ về phía nam.",
+        "Rẽ phải vào Đại Sách Lan (大栅栏) xem các tiệm lâu đời.",
+        "Đi tiếp vào ngõ Dương Mai Trúc (杨梅竹斜街), nơi có Soloist Coffee.",
+        "Quay lại phố chính để ăn tối. Cả vòng khoảng 1,5 km."
+      ],
+      "wear": "Tối 14/11 nhiệt độ xuống gần 1°C. Cần áo khoác dày, khăn và găng tay khi dạo phố.",
+      "wearSwatches": [],
+      "notes": [
+        "Quà dễ mua: bánh kẹo truyền thống, trà, giày vải. Giá ở phố chính cao hơn trong ngõ."
+      ],
+      "photo": {
+        "headline": "Phố cổ lên đèn",
+        "bestTime": "17:15–17:45, lầu Tiễn Lâu vừa lên đèn.",
+        "shots": [
+          {
+            "id": "tien-mon-1",
+            "title": "Giữa phố, lầu Tiễn Lâu sau lưng",
+            "img": "",
+            "where": "Giữa phố đi bộ, quay lưng về phía bắc. Đẹp nhất lúc lên đèn, 17:15–17:30.",
+            "camera": "Máy dọc, cao ngang ngực. Chờ khoảng trống giữa dòng người.",
+            "pose": "Bước thẳng về phía máy, mắt nhìn sang một bên phố.",
+            "poseKey": "buoc",
+            "clip": "",
+            "clipDur": "",
+            "clipTitle": "",
+            "searchZh": "前门大街 箭楼 拍照"
+          },
+          {
+            "id": "tien-mon-2",
+            "title": "Tựa tường gạch trong ngõ",
+            "img": "",
+            "where": "Ngõ Dương Mai Trúc, chọn đoạn tường gạch xám có nắng xiên.",
+            "camera": "Máy ngang tầm mắt, để con ngõ chạy sâu vào một bên khung hình.",
+            "pose": "Tựa vai vào tường, một chân co nhẹ, tay cầm cốc cà phê.",
+            "poseKey": "tua",
+            "clip": "",
+            "clipDur": "",
+            "clipTitle": "",
+            "searchZh": "杨梅竹斜街 拍照"
+          },
+          {
+            "id": "tien-mon-3",
+            "title": "Cả nhóm dưới cổng bài lâu",
+            "img": "",
+            "where": "Đầu phía bắc của phố, đứng lùi ra để lấy hết cổng.",
+            "camera": "Máy ngang, hạ thấp ngang hông để cổng cao lên.",
+            "pose": "Đứng so le trước sau, người thấp đứng trước. Mỗi người nhìn một hướng tự nhiên hơn xếp hàng ngang.",
+            "poseKey": "nhom",
+            "clip": "",
+            "clipDur": "",
+            "clipTitle": "",
+            "searchZh": "前门 五牌楼 拍照"
+          }
+        ]
+      }
+    },
+    {
+      "id": "universal",
+      "name": "Universal Bắc Kinh",
+      "zh": "北京环球影城",
+      "zhFull": "北京环球度假区",
+      "pinyin": "Běijīng Huánqiú Dùjiàqū",
+      "tag": "Công viên chủ đề, bảy khu trò chơi",
+      "hero": "universal",
+      "heroAlt": "Cổng vào Universal Bắc Kinh",
+      "dur": "Cả ngày",
+      "ticket": "Từ 350 tệ, tùy ngày",
+      "req": "Mua trước",
+      "buy": "Ứng dụng hoặc trang chính thức của Universal Beijing Resort",
+      "addressZh": "北京市通州区北京环球度假区",
+      "addressVi": "Khu Universal Bắc Kinh, quận Thông Châu",
+      "dropOffZh": "请在环球影城主题公园入口下车",
+      "dropOffVi": "Cho tôi xuống ở cổng vào công viên Universal",
+      "lat": null,
+      "lng": null,
+      "story": [
+        "Universal Bắc Kinh mở cửa tháng 9 năm 2021 ở quận Thông Châu, phía đông thành phố. Công viên có bảy khu chủ đề, trong đó khu Kung Fu Panda là khu đầu tiên trên thế giới và nằm hoàn toàn trong nhà.",
+        "Bên ngoài cổng là phố CityWalk, vào tự do không cần vé, tập trung nhà hàng và cửa hàng lưu niệm."
+      ],
+      "route": [
+        "Tới cổng trước giờ mở, qua soát vé bằng hộ chiếu.",
+        "Buổi sáng đi các trò đông nhất trước: khu Harry Potter, rồi tàu lượn ở khu Transformers.",
+        "Giữa trưa vào khu Kung Fu Panda trong nhà để ăn và sưởi ấm.",
+        "Buổi chiều: khu Jurassic World, khu Minions, xem show.",
+        "17:30 ra CityWalk uống nước và ăn tối."
+      ],
+      "wear": "Đi bộ cả ngày ngoài trời ở 2–13°C. Mang giày thể thao êm, áo khoác có túi kéo khóa và túi đeo chéo nhỏ gọn để gửi đồ nhanh khi chơi.",
+      "wearSwatches": [],
+      "notes": [
+        "Ngày 15/11 là Chủ Nhật nên sẽ đông. Xem thời gian chờ từng trò trên ứng dụng của công viên.",
+        "Giờ mở và đóng cửa thay đổi theo ngày, xem trên ứng dụng tối hôm trước."
+      ],
+      "photo": {
+        "headline": "Một ngày ở công viên chủ đề",
+        "bestTime": "Trước 9:00 ở quả địa cầu; 17:30 phố CityWalk lên đèn.",
+        "shots": [
+          {
+            "id": "universal-1",
+            "title": "Quả địa cầu ở cổng",
+            "img": "",
+            "where": "Trước quả địa cầu, tới trước 9:00 khi chưa đông.",
+            "camera": "Máy dọc, hạ thấp ngang gối và ngửa lên để lấy trọn quả cầu.",
+            "pose": "Dang hai tay hoặc bật nhảy. Chụp liên tiếp rồi chọn tấm đẹp nhất.",
+            "poseKey": "dangtay",
+            "clip": "",
+            "clipDur": "",
+            "clipTitle": "",
+            "searchZh": "北京环球影城 地球 拍照"
+          },
+          {
+            "id": "universal-2",
+            "title": "Lâu đài ở phía xa",
+            "img": "",
+            "where": "Lối vào làng trong khu Harry Potter, lâu đài nằm cuối đường.",
+            "camera": "Máy dọc, ngang tầm vai người mẫu, để người lệch sang một bên.",
+            "pose": "Quay lưng về máy, ngước nhìn lâu đài. Khăn quàng hoặc mũ là đạo cụ tốt.",
+            "poseKey": "quaylung",
+            "clip": "",
+            "clipDur": "",
+            "clipTitle": "",
+            "searchZh": "北京环球 霍格沃茨 拍照"
+          },
+          {
+            "id": "universal-3",
+            "title": "Cả nhóm trên phố CityWalk",
+            "img": "",
+            "where": "Phố CityWalk lúc 17:30, đèn bảng hiệu đã bật.",
+            "camera": "Máy ngang, đo sáng theo mặt người để nền đèn không cháy.",
+            "pose": "Khoác vai nhau bước về phía máy, vừa đi vừa cười.",
+            "poseKey": "nhom",
+            "clip": "",
+            "clipDur": "",
+            "clipTitle": "",
+            "searchZh": "北京环球城市大道 拍照"
+          }
+        ]
+      }
+    },
+    {
+      "id": "mo-dien-du",
+      "name": "Vạn Lý Trường Thành · Mộ Điền Dụ",
+      "zh": "慕田峪长城",
+      "zhFull": "慕田峪长城",
+      "pinyin": "Mùtiányù Chángchéng",
+      "tag": "Đoạn trường thành đá hoa cương giữa rừng núi Hoài Nhu",
+      "hero": "mo-dien-du",
+      "heroAlt": "Trường Thành đoạn Mộ Điền Dụ",
+      "dur": "2 giờ 45 phút",
+      "ticket": "45 tệ vé cổng (xe trung chuyển và cáp treo tính riêng)",
+      "req": "Mua trước",
+      "buy": "Mua online hoặc tại quầy bằng hộ chiếu",
+      "addressZh": "北京市怀柔区渤海镇慕田峪村",
+      "addressVi": "Thôn Mộ Điền Dụ, trấn Bột Hải, quận Hoài Nhu",
+      "dropOffZh": "请在慕田峪长城游客中心下车",
+      "dropOffVi": "Cho tôi xuống ở trung tâm du khách Mộ Điền Dụ",
+      "lat": null,
+      "lng": null,
+      "story": [
+        "Mộ Điền Dụ cách trung tâm Bắc Kinh khoảng 70 km về phía đông bắc. Đoạn thành hiện nay được xây lại đầu thời Minh, từ năm 1368, trên nền thành cũ từ thế kỷ 6, rồi được gia cố thêm vào thế kỷ 16.",
+        "Điểm khác các đoạn thành khác là tường chắn có lỗ châu mai ở cả hai mặt, nên lính có thể đánh trả từ cả hai phía. Phần mở cho khách dài hơn 2 km với hơn 20 vọng lâu, và ít người hơn nhiều so với Bát Đạt Lĩnh."
+      ],
+      "route": [
+        "Từ bãi xe đi bộ tới trạm, lên xe trung chuyển khoảng 7 phút.",
+        "Lên cáp treo ở cổng Bắc, khoảng 10 phút là tới vọng lâu số 14.",
+        "Đi về phía tây qua các vọng lâu 15, 16, 17. Đoạn này thoải và cảnh mở rộng nhất.",
+        "Còn sức thì đi tiếp tới vọng lâu 20, đoạn cuối rất dốc. Cả đi và về mất 60–90 phút.",
+        "Quay lại vọng lâu 14 trước 11:15 để kịp cáp treo xuống."
+      ],
+      "wear": "Tường đá xám và núi mùa đông trơ cành, nên màu đỏ, vàng mù tạt hoặc cam sẽ nổi bật. Bắt buộc có áo chắn gió, mũ len, găng tay và giày đế bám. Không đi giày cao gót hoặc đế trơn.",
+      "wearSwatches": [
+        {
+          "hex": "#C0392B",
+          "name": "Đỏ"
+        },
+        {
+          "hex": "#D4A017",
+          "name": "Vàng mù tạt"
+        },
+        {
+          "hex": "#E67E22",
+          "name": "Cam"
+        }
+      ],
+      "notes": [
+        "Trên thành gió mạnh, cảm giác lạnh hơn nhiệt độ thực vài độ. Dự báo −2 đến 4°C.",
+        "Sáng sớm có thể mưa tuyết, bậc đá trơn. Bám tay vịn khi xuống dốc.",
+        "Từ 16/11 khu này chuyển sang giờ mùa thấp điểm, mở khoảng 8:00–17:30.",
+        "Xe trung chuyển khoảng 15 tệ, cáp treo khứ hồi khoảng 140 tệ."
+      ],
+      "photo": {
+        "headline": "Tường thành uốn theo sống núi",
+        "bestTime": "9:30–10:30, nắng xiên làm rõ từng lỗ châu mai.",
+        "shots": [
+          {
+            "id": "mo-dien-du-1",
+            "title": "Tường thành uốn lượn sau lưng",
+            "img": "",
+            "where": "Vọng lâu 15–16, đứng sát tường chắn, nhìn ngược về phía đông.",
+            "camera": "Máy ngang tầm mắt, để người chiếm một phần ba trái và tường thành chạy chéo phần còn lại.",
+            "pose": "Xoay người 45°, tay đút túi áo, mắt nhìn theo dãy núi.",
+            "poseKey": "dung",
+            "clip": "",
+            "clipDur": "",
+            "clipTitle": "",
+            "searchZh": "慕田峪长城 拍照 机位"
+          },
+          {
+            "id": "mo-dien-du-2",
+            "title": "Bước lên bậc đá",
+            "img": "",
+            "where": "Đoạn dốc giữa hai vọng lâu. Người chụp đứng thấp hơn 5–6 bậc.",
+            "camera": "Máy dọc, ngửa lên theo hướng dốc.",
+            "pose": "Bước lên một bậc rồi ngoái lại nhìn máy, tay vịn nhẹ tường.",
+            "poseKey": "ngoai",
+            "clip": "",
+            "clipDur": "",
+            "clipTitle": "",
+            "searchZh": "慕田峪长城 台阶 拍照"
+          },
+          {
+            "id": "mo-dien-du-3",
+            "title": "Bóng người trong cửa vòm",
+            "img": "",
+            "where": "Bên trong vọng lâu, người mẫu đứng ngay khung cửa vòm nhìn ra núi.",
+            "camera": "Máy dọc, chạm vào vùng trời sáng để đo sáng. Người sẽ thành bóng đen rõ nét.",
+            "pose": "Đứng nghiêng, một tay chạm thành cửa. Dáng càng rõ đường nét càng đẹp.",
+            "poseKey": "dung",
+            "clip": "",
+            "clipDur": "",
+            "clipTitle": "",
+            "searchZh": "长城 敌楼 窗口 剪影"
+          }
+        ]
+      }
+    },
+    {
+      "id": "di-hoa-vien",
+      "name": "Di Hòa Viên",
+      "zh": "颐和园",
+      "zhFull": "颐和园",
+      "pinyin": "Yíhéyuán",
+      "tag": "Vườn ngự uyển mùa hè của nhà Thanh",
+      "hero": "di-hoa-vien",
+      "heroAlt": "Cầu Thập Thất Khổng, Di Hòa Viên",
+      "dur": "1 giờ 45 phút",
+      "ticket": "20 tệ vé cổng; 50 tệ vé liên thông",
+      "req": "Mua vé",
+      "buy": "WeChat 颐和园 hoặc quầy vé",
+      "addressZh": "北京市海淀区新建宫门路19号",
+      "addressVi": "Số 19 đường Tân Kiến Cung Môn, quận Hải Điến",
+      "dropOffZh": "请在颐和园东宫门下车",
+      "dropOffVi": "Cho tôi xuống ở cổng Đông Cung Môn",
+      "lat": null,
+      "lng": null,
+      "story": [
+        "Vua Càn Long cho xây khu vườn này năm 1750 để mừng thọ mẹ. Năm 1860 liên quân Anh Pháp đốt phá gần hết. Từ Hy Thái hậu cho dựng lại năm 1888, tương truyền bằng tiền dành cho hải quân, và đặt tên là Di Hòa Viên.",
+        "Ba phần tư diện tích là mặt nước hồ Côn Minh. Trên bờ bắc là núi Vạn Thọ với Phật Hương Các. Dọc bờ hồ có Trường Lang dài 728 mét, xà ngang vẽ hàng nghìn bức tranh không bức nào giống nhau."
+      ],
+      "route": [
+        "Vào Đông Cung Môn (东宫门), qua điện Nhân Thọ nơi Từ Hy thiết triều.",
+        "Ra bờ hồ Côn Minh, đi Trường Lang tới chân Phật Hương Các. 35–40 phút.",
+        "Quay lại theo bờ hồ về phía nam, qua tượng Trâu Đồng.",
+        "Tới cầu Thập Thất Khổng (cầu 17 nhịp) khoảng 16:00, lúc nắng chiều vàng nhất.",
+        "Ra cổng Tân Kiến Cung Môn (新建宫门) ngay gần cầu."
+      ],
+      "wear": "Nắng chiều thấp và ấm màu, hợp áo khoác đỏ đô, be hoặc lạc đà. Gió từ hồ thổi rất lạnh, cần khăn quàng và găng tay.",
+      "wearSwatches": [
+        {
+          "hex": "#7B1E1E",
+          "name": "Đỏ đô"
+        },
+        {
+          "hex": "#D8C3A0",
+          "name": "Be"
+        },
+        {
+          "hex": "#B08850",
+          "name": "Lạc đà"
+        }
+      ],
+      "notes": [
+        "Mặt trời lặn khoảng 17:00. Sau 16:30 trời tối nhanh và lạnh hẳn.",
+        "Vé cổng chỉ vào khu ngoài trời. Lên Phật Hương Các cần vé liên thông và các điện đóng sớm hơn cổng vườn.",
+        "Hẹn tài xế đón ở cổng Tân Kiến Cung Môn để khỏi quay lại cổng Đông."
+      ],
+      "photo": {
+        "headline": "Cầu 17 nhịp trong nắng chiều",
+        "bestTime": "Khoảng 16:00, trước khi mặt trời lặn lúc 17:00.",
+        "shots": [
+          {
+            "id": "di-hoa-vien-1",
+            "title": "Cầu 17 nhịp trong nắng chiều",
+            "img": "",
+            "where": "Bờ đông hồ, phía nam chân cầu, khoảng 16:00.",
+            "camera": "Máy ngang tầm mắt, để cầu chạy ngang hai phần ba khung hình.",
+            "pose": "Quay lưng hoặc nghiêng người nhìn về cầu, hai tay đút túi áo khoác.",
+            "poseKey": "quaylung",
+            "clip": "",
+            "clipDur": "",
+            "clipTitle": "",
+            "searchZh": "颐和园 十七孔桥 拍照"
+          },
+          {
+            "id": "di-hoa-vien-2",
+            "title": "Trường Lang hun hút",
+            "img": "",
+            "where": "Giữa hành lang, đứng lệch tâm một chút để thấy hàng cột.",
+            "camera": "Máy dọc, cao ngang ngực, giữ thẳng để cột không bị nghiêng.",
+            "pose": "Bước chậm ra xa máy rồi ngoái lại.",
+            "poseKey": "ngoai",
+            "clip": "",
+            "clipDur": "",
+            "clipTitle": "",
+            "searchZh": "颐和园 长廊 拍照"
+          },
+          {
+            "id": "di-hoa-vien-3",
+            "title": "Ngồi lan can đá bên hồ",
+            "img": "",
+            "where": "Bờ hồ Côn Minh, chọn chỗ thấy Phật Hương Các ở xa.",
+            "camera": "Máy ngang, hạ ngang tầm người ngồi.",
+            "pose": "Ngồi nghiêng, một chân duỗi, mắt nhìn ra hồ.",
+            "poseKey": "ngoi",
+            "clip": "",
+            "clipDur": "",
+            "clipTitle": "",
+            "searchZh": "颐和园 昆明湖 佛香阁 拍照"
+          }
+        ]
+      }
+    },
+    {
+      "id": "co-cung",
+      "name": "Cố Cung",
+      "zh": "故宫",
+      "zhFull": "故宫博物院",
+      "pinyin": "Gùgōng Bówùyuàn",
+      "tag": "Tử Cấm Thành, nơi ở của 24 hoàng đế",
+      "hero": "co-cung",
+      "heroAlt": "Thái Hòa Điện, Cố Cung",
+      "dur": "2 giờ 45 phút",
+      "ticket": "40 tệ",
+      "req": "Bắt buộc đặt trước",
+      "buy": "Trang chính thức của Bảo tàng Cố Cung hoặc tiểu chương trình WeChat, bằng số hộ chiếu",
+      "addressZh": "北京市东城区景山前街4号",
+      "addressVi": "Số 4 phố Cảnh Sơn Tiền, quận Đông Thành",
+      "dropOffZh": "请在天安门东附近下车，我从午门进故宫",
+      "dropOffVi": "Cho tôi xuống gần Thiên An Môn phía đông, tôi đi bộ vào Ngọ Môn",
+      "lat": null,
+      "lng": null,
+      "story": [
+        "Cố Cung xây từ năm 1406 đến 1420 dưới thời Vĩnh Lạc. Trong gần 500 năm, 24 hoàng đế nhà Minh và nhà Thanh sống và trị vì ở đây, cho tới khi Phổ Nghi thoái vị năm 1912. Năm 1925 cung điện trở thành bảo tàng.",
+        "Khu cung rộng khoảng 72 hecta, chia làm hai phần. Ngoại triều ở phía nam là nơi cử hành đại lễ, với ba tòa điện lớn trên nền đá trắng. Nội đình ở phía bắc là nơi vua và hậu cung sinh hoạt.",
+        "Mọi thứ đều theo quy tắc: ngói vàng chỉ dành cho vua, cửa lớn đóng 9 hàng 9 đinh vàng, và số 9 lặp lại khắp nơi vì là con số lớn nhất của bậc đế vương."
+      ],
+      "route": [
+        "Vào từ Ngọ Môn (午门) ở phía nam. Đây là lối vào duy nhất, đi một chiều từ nam lên bắc.",
+        "Qua cầu Kim Thủy và Thái Hòa Môn tới sân Thái Hòa Điện, tòa điện gỗ lớn nhất.",
+        "Đi tiếp Trung Hòa Điện, Bảo Hòa Điện rồi qua Càn Thanh Môn vào nội đình.",
+        "Còn giờ thì rẽ sang phía đông xem Cửu Long Bích và Trân Bảo Quán (vé riêng 10 tệ).",
+        "Qua Ngự Hoa Viên, ra Thần Vũ Môn ở phía bắc. Cà phê Giác Lâu nằm ngay ngoài cổng, Cảnh Sơn ở bên kia đường."
+      ],
+      "wear": "Tường đỏ và ngói vàng làm nền, nên trắng, kem, be hoặc đen sẽ nổi nhất. Áo đỏ dễ lẫn vào tường. Sáng sớm khoảng −3°C và sân đá rất rộng, cần áo dày, mũ, găng tay và miếng dán giữ nhiệt.",
+      "wearSwatches": [
+        {
+          "hex": "#FFFFFF",
+          "name": "Trắng"
+        },
+        {
+          "hex": "#EFE3C8",
+          "name": "Kem"
+        },
+        {
+          "hex": "#D8C3A0",
+          "name": "Be"
+        },
+        {
+          "hex": "#1E1A16",
+          "name": "Đen"
+        }
+      ],
+      "notes": [
+        "Không bán vé tại cổng. Vé mở bán trước 7 ngày, lúc 20:00 giờ Bắc Kinh, và gắn với số hộ chiếu.",
+        "Mang hộ chiếu gốc. Soát vé bằng chính hộ chiếu đã dùng để đặt.",
+        "Đóng cửa thứ Hai. Mùa đông mở 8:30–16:30, ngừng nhận khách lúc 15:30.",
+        "Hàng kiểm tra an ninh ở khu Thiên An Môn có thể mất 30–45 phút, nên có mặt từ 7:45."
+      ],
+      "photo": {
+        "headline": "Tường đỏ, ngói vàng và một sân đá trống",
+        "bestTime": "Tới 8:30, vào thẳng sân Thái Hòa Điện trước khi đông.",
+        "shots": [
+          {
+            "id": "co-cung-1",
+            "title": "Một mình giữa sân Thái Hòa Điện",
+            "img": "",
+            "where": "Trục giữa, ngay sau Thái Hòa Môn. Chụp lúc 8:30–9:00 khi sân còn trống.",
+            "camera": "Máy dọc, hạ thấp ngang hông để nền gạch kéo dài về phía điện.",
+            "pose": "Bước về phía điện, áo khoác mở. Ảnh quay lưng cho cảm giác sân rộng nhất.",
+            "poseKey": "buoc",
+            "clip": "",
+            "clipDur": "",
+            "clipTitle": "",
+            "searchZh": "故宫 太和殿 机位"
+          },
+          {
+            "id": "co-cung-2",
+            "title": "Tường đỏ",
+            "img": "",
+            "where": "Các lối đi dài ở phía đông nội đình, chọn đoạn tường có nắng.",
+            "camera": "Máy ngang ngực, chụp song song với tường, người ở một phần ba trái.",
+            "pose": "Tựa nhẹ vai vào tường, mặt quay ra nắng. Áo trắng hoặc kem nổi nhất.",
+            "poseKey": "tua",
+            "clip": "",
+            "clipDur": "",
+            "clipTitle": "",
+            "searchZh": "故宫 红墙 拍照"
+          },
+          {
+            "id": "co-cung-3",
+            "title": "Cánh cửa đinh vàng",
+            "img": "",
+            "where": "Trước một cánh cổng lớn sơn đỏ có hàng đinh vàng.",
+            "camera": "Máy dọc, ngang tầm mắt, lấy cửa kín khung hình.",
+            "pose": "Một tay chạm lên đinh cửa, mặt nghiêng nhìn theo tay.",
+            "poseKey": "giotay",
+            "clip": "",
+            "clipDur": "",
+            "clipTitle": "",
+            "searchZh": "故宫 门钉 拍照"
+          }
+        ]
+      }
+    },
+    {
+      "id": "canh-son",
+      "name": "Công viên Cảnh Sơn",
+      "zh": "景山公园",
+      "zhFull": "景山公园",
+      "pinyin": "Jǐngshān Gōngyuán",
+      "tag": "Ngọn đồi nhìn xuống toàn bộ mái ngói Cố Cung",
+      "hero": "canh-son",
+      "heroAlt": "Cố Cung nhìn từ đỉnh Cảnh Sơn",
+      "dur": "45 phút",
+      "ticket": "2 tệ",
+      "req": "Mua tại cổng",
+      "buy": "Quầy vé hoặc WeChat",
+      "addressZh": "北京市西城区景山西街44号",
+      "addressVi": "Số 44 phố Cảnh Sơn Tây, quận Tây Thành",
+      "dropOffZh": "请在景山公园南门下车",
+      "dropOffVi": "Cho tôi xuống ở cổng Nam công viên Cảnh Sơn",
+      "lat": null,
+      "lng": null,
+      "story": [
+        "Cảnh Sơn là đồi nhân tạo, đắp bằng đất đào hào quanh Cố Cung từ thời Vĩnh Lạc. Theo phong thủy, ngọn đồi chắn gió bắc và che chở cho hoàng cung.",
+        "Năm 1644, khi quân khởi nghĩa tràn vào Bắc Kinh, vua Sùng Trinh, hoàng đế cuối cùng của nhà Minh, đã treo cổ ở sườn đông ngọn đồi này."
+      ],
+      "route": [
+        "Vào cổng Nam, đối diện Thần Vũ Môn của Cố Cung.",
+        "Leo bậc đá lên Vạn Xuân Đình trên đỉnh, mất 10–15 phút.",
+        "Đứng ở lan can phía nam nhìn xuống trục chính của Cố Cung.",
+        "Xuống theo sườn đông nếu muốn xem nơi vua Sùng Trinh tự vẫn."
+      ],
+      "wear": "Giữ nguyên trang phục ở Cố Cung. Leo dốc sẽ nóng người, mở bớt áo khoác khi leo và cài lại trên đỉnh vì gió.",
+      "wearSwatches": [
+        {
+          "hex": "#FFFFFF",
+          "name": "Trắng"
+        },
+        {
+          "hex": "#EFE3C8",
+          "name": "Kem"
+        },
+        {
+          "hex": "#D8C3A0",
+          "name": "Be"
+        },
+        {
+          "hex": "#1E1A16",
+          "name": "Đen"
+        }
+      ],
+      "notes": [
+        "Bậc đá dốc, người lớn tuổi nên đi chậm và nghỉ ở các đình giữa đường."
+      ],
+      "photo": {
+        "headline": "Cả Tử Cấm Thành dưới chân",
+        "bestTime": "Giữa trưa nhìn về nam bị ngược sáng: đo sáng theo mặt người.",
+        "shots": [
+          {
+            "id": "canh-son-1",
+            "title": "Cố Cung trải dưới chân",
+            "img": "",
+            "where": "Lan can phía nam của Vạn Xuân Đình.",
+            "camera": "Máy ngang. Buổi trưa ngược sáng nên chạm vào mặt người để đo sáng.",
+            "pose": "Đứng nghiêng ở mép phải khung hình, mắt nhìn xuống các mái ngói.",
+            "poseKey": "dung",
+            "clip": "",
+            "clipDur": "",
+            "clipTitle": "",
+            "searchZh": "景山公园 万春亭 故宫全景"
+          },
+          {
+            "id": "canh-son-2",
+            "title": "Tựa lan can trên đỉnh đồi",
+            "img": "",
+            "where": "Góc đông nam của đình, tựa vào lan can đá.",
+            "camera": "Máy dọc, cao ngang ngực.",
+            "pose": "Tựa khuỷu tay lên lan can, người xoay nửa về phía Cố Cung.",
+            "poseKey": "tua",
+            "clip": "",
+            "clipDur": "",
+            "clipTitle": "",
+            "searchZh": "景山 万春亭 拍照"
+          }
+        ]
+      }
+    },
+    {
+      "id": "bao-tang-khoa-hoc",
+      "name": "Bảo tàng Khoa học",
+      "zh": "中国科学技术馆",
+      "zhFull": "中国科学技术馆",
+      "pinyin": "Zhōngguó Kēxué Jìshù Guǎn",
+      "tag": "Bảo tàng khoa học quốc gia, trong khu Olympic",
+      "hero": "khoa-hoc",
+      "heroAlt": "Sảnh chính Bảo tàng Khoa học",
+      "dur": "2 giờ",
+      "ticket": "30 tệ khu chính",
+      "req": "Đặt trước",
+      "buy": "Trang chính thức hoặc WeChat 中国科学技术馆",
+      "addressZh": "北京市朝阳区北辰东路5号",
+      "addressVi": "Số 5 đường Bắc Thần Đông, quận Triều Dương",
+      "dropOffZh": "",
+      "dropOffVi": "",
+      "lat": null,
+      "lng": null,
+      "story": [
+        "Bảo tàng Khoa học và Công nghệ Trung Quốc chuyển về tòa nhà hiện nay trong công viên Olympic năm 2009. Phần lớn hiện vật cho phép chạm và thử, nên hợp với gia đình có trẻ em.",
+        "Tầng một kể về các phát minh cổ của Trung Quốc như la bàn, giấy và kỹ thuật in. Các tầng trên nói về vật lý, đời sống, và chương trình vũ trụ với mô hình tàu Thần Châu."
+      ],
+      "route": [
+        "Qua cổng bằng hộ chiếu và mã đặt vé.",
+        "Tầng 1: sảnh Hoa Hạ chi quang về khoa học cổ đại. 30 phút.",
+        "Tầng 2: khu Khám phá và phát hiện với các thí nghiệm vật lý tương tác.",
+        "Tầng 4: khu hàng không vũ trụ. Ra cổng trước 16:15 để kịp đi bộ sang khu Olympic."
+      ],
+      "wear": "Trong nhà sưởi ấm, mặc nhiều lớp mỏng để cởi áo khoác.",
+      "wearSwatches": [],
+      "notes": [
+        "Ngày 17/11 là thứ Ba. Bảo tàng có ngày nghỉ cố định trong tuần, cần xem lịch mở cửa trên kênh chính thức trước khi đặt vé.",
+        "Mở 9:30–17:00, ngừng nhận khách lúc 16:30.",
+        "Phải đặt vé online trước, bằng tên thật."
+      ],
+      "photo": {
+        "headline": "Khoa học để chạm vào",
+        "bestTime": "Đầu giờ chiều, sảnh giữa còn vắng.",
+        "shots": [
+          {
+            "id": "bao-tang-khoa-hoc-1",
+            "title": "Ngước nhìn giữa sảnh thông tầng",
+            "img": "",
+            "where": "Giữa sảnh chính, dưới mô hình treo.",
+            "camera": "Máy dọc, hạ thấp ngang gối và ngửa hẳn lên.",
+            "pose": "Ngước mặt, một tay chỉ lên mô hình.",
+            "poseKey": "giotay",
+            "clip": "",
+            "clipDur": "",
+            "clipTitle": "",
+            "searchZh": "中国科技馆 拍照"
+          },
+          {
+            "id": "bao-tang-khoa-hoc-2",
+            "title": "Đang chơi với thí nghiệm",
+            "img": "",
+            "where": "Bên một mô hình tương tác ở tầng 2.",
+            "camera": "Máy ngang, đứng ngang tầm trẻ em. Chụp khi mọi người đang chăm chú.",
+            "pose": "Không cần nhìn máy. Ảnh lúc đang thử nghiệm tự nhiên hơn ảnh đứng tạo dáng.",
+            "poseKey": "nhom",
+            "clip": "",
+            "clipDur": "",
+            "clipTitle": "",
+            "searchZh": "中国科技馆 亲子 拍照"
+          }
+        ]
+      }
+    },
+    {
+      "id": "khu-olympic",
+      "name": "Khu Olympic",
+      "zh": "奥林匹克公园",
+      "zhFull": "奥林匹克公园（鸟巢）",
+      "pinyin": "Àolínpǐkè Gōngyuán (Niǎocháo)",
+      "tag": "Tổ Chim và Khối Nước lúc lên đèn",
+      "hero": "olympic",
+      "heroAlt": "Tổ Chim và Khối Nước lúc lên đèn",
+      "dur": "45 phút",
+      "ticket": "Miễn phí (khu bên ngoài)",
+      "req": "Không cần mua vé",
+      "buy": "",
+      "addressZh": "北京市朝阳区国家体育场南路1号",
+      "addressVi": "Số 1 đường Sân vận động Quốc gia Nam, quận Triều Dương",
+      "dropOffZh": "请在鸟巢附近下车",
+      "dropOffVi": "Cho tôi xuống gần sân vận động Tổ Chim",
+      "lat": null,
+      "lng": null,
+      "story": [
+        "Đây là nơi tổ chức Thế vận hội mùa hè 2008 và lễ khai mạc Thế vận hội mùa đông 2022, khiến Bắc Kinh thành thành phố đầu tiên đăng cai cả hai kỳ.",
+        "Sân vận động quốc gia được gọi là Tổ Chim vì bộ khung thép đan chéo. Bên cạnh là trung tâm bơi lội Khối Nước với lớp vỏ như bong bóng xà phòng. Khu này nằm trên phần kéo dài của trục chính Bắc Kinh, thẳng hàng với Cố Cung."
+      ],
+      "route": [
+        "Từ Bảo tàng Khoa học đi bộ về phía nam dọc quảng trường trung tâm, khoảng 15–20 phút.",
+        "Dừng giữa hai công trình: Tổ Chim bên trái, Khối Nước bên phải.",
+        "Chờ tới khoảng 17:00 khi đèn bật rồi ra điểm hẹn xe."
+      ],
+      "wear": "Quảng trường trống và gió lùa mạnh. Cài kín áo, đội mũ và đeo găng tay.",
+      "wearSwatches": [],
+      "notes": [
+        "Vào bên trong Tổ Chim hoặc Khối Nước cần mua vé riêng và không nằm trong lịch."
+      ],
+      "photo": {
+        "headline": "Tổ Chim lúc lên đèn",
+        "bestTime": "17:00–17:15, đèn vừa bật, trời xanh đậm.",
+        "shots": [
+          {
+            "id": "khu-olympic-1",
+            "title": "Tổ Chim lúc lên đèn",
+            "img": "",
+            "where": "Giữa quảng trường trung tâm, 17:00–17:15.",
+            "camera": "Máy ngang, chạm vào công trình để đo sáng và giữ chắc tay vì trời tối.",
+            "pose": "Quay lưng hoặc nghiêng người nhìn về sân vận động.",
+            "poseKey": "quaylung",
+            "clip": "",
+            "clipDur": "",
+            "clipTitle": "",
+            "searchZh": "鸟巢 夜景 拍照"
+          },
+          {
+            "id": "khu-olympic-2",
+            "title": "Dang tay giữa quảng trường",
+            "img": "",
+            "where": "Trục giữa quảng trường, công trình ở phía xa sau lưng.",
+            "camera": "Máy dọc, hạ thấp ngang hông.",
+            "pose": "Dang rộng tay, áo khoác mở để gió thổi.",
+            "poseKey": "dangtay",
+            "clip": "",
+            "clipDur": "",
+            "clipTitle": "",
+            "searchZh": "奥林匹克公园 鸟巢 水立方 拍照"
+          }
+        ]
+      }
+    }
+  ],
+  "prepTasks": [
+    {
+      "id": "ho-chieu-goc",
+      "text": "Vé tham quan công ty tour đã đặt theo số hộ chiếu: mang hộ chiếu gốc mỗi ngày"
+    },
+    {
+      "id": "luu-offline",
+      "text": "Đã thêm sổ tay vào Màn hình chính, mở từ biểu tượng và thấy \"Đã lưu ✓\""
+    },
+    {
+      "id": "amap-offline",
+      "text": "Đã tải bản đồ offline Bắc Kinh trong Amap (高德地图)"
+    },
+    {
+      "id": "app-tq",
+      "text": "Đã cài Xiaohongshu và Douyin (không bắt buộc)"
+    }
+  ],
+  "checklist": [
+    {
+      "id": "ho-chieu",
+      "text": "Hộ chiếu còn hạn trên 6 tháng và visa Trung Quốc"
+    },
+    {
+      "id": "anh-ho-chieu",
+      "text": "Ảnh chụp trang hộ chiếu và visa lưu trong điện thoại"
+    },
+    {
+      "id": "vi-dien-tu",
+      "text": "Alipay hoặc WeChat Pay đã liên kết thẻ quốc tế, thử trước khi đi"
+    },
+    {
+      "id": "tien-mat",
+      "text": "Một ít tiền mặt nhân dân tệ, mệnh giá nhỏ"
+    },
+    {
+      "id": "ao-khoac",
+      "text": "Áo khoác dày chắn gió và áo giữ nhiệt mặc trong"
+    },
+    {
+      "id": "mu-gang",
+      "text": "Mũ len, găng tay, khăn quàng"
+    },
+    {
+      "id": "giay",
+      "text": "Giày đế bám, đã đi quen chân"
+    },
+    {
+      "id": "mieng-dan",
+      "text": "Miếng dán giữ nhiệt cho ngày 16 và 17"
+    },
+    {
+      "id": "kem-duong",
+      "text": "Kem dưỡng ẩm, son dưỡng: trời rất khô"
+    },
+    {
+      "id": "o-cam",
+      "text": "Ổ cắm chuyển đổi đa năng (điện 220V)"
+    },
+    {
+      "id": "sac-du-phong",
+      "text": "Sạc dự phòng có ghi rõ dung lượng, để trong hành lý xách tay"
+    },
+    {
+      "id": "thuoc",
+      "text": "Thuốc cá nhân đủ dùng 5 ngày"
+    },
+    {
+      "id": "binh-giu-nhiet",
+      "text": "Bình giữ nhiệt nhỏ"
+    }
+  ],
+  "wearGeneral": [
+    "Mặc theo lớp: áo giữ nhiệt, áo len hoặc nỉ, áo khoác dày chắn gió bên ngoài. Trong nhà và trên xe sưởi rất ấm nên cần lớp ngoài dễ cởi.",
+    "Chọn một áo khoác màu sáng hoặc màu nổi cho ảnh ngoài trời. Mùa này cây trơ cành và trời xanh nhạt, màu đỏ, kem, vàng mù tạt lên hình đẹp hơn đen và xám."
+  ],
+  "prepNotes": [
+    {
+      "k": "Múi giờ",
+      "v": "Nhanh hơn Việt Nam 1 tiếng. Mọi giờ trong lịch là giờ Bắc Kinh."
+    },
+    {
+      "k": "Hộ chiếu",
+      "v": "Mang theo hằng ngày. Vé tham quan gắn với số hộ chiếu và cổng soát bằng hộ chiếu gốc."
+    },
+    {
+      "k": "Thanh toán",
+      "v": "Hầu hết quán và quầy vé quét mã Alipay hoặc WeChat Pay. Tiền mặt vẫn dùng được nhưng khó thối lẻ."
+    },
+    {
+      "k": "Ứng dụng",
+      "v": "Google, Facebook và Instagram không mở được bằng wifi tại Trung Quốc. Lưu sẵn những gì cần xem."
+    },
+    {
+      "k": "Điện",
+      "v": "220V. Ổ cắm chấu dẹt hai chân và ba chân chéo."
+    },
+    {
+      "k": "Nước uống",
+      "v": "Không uống nước vòi. Khách sạn có ấm đun, nên mang bình giữ nhiệt."
+    },
+    {
+      "k": "Nhà vệ sinh",
+      "v": "Điểm tham quan thường là bệt xổm và không có giấy. Mang khăn giấy theo người."
+    },
+    {
+      "k": "An ninh",
+      "v": "Ga tàu điện, bảo tàng và khu Thiên An Môn đều soi chiếu túi xách. Tính thêm thời gian xếp hàng."
+    },
+    {
+      "k": "Bàn ăn",
+      "v": "Không cắm đũa dựng đứng vào bát cơm. Món ăn thường gọi chung và xoay bàn."
+    }
+  ],
+  "phrases": [
+    {
+      "zh": "洗手间在哪里?",
+      "vi": "Nhà vệ sinh ở đâu?"
+    },
+    {
+      "zh": "可以用支付宝吗?",
+      "vi": "Tôi trả bằng Alipay được không?"
+    },
+    {
+      "zh": "不要辣,谢谢。",
+      "vi": "Xin đừng cho cay, cảm ơn."
+    },
+    {
+      "zh": "请帮我叫一辆出租车。",
+      "vi": "Xin gọi giúp tôi một chiếc taxi."
+    },
+    {
+      "zh": "我迷路了,请帮我打这个电话。",
+      "vi": "Tôi bị lạc, xin gọi giúp số điện thoại này."
+    }
+  ],
+  "poses": [
+    {
+      "id": "dung",
+      "label": "Đứng nghiêng 45°, tay đút túi",
+      "fig": "dung"
+    },
+    {
+      "id": "quaylung",
+      "label": "Quay lưng ngắm cảnh",
+      "fig": "dung"
+    },
+    {
+      "id": "buoc",
+      "label": "Bước đi tự nhiên",
+      "fig": "buoc"
+    },
+    {
+      "id": "ngoai",
+      "label": "Bước đi, ngoái đầu qua vai",
+      "fig": "buoc"
+    },
+    {
+      "id": "giotay",
+      "label": "Một tay giơ cao hoặc chạm vật",
+      "fig": "giotay"
+    },
+    {
+      "id": "dangtay",
+      "label": "Dang rộng hai tay",
+      "fig": "dangtay"
+    },
+    {
+      "id": "ngoi",
+      "label": "Ngồi bậc thềm, một chân duỗi",
+      "fig": "ngoi"
+    },
+    {
+      "id": "tua",
+      "label": "Tựa nhẹ vào lan can hoặc tường",
+      "fig": "tua"
+    },
+    {
+      "id": "nhom",
+      "label": "Cả nhóm đứng so le",
+      "fig": "nhom"
+    }
+  ],
+  "afterTour": {
+    "tours": [
+      {
+        "id": "thuong-hai",
+        "title": "Thượng Hải – Hàng Châu – Ô Trấn",
+        "desc": "5 ngày 4 đêm · phố Bến Thượng Hải, Tây Hồ, cổ trấn sông nước"
+      },
+      {
+        "id": "truong-gia-gioi",
+        "title": "Trương Gia Giới – Phượng Hoàng Cổ Trấn",
+        "desc": "6 ngày 5 đêm · núi đá sa thạch, cầu kính, phố cổ bên sông"
+      },
+      {
+        "id": "thanh-do",
+        "title": "Thành Đô – Cửu Trại Câu",
+        "desc": "6 ngày 5 đêm · gấu trúc, hồ nước nhiều màu trên cao nguyên"
+      }
+    ]
+  },
+  "credits": [
+    {
+      "file": "thien-dan",
+      "title": "Temple of Heaven - Hall of Prayer for Good Harvests 01.jpg",
+      "author": "xiquinhosilva",
+      "license": "CC BY 2.0",
+      "url": "https://commons.wikimedia.org/wiki/File:Temple_of_Heaven_-_Hall_of_Prayer_for_Good_Harvests_01.jpg",
+      "personalUseOnly": false
+    },
+    {
+      "file": "tu-nhien",
+      "title": "Psittacosaurus IMG 5151 Beijing Museum of Natural History.jpg",
+      "author": "Bjoertvedt",
+      "license": "CC BY-SA 4.0",
+      "url": "https://commons.wikimedia.org/wiki/File:Psittacosaurus_IMG_5151_Beijing_Museum_of_Natural_History.jpg",
+      "personalUseOnly": false
+    },
+    {
+      "file": "ngo-duong-mai-truc",
+      "title": "Yangmeizhu Xiejie (20240210151543).jpg",
+      "author": "N509FZ",
+      "license": "CC BY-SA 4.0",
+      "url": "https://commons.wikimedia.org/wiki/File:Yangmeizhu_Xiejie_(20240210151543).jpg",
+      "personalUseOnly": false
+    },
+    {
+      "file": "universal",
+      "title": "Entrance of Universal Studios Beijing (20210907121707).jpg",
+      "author": "N509FZ",
+      "license": "CC BY-SA 4.0",
+      "url": "https://commons.wikimedia.org/wiki/File:Entrance_of_Universal_Studios_Beijing_(20210907121707).jpg",
+      "personalUseOnly": false
+    },
+    {
+      "file": "mo-dien-du",
+      "title": "The Mutianyu section of the Great Wall of China.jpg",
+      "author": "Lloyd Tudor",
+      "license": "CC BY-SA 4.0",
+      "url": "https://commons.wikimedia.org/wiki/File:The_Mutianyu_section_of_the_Great_Wall_of_China.jpg",
+      "personalUseOnly": false
+    },
+    {
+      "file": "di-hoa-vien",
+      "title": "Peking Sommerpalast Seventeen Arch Bridge-20071020-RM-123138.jpg",
+      "author": "Ermell",
+      "license": "CC BY-SA 4.0",
+      "url": "https://commons.wikimedia.org/wiki/File:Peking_Sommerpalast_Seventeen_Arch_Bridge-20071020-RM-123138.jpg",
+      "personalUseOnly": false
+    },
+    {
+      "file": "co-cung",
+      "title": "Hall of Supreme Harmony (Forbidden City) 1.jpg",
+      "author": "EditQ",
+      "license": "CC BY-SA 4.0",
+      "url": "https://commons.wikimedia.org/wiki/File:Hall_of_Supreme_Harmony_(Forbidden_City)_1.jpg",
+      "personalUseOnly": false
+    },
+    {
+      "file": "canh-son",
+      "title": "Views of the Forbidden City from Jingshan Park 3.jpg",
+      "author": "EditQ",
+      "license": "CC BY-SA 4.0",
+      "url": "https://commons.wikimedia.org/wiki/File:Views_of_the_Forbidden_City_from_Jingshan_Park_3.jpg",
+      "personalUseOnly": false
+    },
+    {
+      "file": "khoa-hoc",
+      "title": "China Science and Technology Museum main hall 14 Aug 2010.jpg",
+      "author": "Jason Quinn",
+      "license": "CC BY 3.0",
+      "url": "https://commons.wikimedia.org/wiki/File:China_Science_and_Technology_Museum_main_hall_14_Aug_2010.jpg",
+      "personalUseOnly": false
+    },
+    {
+      "file": "olympic",
+      "title": "Water Cube (red dots version) & Bird's Nest.jpg",
+      "author": "Alberto Alerigi",
+      "license": "CC BY 2.0",
+      "url": "https://commons.wikimedia.org/wiki/File:Water_Cube_(red_dots_version)_%26_Bird%27s_Nest.jpg",
+      "personalUseOnly": false
+    },
+    {
+      "file": "thieu-mai",
+      "title": "Shaomai stuffed with three delicacies (20180331174303).jpg",
+      "author": "N509FZ",
+      "license": "CC BY-SA 4.0",
+      "url": "https://commons.wikimedia.org/wiki/File:Shaomai_stuffed_with_three_delicacies_(20180331174303).jpg",
+      "personalUseOnly": false
+    },
+    {
+      "file": "dimsum",
+      "title": "Dim sum at Shi-Art Chinese Cuisine.jpg",
+      "author": "StoppedTime",
+      "license": "CC0",
+      "url": "https://commons.wikimedia.org/wiki/File:Dim_sum_at_Shi-Art_Chinese_Cuisine.jpg",
+      "personalUseOnly": false
+    }
+  ]
+}
