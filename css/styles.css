@@ -253,3 +253,18 @@ body.has-bar{padding-top:var(--bar-h,0px)}
 .pcover-n{position:absolute;right:10px;bottom:10px;font-size:12px;font-weight:600;background:rgba(0,0,0,.55);color:#fff;border-radius:99px;padding:3px 10px}
 .pcover-h{font:700 22px/1.15 var(--f-display)}
 .pcover-b .link{display:inline-flex;align-items:center;min-height:44px}
+
+/* ===== Đợt 3 — clip mẫu ===== */
+.vbox{background:#1E1A16;border-radius:12px;overflow:hidden;color:#F5F0E6}
+.vmedia{position:relative;height:280px;background:#000}
+.vplay{position:relative;display:block;width:100%;height:100%;min-height:44px;color:#fff}
+.vplay img{width:100%;height:100%;object-fit:contain;background:#000}
+.vplay-ico{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:60px;height:60px;border-radius:50%;background:rgba(255,255,255,.92);color:#1E1A16;display:flex;align-items:center;justify-content:center;font-size:24px;padding-left:4px}
+.vdur{position:absolute;right:8px;bottom:8px;font-size:12px;font-weight:600;background:rgba(0,0,0,.6);color:#fff;border-radius:4px;padding:2px 7px}
+.vmedia video{width:100%;height:100%;object-fit:contain;background:#000;display:block}
+.vcap{padding:9px 12px 11px;font-size:14px;font-weight:600}
+/* clip trong story */
+.st-vid{position:absolute;inset:0;z-index:1;background:#000}
+.st-vid video{width:100%;height:100%;object-fit:contain;display:block}
+.st-vx{position:absolute;left:50%;transform:translateX(-50%);bottom:calc(64px + var(--safe-b));z-index:4;min-height:44px;padding:0 18px;border-radius:99px;font-size:14px;font-weight:600;color:#fff;background:rgba(0,0,0,.55);border:1px solid rgba(255,255,255,.4)}
+.story.is-vid .st-bt{visibility:hidden}

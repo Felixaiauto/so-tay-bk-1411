@@ -1,4 +1,4 @@
-import { esc, imgTag } from '../dom.js';
+import { esc, imgTag, clipVideoTag, playClip } from '../dom.js';
 import { douyinSearch, xhsSearch } from '../links.js';
 import { openStory } from './story.js';
 
@@ -9,6 +9,12 @@ export function moreLinks(shot) {
   const kw = esc(shot.searchZh);
   return `<a class="btn btn-pri" href="${esc(douyinSearch(shot.searchZh))}" target="_blank" rel="noopener" data-copy="${kw}">Xem thêm video mẫu</a>
     <a class="btn btn-sec" href="${esc(xhsSearch(shot.searchZh))}" target="_blank" rel="noopener" data-copy="${kw}">Xem thêm ảnh mẫu</a>`;
+}
+
+export function clipBoxHtml(s) {
+  if (!s.clip) return '';
+  return `<div class="vbox" data-clip="${esc(s.clip)}"><div class="vmedia"><button type="button" class="vplay" data-play aria-label="Phát clip: ${esc(s.clipTitle)}">${imgTag(s.clip + '-poster', 900, '')}<span class="vplay-ico" aria-hidden="true">▶</span>${s.clipDur ? `<span class="vdur">${esc(s.clipDur)}</span>` : ''}</button></div>
+      <p class="vcap">${esc(s.clipTitle)}</p></div>`;
 }
 
 export function photoSectionHtml(place) {
@@ -22,6 +28,7 @@ export function photoSectionHtml(place) {
   shots.forEach((s, i) => {
     h += `<article class="pframe"><span class="pframe-k">Khung ${num(i)}</span><h3 class="pframe-h">${esc(s.title)}</h3>
       <div class="pcols"><div><b>Đứng ở đâu</b>${esc(s.where)}</div><div><b>Cầm máy</b>${esc(s.camera)}</div><div><b>Dáng</b>${esc(s.pose)}</div></div>
+      ${clipBoxHtml(s)}
       <div class="pmore">${moreLinks(s)}</div></article>`;
   });
   return h + '</section>';
@@ -29,4 +36,11 @@ export function photoSectionHtml(place) {
 
 export function mountPhotoSection(root, place) {
   for (const b of root.querySelectorAll('[data-story]')) b.addEventListener('click', () => { b.focus(); openStory(place, +b.dataset.story); });
+  for (const b of root.querySelectorAll('.vbox [data-play]')) {
+    b.addEventListener('click', () => {
+      const media = b.closest('.vmedia');
+      media.innerHTML = clipVideoTag(b.closest('.vbox').dataset.clip);
+      playClip(media)?.focus();
+    });
+  }
 }

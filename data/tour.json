@@ -922,9 +922,9 @@
             "camera": "Máy ngang tầm mắt. Người chụp lùi xa rồi zoom 2x để điện to ra sau lưng.",
             "pose": "Xoay người 45°, một tay giữ khăn quàng, mắt nhìn về phía điện.",
             "poseKey": "dung",
-            "clip": "",
-            "clipDur": "",
-            "clipTitle": "",
+            "clip": "thien-dan-2",
+            "clipDur": "0:14",
+            "clipTitle": "Tựa lan can, Kỳ Niên Điện phía sau",
             "searchZh": "天坛 祈年殿 人像"
           },
           {
@@ -1140,9 +1140,9 @@
             "camera": "Máy dọc, hạ thấp ngang gối và ngửa lên để lấy trọn quả cầu.",
             "pose": "Dang hai tay hoặc bật nhảy. Chụp liên tiếp rồi chọn tấm đẹp nhất.",
             "poseKey": "dangtay",
-            "clip": "",
-            "clipDur": "",
-            "clipTitle": "",
+            "clip": "universal-1",
+            "clipDur": "0:13",
+            "clipTitle": "Các dáng chụp bên quả địa cầu",
             "searchZh": "北京环球影城 地球 拍照"
           },
           {
@@ -1359,9 +1359,9 @@
             "camera": "Máy ngang, hạ ngang tầm người ngồi.",
             "pose": "Ngồi nghiêng, một chân duỗi, mắt nhìn ra hồ.",
             "poseKey": "ngoi",
-            "clip": "",
-            "clipDur": "",
-            "clipTitle": "",
+            "clip": "di-hoa-vien-3",
+            "clipDur": "0:10",
+            "clipTitle": "Ngồi lan can bên hồ, Phật Hương Các phía xa",
             "searchZh": "颐和园 昆明湖 佛香阁 拍照"
           }
         ]
@@ -1448,9 +1448,9 @@
             "camera": "Máy ngang ngực, chụp song song với tường, người ở một phần ba trái.",
             "pose": "Tựa nhẹ vai vào tường, mặt quay ra nắng. Áo trắng hoặc kem nổi nhất.",
             "poseKey": "tua",
-            "clip": "",
-            "clipDur": "",
-            "clipTitle": "",
+            "clip": "co-cung-2",
+            "clipDur": "0:12",
+            "clipTitle": "Tạo dáng bên tường đỏ Cố Cung",
             "searchZh": "故宫 红墙 拍照"
           },
           {
@@ -2194,6 +2194,38 @@
       "author": "hanvinatravel.vn (Vietnamese travel blog)",
       "license": "không rõ (dùng cá nhân)",
       "url": "https://hanvinatravel.vn/tin-tuc/check-in-san-van-dong-to-chim-bieu-tuong-olympic-bac-kinh",
+      "personalUseOnly": true
+    },
+    {
+      "file": "co-cung-2.mp4",
+      "title": "bilibili.com",
+      "author": "蚂蚁摄影APP-源儿",
+      "license": "không rõ (dùng cá nhân)",
+      "url": "https://www.bilibili.com/video/BV1r3DpYaE7a",
+      "personalUseOnly": true
+    },
+    {
+      "file": "thien-dan-2.mp4",
+      "title": "bilibili.com",
+      "author": "蓝甜恬",
+      "license": "không rõ (dùng cá nhân)",
+      "url": "https://www.bilibili.com/video/BV1gWopBsEJL",
+      "personalUseOnly": true
+    },
+    {
+      "file": "universal-1.mp4",
+      "title": "bilibili.com",
+      "author": "沐沐喵格",
+      "license": "không rõ (dùng cá nhân)",
+      "url": "https://www.bilibili.com/video/BV1BZpseSEW7",
+      "personalUseOnly": true
+    },
+    {
+      "file": "di-hoa-vien-3.mp4",
+      "title": "bilibili.com",
+      "author": "蚂蚁摄影APP-源儿",
+      "license": "không rõ (dùng cá nhân)",
+      "url": "https://www.bilibili.com/video/BV1dVCzYUEHP",
       "personalUseOnly": true
     }
   ]

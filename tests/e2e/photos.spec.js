@@ -110,3 +110,75 @@ test('story trên màn hình thấp: ‹ › nằm trên khối chữ và vẫn 
   await page.locator('.st-next').click();
   await expect(page.locator('.story .st-hd span')).toHaveText('Cố Cung · Khung 2/3');
 });
+
+test('khung có clip: khối video có poster, ▶ to, thời lượng, một dòng tiêu đề; bấm mới phát', async ({ page }) => {
+  await page.goto(PLACE);
+  await expect(page.locator('.pframe').first().locator('.vbox')).toHaveCount(0);
+  await expect(page.locator('.pframe .vbox')).toHaveCount(1);
+  const box = page.locator('.pframe').nth(1).locator('.vbox');
+  await expect(box.locator('img')).toHaveAttribute('src', './img/co-cung-2-poster-900.webp');
+  await expect(box.locator('.vdur')).toHaveText('0:12');
+  await expect(box.locator('.vcap')).toHaveText('Tạo dáng bên tường đỏ Cố Cung');
+  await expect(box).not.toContainText(/offline|ngoại tuyến|giây/i);
+  await expect(box.locator('video')).toHaveCount(0);
+  const play = box.locator('.vplay');
+  const ico = await box.locator('.vplay-ico').boundingBox();
+  expect(ico.width).toBeGreaterThanOrEqual(56);
+  expect(ico.height).toBeGreaterThanOrEqual(56);
+  const pb = await play.boundingBox();
+  expect(pb.width).toBeGreaterThanOrEqual(44);
+  expect(pb.height).toBeGreaterThanOrEqual(44);
+  expect(await box.evaluate(e => [getComputedStyle(e).backgroundColor, getComputedStyle(e).borderRadius])).toEqual(['rgb(30, 26, 22)', '12px']);
+  await play.click();
+  const v = box.locator('video');
+  await expect(v).toHaveCount(1);
+  await expect(v).toHaveAttribute('src', './video/co-cung-2.mp4');
+  await expect(v).toHaveAttribute('poster', './img/co-cung-2-poster-900.webp');
+  await expect(v).toHaveAttribute('preload', 'none');
+  await expect(v).toHaveAttribute('controls', '');
+  await expect(v).toHaveAttribute('playsinline', '');
+  expect(await v.evaluate(e => e.muted)).toBe(true);
+  await expect(box.locator('.vplay')).toHaveCount(0);
+});
+
+test('story: khung có clip hiện ▶ Xem video; bấm thì video phủ ảnh, chuyển khung hoặc đóng thì video dừng và gỡ', async ({ page }) => {
+  await page.goto(PLACE);
+  await page.locator('.psec-strip button').first().click();
+  const st = page.locator('.story');
+  await expect(st.locator('.st-hd span')).toHaveText('Cố Cung · Khung 1/3');
+  await expect(st.locator('[data-vid]')).toHaveCount(0);
+  await page.keyboard.press('ArrowRight');
+  await expect(st.locator('.st-hd span')).toHaveText('Cố Cung · Khung 2/3');
+  const pill = st.locator('.st-pills [data-vid]');
+  await expect(pill).toHaveText('▶ Xem video');
+  expect((await pill.boundingBox()).height).toBeGreaterThanOrEqual(44);
+  await pill.click();
+  const v = st.locator('.st-vid video');
+  await expect(v).toHaveCount(1);
+  await expect(v).toHaveAttribute('src', './video/co-cung-2.mp4');
+  for (const a of ['controls', 'autoplay', 'playsinline']) await expect(v).toHaveAttribute(a, '');
+  expect(await v.evaluate(e => e.muted)).toBe(true);
+  // chạm vào video không làm story chuyển khung
+  const vb = await v.boundingBox();
+  await page.mouse.click(vb.x + vb.width * 0.9, vb.y + vb.height * 0.3);
+  await expect(st.locator('.st-hd span')).toHaveText('Cố Cung · Khung 2/3');
+  // nút đóng video: về lại ảnh, nút ▶ Xem video còn
+  await st.locator('[data-vclose]').click();
+  await expect(st.locator('.st-vid')).toHaveCount(0);
+  await expect(pill).toBeVisible();
+  // mở lại, rồi chuyển khung: video phải dừng và gỡ
+  await pill.click();
+  const h = await st.locator('.st-vid video').elementHandle();
+  await page.keyboard.press('ArrowRight');
+  await expect(st.locator('.st-hd span')).toHaveText('Cố Cung · Khung 3/3');
+  await expect(st.locator('.st-vid')).toHaveCount(0);
+  expect(await h.evaluate(e => e.paused)).toBe(true);
+  expect(await h.evaluate(e => e.isConnected)).toBe(false);
+  // đóng story khi video đang chạy: video dừng
+  await page.keyboard.press('ArrowLeft');
+  await st.locator('[data-vid]').click();
+  const h2 = await st.locator('.st-vid video').elementHandle();
+  await page.keyboard.press('Escape');
+  await expect(page.locator('.story')).toHaveCount(0);
+  expect(await h2.evaluate(e => e.paused)).toBe(true);
+});

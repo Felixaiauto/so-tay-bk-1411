@@ -33,3 +33,17 @@ test('ảnh khung chụp đã gán đều có 2 cỡ và có nguồn ghi "chỉ 
     assert.ok(c && c.url && (c.personalUseOnly === true || /^(Unsplash|Pexels) License$/.test(c.license)), `thiếu nguồn cho ${s.img}`);
   }
 });
+
+test('khung có clip thì có video/<clip>.mp4, poster 900 và nguồn ghi "chỉ dùng cá nhân"', () => {
+  const shots = data.places.flatMap(p => p.photo.shots).filter(s => s.clip);
+  assert.ok(shots.length >= 4, `mới có ${shots.length} khung có clip`);
+  for (const s of shots) {
+    assert.ok(exists(`video/${s.clip}.mp4`), `thiếu video/${s.clip}.mp4`);
+    assert.ok(fs.statSync(new URL(`video/${s.clip}.mp4`, root)).size > 10_000, `video/${s.clip}.mp4 rỗng`);
+    assert.ok(exists(`img/${s.clip}-poster-900.webp`), `thiếu poster ${s.clip}`);
+    assert.match(s.clipDur, /^\d+:\d{2}$/, `clipDur ${s.clip}`);
+    assert.ok(s.clipTitle && s.clipTitle.length < 60, `clipTitle ${s.clip}`);
+    const c = data.credits.find(x => x.file === `${s.clip}.mp4`);
+    assert.ok(c && c.url && c.personalUseOnly === true, `thiếu nguồn cho ${s.clip}.mp4`);
+  }
+});
