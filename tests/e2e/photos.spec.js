@@ -76,26 +76,38 @@ test('story: sau khi chuyển khung, Shift+Tab không thoát khỏi overlay', as
   expect(await page.evaluate(() => document.querySelector('.overlay').contains(document.activeElement))).toBe(true);
 });
 
-test('tab Chụp ảnh: thư viện 9 dáng, 10 bộ ảnh theo ngày, mở story, dẫn tới chỉ dẫn đầy đủ', async ({ page }) => {
+test('tab Chụp ảnh: dải ngày, các điểm trong ngày, ô khung, mở story, đổi ngày dùng chung với Lịch trình', async ({ page }) => {
   await page.goto('./?now=2026-11-17T09:40#chup-anh');
   await expect(page.locator('.poses')).toHaveCount(0);
-  await expect(page.locator('.pcover')).toHaveCount(10);
-  await page.locator('[data-open-story="mo-dien-du"]').click();
-  await expect(page.locator('.story .st-hd span')).toHaveText('Vạn Lý Trường Thành · Mộ Điền Dụ · Khung 1/3');
-  await page.keyboard.press('Escape');
-  await page.locator('.pcover', { hasText: 'Cố Cung' }).locator('a.link').click();
-  await expect(page).toHaveURL(/#dd-co-cung\/chup-anh$/);
-  await expect(page.locator('[data-sec="chup-anh"] .psec-h')).toBeInViewport();
-});
-
-test('Chụp ảnh: Esc đóng story, focus trở về ảnh bìa đã chạm', async ({ page }) => {
-  await page.goto('./?now=2026-11-17T09:40#chup-anh');
-  const cover = page.locator('.pcover-img').first();
-  await cover.click();
-  await expect(page.locator('.story')).toBeVisible();
+  await expect(page.locator('.pcover')).toHaveCount(0);
+  await expect(page.locator('.day')).toHaveCount(5);
+  await expect(page.locator('.day[data-date="2026-11-17"]')).toHaveAttribute('aria-pressed', 'true');
+  await expect(page.locator('.pgroup')).toHaveCount(4);
+  await expect(page.locator('.ptile')).toHaveCount(9);
+  await expect(page.locator('.pgroup').first().locator('.eyebrow')).toHaveText('Cố Cung · 08:30');
+  const co = page.locator('.pgroup', { hasText: 'Cố Cung' }).locator('.ptile');
+  await expect(co).toHaveCount(3);
+  await expect(co.nth(0).locator('.ptile-clip')).toHaveCount(0);
+  await expect(co.nth(1).locator('.ptile-clip')).toHaveText('▶');
+  await expect(co.nth(1).locator('.ptile-n')).toHaveText('02');
+  await expect(co.nth(1)).toHaveAttribute('aria-label', /^Cố Cung · khung 02: .+/);
+  expect((await co.nth(1).boundingBox()).height).toBeGreaterThanOrEqual(44);
+  await co.nth(1).click();
+  await expect(page.locator('.story .st-hd span')).toHaveText('Cố Cung · Khung 2/3');
   await page.keyboard.press('Escape');
   await expect(page.locator('.story')).toHaveCount(0);
-  await expect(cover).toBeFocused();
+  await expect(co.nth(1)).toBeFocused();
+  await page.locator('.day[data-date="2026-11-16"]').click();
+  await expect(page.locator('.day[data-date="2026-11-16"]')).toHaveAttribute('aria-pressed', 'true');
+  await expect(page.locator('.ptile')).toHaveCount(6);
+  await expect(page.locator('.pgroup')).toHaveCount(2);
+  await expect(page.locator('.pgroup .eyebrow')).toHaveText(['Vạn Lý Trường Thành · Mộ Điền Dụ · 09:00', 'Di Hòa Viên · 14:45']);
+  await page.locator('#tabs a[data-v="lich-trinh"]').click();
+  await expect(page.locator('.day[data-date="2026-11-16"]')).toHaveAttribute('aria-pressed', 'true');
+  await page.locator('.day[data-date="2026-11-18"]').click();
+  await page.locator('#tabs a[data-v="chup-anh"]').click();
+  await expect(page.locator('.day[data-date="2026-11-18"]')).toHaveAttribute('aria-pressed', 'true');
+  await expect(page.locator('.pgroup .eyebrow').first()).toContainText('dự phòng');
 });
 
 test('story trên màn hình thấp: ‹ › nằm trên khối chữ và vẫn bấm được', async ({ page }) => {

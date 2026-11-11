@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
-import { placeWindows, whenText, placesByDay } from '../../js/places.js';
+import { placeWindows, whenText, placesByDay, placesOnDay } from '../../js/places.js';
 
 const data = JSON.parse(fs.readFileSync(new URL('../../data/tour.json', import.meta.url), 'utf8'));
 
@@ -22,3 +22,15 @@ test('nhóm theo ngày, mỗi điểm một lần, đủ 10 điểm', () => {
     ['2026-11-17', ['co-cung', 'canh-son', 'bao-tang-khoa-hoc', 'khu-olympic']],
   ]);
 });
+
+test('placesOnDay: các điểm trong ngày theo thứ tự lịch, giờ bắt đầu sớm nhất', () => {
+  assert.deepEqual(placesOnDay(data, '2026-11-17').map(x => [x.place.id, x.s, x.optional]), [
+    ['co-cung', '08:30', false], ['canh-son', '12:30', false], ['bao-tang-khoa-hoc', '14:15', false], ['khu-olympic', '16:30', false],
+  ]);
+  assert.deepEqual(placesOnDay(data, '2026-11-18').map(x => [x.place.id, x.s, x.optional]), [
+    ['bao-tang-tu-nhien', '08:30', true], ['tien-mon', '10:15', false],
+  ]);
+});
+test('placesOnDay: điểm có hai mục cùng ngày chỉ một lần', () =>
+  assert.deepEqual(placesOnDay(data, '2026-11-15').map(x => [x.place.id, x.s]), [['universal', '09:00']]));
+test('placesOnDay: ngày không có hoặc ngày lạ trả về rỗng', () => assert.deepEqual(placesOnDay(data, '2030-01-01'), []));

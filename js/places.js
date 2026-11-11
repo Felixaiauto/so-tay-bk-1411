@@ -40,3 +40,25 @@ export function placesByDay(data) {
   }
   return groups;
 }
+
+export function placesOnDay(data, date) {
+  const day = data.days.find(d => d.date === date);
+  const out = [];
+  if (!day) return out;
+  const byId = new Map();
+  for (const s of day.stops) {
+    if (!s.place) continue;
+    const g = byId.get(s.place);
+    if (!g) {
+      const place = data.places.find(p => p.id === s.place);
+      if (!place) continue;
+      const r = { place, s: s.s, optional: !!s.optional };
+      byId.set(s.place, r);
+      out.push(r);
+    } else {
+      if (s.s < g.s) g.s = s.s;
+      g.optional = g.optional && !!s.optional;
+    }
+  }
+  return out;
+}

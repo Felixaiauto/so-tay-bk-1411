@@ -1,22 +1,30 @@
 import { esc, imgTag } from '../dom.js';
-import { placesByDay } from '../places.js';
-import { fmtDM, dowOf } from '../time.js';
+import { placesOnDay } from '../places.js';
+import { dowShort } from '../time.js';
 import { openStory } from '../components/story.js';
 import { shotImg } from '../components/photo-section.js';
 
+const num = i => String(i + 1).padStart(2, '0');
+
 export function renderPhotos(ctx) {
-  const d = ctx.data;
-  let h = `<h1 class="view-h">Chụp ảnh</h1><div class="stack">`;
-  for (const g of placesByDay(d)) {
-    h += `<section class="pday"><span class="eyebrow">${esc(dowOf(g.date))} ${fmtDM(g.date)}</span>${g.places.map(p =>
-      `<article class="pcover"><button type="button" class="pcover-img" data-open-story="${esc(p.id)}" aria-label="Xem bộ ảnh ${esc(p.name)} · ${p.photo.shots.length} khung">${imgTag(shotImg(p, p.photo.shots[0]), 900, '')}<span class="pcover-n">${p.photo.shots.length} khung</span></button>
-        <div class="pcover-b"><h2 class="pcover-h">${esc(p.photo.headline)}</h2><p class="sub">${esc(p.name)}</p><a class="link" href="#dd-${esc(p.id)}/chup-anh">Xem chỉ dẫn đầy đủ</a></div></article>`).join('')}</section>`;
+  const { data, viewDate } = ctx;
+  let h = `<h1 class="view-h">Chụp ảnh</h1>
+    <nav class="days" aria-label="Chọn ngày"><div class="days-in">${data.days.map(d =>
+      `<button type="button" class="day" data-date="${d.date}" aria-pressed="${d.date === viewDate}"><b>${+d.date.slice(8)}</b><span>${dowShort(d.date)}</span></button>`).join('')}</div></nav>`;
+  const groups = placesOnDay(data, viewDate);
+  if (!groups.length) return h + '<p class="sub pnone">Ngày này không có điểm chụp ảnh.</p>';
+  h += '<div class="pgroups">';
+  for (const { place: p, s, optional } of groups) {
+    h += `<section class="pgroup"><span class="eyebrow">${esc(p.name)} · ${esc(s)}${optional ? ' · dự phòng' : ''}</span>
+      <div class="pgrid">${p.photo.shots.map((shot, i) =>
+        `<button type="button" class="ptile" data-place="${esc(p.id)}" data-i="${i}" aria-label="${esc(p.name)} · khung ${num(i)}: ${esc(shot.title)}">${imgTag(shotImg(p, shot), 900, '')}${shot.clip ? '<span class="ptile-clip" aria-hidden="true">▶</span>' : ''}<span class="ptile-n">${num(i)}</span></button>`).join('')}</div></section>`;
   }
   return h + '</div>';
 }
 
 export function mountPhotos(root, ctx) {
-  for (const b of root.querySelectorAll('[data-open-story]')) {
-    b.addEventListener('click', () => { b.focus(); openStory(ctx.data.places.find(p => p.id === b.dataset.openStory), 0); });
+  for (const b of root.querySelectorAll('.day')) b.addEventListener('click', () => ctx.setViewDate(b.dataset.date));
+  for (const b of root.querySelectorAll('.ptile')) {
+    b.addEventListener('click', () => { b.focus(); openStory(ctx.data.places.find(p => p.id === b.dataset.place), +b.dataset.i); });
   }
 }

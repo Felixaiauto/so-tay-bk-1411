@@ -246,13 +246,6 @@ body.has-bar{padding-top:var(--bar-h,0px)}
 @media (prefers-reduced-motion:reduce){.st-img::after{transition:none}}
 
 /* ===== Đợt 2 — tab chụp ảnh ===== */
-.pday{display:flex;flex-direction:column;gap:12px}
-.pcover{display:flex;flex-direction:column;gap:8px}
-.pcover-img{position:relative;display:block;width:100%;border-radius:6px;overflow:hidden;background:var(--line)}
-.pcover-img img{width:100%;aspect-ratio:3/2;object-fit:cover}
-.pcover-n{position:absolute;right:10px;bottom:10px;font-size:12px;font-weight:600;background:rgba(0,0,0,.55);color:#fff;border-radius:99px;padding:3px 10px}
-.pcover-h{font:700 22px/1.15 var(--f-display)}
-.pcover-b .link{display:inline-flex;align-items:center;min-height:44px}
 
 /* ===== Đợt 3 — clip mẫu ===== */
 .vbox{background:#1E1A16;border-radius:12px;overflow:hidden;color:#F5F0E6}
@@ -268,3 +261,12 @@ body.has-bar{padding-top:var(--bar-h,0px)}
 .st-vid video{width:100%;height:100%;object-fit:contain;display:block}
 .st-vx{position:absolute;left:50%;transform:translateX(-50%);bottom:calc(64px + var(--safe-b));z-index:4;min-height:44px;padding:0 18px;border-radius:99px;font-size:14px;font-weight:600;color:#fff;background:rgba(0,0,0,.55);border:1px solid rgba(255,255,255,.4)}
 .story.is-vid .st-bt{visibility:hidden}
+/* tab Chụp ảnh: các điểm trong ngày */
+.pgroups{display:flex;flex-direction:column;gap:20px;padding:6px 16px 24px}
+.pnone{padding:16px}
+.pgroup{display:flex;flex-direction:column;gap:8px}
+.pgrid{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.ptile{position:relative;display:block;min-height:44px;border-radius:8px;overflow:hidden;background:var(--line)}
+.ptile img{display:block;width:100%;aspect-ratio:4/5;object-fit:cover}
+.ptile-n{position:absolute;right:10px;bottom:6px;font:italic 600 30px/1 var(--f-display);color:#fff;text-shadow:0 2px 10px rgba(0,0,0,.55)}
+.ptile-clip{position:absolute;left:8px;top:8px;font-size:12px;font-weight:700;line-height:1;color:#fff;background:rgba(0,0,0,.55);border-radius:99px;padding:5px 9px}
