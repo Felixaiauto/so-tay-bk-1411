@@ -904,7 +904,7 @@
           {
             "id": "thien-dan-1",
             "title": "Toàn thân với Kỳ Niên Điện",
-            "img": "",
+            "img": "thien-dan-1",
             "where": "Chính giữa lối đá phía nam, cách bậc thềm khoảng 30 mét.",
             "camera": "Máy dọc, hạ ngang hông và ngửa nhẹ để mái điện vươn cao.",
             "pose": "Bước chậm về phía điện rồi ngoái đầu qua vai. Chụp liên tiếp khi đang bước.",
@@ -917,7 +917,7 @@
           {
             "id": "thien-dan-2",
             "title": "Bán thân, điện lệch một bên",
-            "img": "",
+            "img": "thien-dan-2",
             "where": "Góc tây nam của sân, nơi ít người đi ngang.",
             "camera": "Máy ngang tầm mắt. Người chụp lùi xa rồi zoom 2x để điện to ra sau lưng.",
             "pose": "Xoay người 45°, một tay giữ khăn quàng, mắt nhìn về phía điện.",
@@ -930,7 +930,7 @@
           {
             "id": "thien-dan-3",
             "title": "Con đường Đan Bệ Kiều",
-            "img": "",
+            "img": "thien-dan-3",
             "where": "Giữa đường lát đá, hai hàng bách ở hai bên.",
             "camera": "Máy dọc, hạ thấp gần mặt đất để con đường hút về xa.",
             "pose": "Dang hai tay, mặt hơi ngửa lên trời. Hợp với ảnh quay lưng.",
@@ -985,7 +985,7 @@
           {
             "id": "bao-tang-tu-nhien-1",
             "title": "Nhỏ bé bên bộ xương khủng long",
-            "img": "",
+            "img": "bao-tang-tu-nhien-1",
             "where": "Đứng sát chân bệ trưng bày, lệch về một đầu của bộ xương.",
             "camera": "Máy ngang, hạ thấp và ngửa lên để thấy độ cao. Tắt flash.",
             "pose": "Một tay chỉ lên cao, mặt ngước theo tay.",
@@ -998,7 +998,7 @@
           {
             "id": "bao-tang-tu-nhien-2",
             "title": "Ngắm hiện vật qua tủ kính",
-            "img": "",
+            "img": "bao-tang-tu-nhien-2",
             "where": "Đứng nghiêng cạnh tủ kính có đèn.",
             "camera": "Máy dọc, chụp ngang từ bên hông để ánh đèn tủ chiếu lên mặt.",
             "pose": "Hơi cúi về phía tủ kính, tay đặt hờ lên mép tủ, không nhìn máy.",
@@ -1053,7 +1053,7 @@
           {
             "id": "tien-mon-1",
             "title": "Giữa phố, lầu Tiễn Lâu sau lưng",
-            "img": "",
+            "img": "tien-mon-1",
             "where": "Giữa phố đi bộ, quay lưng về phía bắc. Đẹp nhất lúc lên đèn, 17:15–17:30.",
             "camera": "Máy dọc, cao ngang ngực. Chờ khoảng trống giữa dòng người.",
             "pose": "Bước thẳng về phía máy, mắt nhìn sang một bên phố.",
@@ -1066,7 +1066,7 @@
           {
             "id": "tien-mon-2",
             "title": "Tựa tường gạch trong ngõ",
-            "img": "",
+            "img": "tien-mon-2",
             "where": "Ngõ Dương Mai Trúc, chọn đoạn tường gạch xám có nắng xiên.",
             "camera": "Máy ngang tầm mắt, để con ngõ chạy sâu vào một bên khung hình.",
             "pose": "Tựa vai vào tường, một chân co nhẹ, tay cầm cốc cà phê.",
@@ -1079,7 +1079,7 @@
           {
             "id": "tien-mon-3",
             "title": "Cả nhóm dưới cổng bài lâu",
-            "img": "",
+            "img": "tien-mon-3",
             "where": "Đầu phía bắc của phố, đứng lùi ra để lấy hết cổng.",
             "camera": "Máy ngang, hạ thấp ngang hông để cổng cao lên.",
             "pose": "Đứng so le trước sau, người thấp đứng trước. Mỗi người nhìn một hướng tự nhiên hơn xếp hàng ngang.",
@@ -1135,7 +1135,7 @@
           {
             "id": "universal-1",
             "title": "Quả địa cầu ở cổng",
-            "img": "",
+            "img": "universal-1",
             "where": "Trước quả địa cầu, tới trước 9:00 khi chưa đông.",
             "camera": "Máy dọc, hạ thấp ngang gối và ngửa lên để lấy trọn quả cầu.",
             "pose": "Dang hai tay hoặc bật nhảy. Chụp liên tiếp rồi chọn tấm đẹp nhất.",
@@ -1148,7 +1148,7 @@
           {
             "id": "universal-2",
             "title": "Lâu đài ở phía xa",
-            "img": "",
+            "img": "universal-2",
             "where": "Lối vào làng trong khu Harry Potter, lâu đài nằm cuối đường.",
             "camera": "Máy dọc, ngang tầm vai người mẫu, để người lệch sang một bên.",
             "pose": "Quay lưng về máy, ngước nhìn lâu đài. Khăn quàng hoặc mũ là đạo cụ tốt.",
@@ -1161,7 +1161,7 @@
           {
             "id": "universal-3",
             "title": "Cả nhóm trên phố CityWalk",
-            "img": "",
+            "img": "universal-3",
             "where": "Phố CityWalk lúc 17:30, đèn bảng hiệu đã bật.",
             "camera": "Máy ngang, đo sáng theo mặt người để nền đèn không cháy.",
             "pose": "Khoác vai nhau bước về phía máy, vừa đi vừa cười.",
@@ -1232,7 +1232,7 @@
           {
             "id": "mo-dien-du-1",
             "title": "Tường thành uốn lượn sau lưng",
-            "img": "",
+            "img": "mo-dien-du-1",
             "where": "Vọng lâu 15–16, đứng sát tường chắn, nhìn ngược về phía đông.",
             "camera": "Máy ngang tầm mắt, để người chiếm một phần ba trái và tường thành chạy chéo phần còn lại.",
             "pose": "Xoay người 45°, tay đút túi áo, mắt nhìn theo dãy núi.",
@@ -1245,7 +1245,7 @@
           {
             "id": "mo-dien-du-2",
             "title": "Bước lên bậc đá",
-            "img": "",
+            "img": "mo-dien-du-2",
             "where": "Đoạn dốc giữa hai vọng lâu. Người chụp đứng thấp hơn 5–6 bậc.",
             "camera": "Máy dọc, ngửa lên theo hướng dốc.",
             "pose": "Bước lên một bậc rồi ngoái lại nhìn máy, tay vịn nhẹ tường.",
@@ -1258,7 +1258,7 @@
           {
             "id": "mo-dien-du-3",
             "title": "Bóng người trong cửa vòm",
-            "img": "",
+            "img": "mo-dien-du-3",
             "where": "Bên trong vọng lâu, người mẫu đứng ngay khung cửa vòm nhìn ra núi.",
             "camera": "Máy dọc, chạm vào vùng trời sáng để đo sáng. Người sẽ thành bóng đen rõ nét.",
             "pose": "Đứng nghiêng, một tay chạm thành cửa. Dáng càng rõ đường nét càng đẹp.",
@@ -1328,7 +1328,7 @@
           {
             "id": "di-hoa-vien-1",
             "title": "Cầu 17 nhịp trong nắng chiều",
-            "img": "",
+            "img": "di-hoa-vien-1",
             "where": "Bờ đông hồ, phía nam chân cầu, khoảng 16:00.",
             "camera": "Máy ngang tầm mắt, để cầu chạy ngang hai phần ba khung hình.",
             "pose": "Quay lưng hoặc nghiêng người nhìn về cầu, hai tay đút túi áo khoác.",
@@ -1341,7 +1341,7 @@
           {
             "id": "di-hoa-vien-2",
             "title": "Trường Lang hun hút",
-            "img": "",
+            "img": "di-hoa-vien-2",
             "where": "Giữa hành lang, đứng lệch tâm một chút để thấy hàng cột.",
             "camera": "Máy dọc, cao ngang ngực, giữ thẳng để cột không bị nghiêng.",
             "pose": "Bước chậm ra xa máy rồi ngoái lại.",
@@ -1354,7 +1354,7 @@
           {
             "id": "di-hoa-vien-3",
             "title": "Ngồi lan can đá bên hồ",
-            "img": "",
+            "img": "di-hoa-vien-3",
             "where": "Bờ hồ Côn Minh, chọn chỗ thấy Phật Hương Các ở xa.",
             "camera": "Máy ngang, hạ ngang tầm người ngồi.",
             "pose": "Ngồi nghiêng, một chân duỗi, mắt nhìn ra hồ.",
@@ -1430,7 +1430,7 @@
           {
             "id": "co-cung-1",
             "title": "Một mình giữa sân Thái Hòa Điện",
-            "img": "",
+            "img": "co-cung-1",
             "where": "Trục giữa, ngay sau Thái Hòa Môn. Chụp lúc 8:30–9:00 khi sân còn trống.",
             "camera": "Máy dọc, hạ thấp ngang hông để nền gạch kéo dài về phía điện.",
             "pose": "Bước về phía điện, áo khoác mở. Ảnh quay lưng cho cảm giác sân rộng nhất.",
@@ -1443,7 +1443,7 @@
           {
             "id": "co-cung-2",
             "title": "Tường đỏ",
-            "img": "",
+            "img": "co-cung-2",
             "where": "Các lối đi dài ở phía đông nội đình, chọn đoạn tường có nắng.",
             "camera": "Máy ngang ngực, chụp song song với tường, người ở một phần ba trái.",
             "pose": "Tựa nhẹ vai vào tường, mặt quay ra nắng. Áo trắng hoặc kem nổi nhất.",
@@ -1456,7 +1456,7 @@
           {
             "id": "co-cung-3",
             "title": "Cánh cửa đinh vàng",
-            "img": "",
+            "img": "co-cung-3",
             "where": "Trước một cánh cổng lớn sơn đỏ có hàng đinh vàng.",
             "camera": "Máy dọc, ngang tầm mắt, lấy cửa kín khung hình.",
             "pose": "Một tay chạm lên đinh cửa, mặt nghiêng nhìn theo tay.",
@@ -1527,7 +1527,7 @@
           {
             "id": "canh-son-1",
             "title": "Cố Cung trải dưới chân",
-            "img": "",
+            "img": "canh-son-1",
             "where": "Lan can phía nam của Vạn Xuân Đình.",
             "camera": "Máy ngang. Buổi trưa ngược sáng nên chạm vào mặt người để đo sáng.",
             "pose": "Đứng nghiêng ở mép phải khung hình, mắt nhìn xuống các mái ngói.",
@@ -1540,7 +1540,7 @@
           {
             "id": "canh-son-2",
             "title": "Tựa lan can trên đỉnh đồi",
-            "img": "",
+            "img": "canh-son-2",
             "where": "Góc đông nam của đình, tựa vào lan can đá.",
             "camera": "Máy dọc, cao ngang ngực.",
             "pose": "Tựa khuỷu tay lên lan can, người xoay nửa về phía Cố Cung.",
@@ -1596,7 +1596,7 @@
           {
             "id": "bao-tang-khoa-hoc-1",
             "title": "Ngước nhìn giữa sảnh thông tầng",
-            "img": "",
+            "img": "bao-tang-khoa-hoc-1",
             "where": "Giữa sảnh chính, dưới mô hình treo.",
             "camera": "Máy dọc, hạ thấp ngang gối và ngửa hẳn lên.",
             "pose": "Ngước mặt, một tay chỉ lên mô hình.",
@@ -1609,7 +1609,7 @@
           {
             "id": "bao-tang-khoa-hoc-2",
             "title": "Đang chơi với thí nghiệm",
-            "img": "",
+            "img": "bao-tang-khoa-hoc-2",
             "where": "Bên một mô hình tương tác ở tầng 2.",
             "camera": "Máy ngang, đứng ngang tầm trẻ em. Chụp khi mọi người đang chăm chú.",
             "pose": "Không cần nhìn máy. Ảnh lúc đang thử nghiệm tự nhiên hơn ảnh đứng tạo dáng.",
@@ -1662,7 +1662,7 @@
           {
             "id": "khu-olympic-1",
             "title": "Tổ Chim lúc lên đèn",
-            "img": "",
+            "img": "khu-olympic-1",
             "where": "Giữa quảng trường trung tâm, 17:00–17:15.",
             "camera": "Máy ngang, chạm vào công trình để đo sáng và giữ chắc tay vì trời tối.",
             "pose": "Quay lưng hoặc nghiêng người nhìn về sân vận động.",
@@ -1675,7 +1675,7 @@
           {
             "id": "khu-olympic-2",
             "title": "Dang tay giữa quảng trường",
-            "img": "",
+            "img": "khu-olympic-2",
             "where": "Trục giữa quảng trường, công trình ở phía xa sau lưng.",
             "camera": "Máy dọc, hạ thấp ngang hông.",
             "pose": "Dang rộng tay, áo khoác mở để gió thổi.",
@@ -1987,6 +1987,214 @@
       "license": "CC0",
       "url": "https://commons.wikimedia.org/wiki/File:Dim_sum_at_Shi-Art_Chinese_Cuisine.jpg",
       "personalUseOnly": false
+    },
+    {
+      "file": "thien-dan-1",
+      "title": "zhuanlan.zhihu.com",
+      "author": "Zhihu column (travel pose tutorial, anonymous poster)",
+      "license": "không rõ (dùng cá nhân)",
+      "url": "https://zhuanlan.zhihu.com/p/763708570",
+      "personalUseOnly": true
+    },
+    {
+      "file": "thien-dan-2",
+      "title": "goods.taobao.com",
+      "author": "Taobao photographer listing (Beijing travel photography)",
+      "license": "không rõ (dùng cá nhân)",
+      "url": "https://goods.taobao.com/t/_4423/d3d5f4576d8d3aabff5048e3d80cabe3.html",
+      "personalUseOnly": true
+    },
+    {
+      "file": "thien-dan-3",
+      "title": "bbs.zol.com.cn",
+      "author": "Visit Beijing / 天坛丹陛桥 article photo",
+      "license": "không rõ (dùng cá nhân)",
+      "url": "https://bbs.zol.com.cn/dcbbs/d34019_155231.html",
+      "personalUseOnly": true
+    },
+    {
+      "file": "bao-tang-tu-nhien-1",
+      "title": "snow.js.org",
+      "author": "Shiro (blog: 自然的怀抱——北京自然博物馆参观随感)",
+      "license": "không rõ (dùng cá nhân)",
+      "url": "https://snow.js.org/notes-nnhm/",
+      "personalUseOnly": true
+    },
+    {
+      "file": "bao-tang-tu-nhien-2",
+      "title": "beijing.qianlong.com",
+      "author": "News photo from Beijing Natural History Museum report (Chinese media, via Bing)",
+      "license": "không rõ (dùng cá nhân)",
+      "url": "https://beijing.qianlong.com/2022/0921/7642841.shtml",
+      "personalUseOnly": true
+    },
+    {
+      "file": "tien-mon-1",
+      "title": "www.aihanfu.com",
+      "author": "Hanfu event report (腊八刷街 前门), via Bing",
+      "license": "không rõ (dùng cá nhân)",
+      "url": "https://www.aihanfu.com/wen/6505/",
+      "personalUseOnly": true
+    },
+    {
+      "file": "tien-mon-2",
+      "title": "www.sohu.com",
+      "author": "北京LOOK (Sohu article 杨梅竹斜街漫游攻略)",
+      "license": "không rõ (dùng cá nhân)",
+      "url": "https://www.sohu.com/a/490123286_604122",
+      "personalUseOnly": true
+    },
+    {
+      "file": "tien-mon-3",
+      "title": "xinwen.bjd.com.cn",
+      "author": "京报网 / Beijing Daily (Qianmen Guofeng Festival)",
+      "license": "không rõ (dùng cá nhân)",
+      "url": "https://xinwen.bjd.com.cn/content/s662dc613e4b0fa9ed6b97d6a.html",
+      "personalUseOnly": true
+    },
+    {
+      "file": "universal-1",
+      "title": "www.yourdisney.com.tw",
+      "author": "Your Disney travel guide (Universal Beijing guide), photo uncredited",
+      "license": "không rõ (dùng cá nhân)",
+      "url": "https://www.yourdisney.com.tw/sc/universalbeijing/universal-studios-bejing-guide/",
+      "personalUseOnly": true
+    },
+    {
+      "file": "universal-2",
+      "title": "bk.taobao.com",
+      "author": "Taobao travel-photographer listing (Beijing Universal)",
+      "license": "không rõ (dùng cá nhân)",
+      "url": "https://bk.taobao.com/k/jingneilvxingpaizhao_3562/c1751f54a9d95e37d75707f13586365e.html",
+      "personalUseOnly": true
+    },
+    {
+      "file": "universal-3",
+      "title": "www.universalbeijingresort.com",
+      "author": "Universal Beijing Resort official website (universalbeijingresort.com)",
+      "license": "không rõ (dùng cá nhân)",
+      "url": "https://www.universalbeijingresort.com/zh_CN/Summer_fun",
+      "personalUseOnly": true
+    },
+    {
+      "file": "mo-dien-du-1",
+      "title": "www.klook.cn",
+      "author": "Klook (Beijing Mutianyu travel photo experience)",
+      "license": "không rõ (dùng cá nhân)",
+      "url": "https://www.klook.cn/zh-CN/activity/185955-beijing-mutianyu-greatwall-traditional-chinese-costume-photoshoot/",
+      "personalUseOnly": true
+    },
+    {
+      "file": "mo-dien-du-2",
+      "title": "www.klook.cn",
+      "author": "Klook (Beijing Mutianyu travel photo experience)",
+      "license": "không rõ (dùng cá nhân)",
+      "url": "https://www.klook.cn/zh-CN/activity/185955-beijing-mutianyu-greatwall-traditional-chinese-costume-photoshoot/",
+      "personalUseOnly": true
+    },
+    {
+      "file": "mo-dien-du-3",
+      "title": "www.sohu.com",
+      "author": "Xiaohongshu-style post via Bing (shared on Zhihu/travel blog)",
+      "license": "không rõ (dùng cá nhân)",
+      "url": "https://www.sohu.com/a/708618831_121678350",
+      "personalUseOnly": true
+    },
+    {
+      "file": "di-hoa-vien-1",
+      "title": "zhongce.sina.com.cn",
+      "author": "新浪众测 (Sina Zhongce user review)",
+      "license": "không rõ (dùng cá nhân)",
+      "url": "https://zhongce.sina.com.cn/article/view/178237",
+      "personalUseOnly": true
+    },
+    {
+      "file": "di-hoa-vien-2",
+      "title": "www.klook.cn",
+      "author": "Klook (tourist photo experience page)",
+      "license": "không rõ (dùng cá nhân)",
+      "url": "https://www.klook.cn/zh-CN/activity/122954-china-travel-tourists-take-photos-in-hanfu-beijing/",
+      "personalUseOnly": true
+    },
+    {
+      "file": "di-hoa-vien-3",
+      "title": "www.aihanfu.com",
+      "author": "爱汉服 aihanfu.com photo feature (Yiheyuan hanfu photography)",
+      "license": "không rõ (dùng cá nhân)",
+      "url": "https://www.aihanfu.com/wen/8451/",
+      "personalUseOnly": true
+    },
+    {
+      "file": "co-cung-1",
+      "title": "zhuanlan.zhihu.com",
+      "author": "Follow相机 (via Zhihu column 史上最全故宫拍照攻略)",
+      "license": "không rõ (dùng cá nhân)",
+      "url": "https://zhuanlan.zhihu.com/p/616079913",
+      "personalUseOnly": true
+    },
+    {
+      "file": "co-cung-2",
+      "title": "k.sina.cn",
+      "author": "桐子摄影师 (Weibo, via Bing)",
+      "license": "không rõ (dùng cá nhân)",
+      "url": "https://k.sina.cn/article_3291418514_pc42f0f92027015rlj.html?from=photo",
+      "personalUseOnly": true
+    },
+    {
+      "file": "co-cung-3",
+      "title": "zhuanlan.zhihu.com",
+      "author": "Follow相机 (via Zhihu column)",
+      "license": "không rõ (dùng cá nhân)",
+      "url": "https://zhuanlan.zhihu.com/p/614440268",
+      "personalUseOnly": true
+    },
+    {
+      "file": "canh-son-1",
+      "title": "zhuanlan.zhihu.com",
+      "author": "亲测8个城市15个旅拍 (travel blog via Bing)",
+      "license": "không rõ (dùng cá nhân)",
+      "url": "https://zhuanlan.zhihu.com/p/676501662",
+      "personalUseOnly": true
+    },
+    {
+      "file": "canh-son-2",
+      "title": "bbs.zol.com.cn",
+      "author": "中关村在线摄影论坛 (ZOL photography forum)",
+      "license": "không rõ (dùng cá nhân)",
+      "url": "https://bbs.zol.com.cn/dcbbs/d23_39130.html",
+      "personalUseOnly": true
+    },
+    {
+      "file": "bao-tang-khoa-hoc-1",
+      "title": "vip.people.com.cn",
+      "author": "人民网图片 (people.cn photo, via Bing)",
+      "license": "không rõ (dùng cá nhân)",
+      "url": "http://vip.people.com.cn/albumsDetail?aid=1417065",
+      "personalUseOnly": true
+    },
+    {
+      "file": "bao-tang-khoa-hoc-2",
+      "title": "www.mindyn.com",
+      "author": "唛丁科技 / Chinese exhibit-design company (via Bing)",
+      "license": "không rõ (dùng cá nhân)",
+      "url": "https://www.mindyn.com/blog/l-23bf4cf4-4fd7-48d9-aacd-92b67889e291",
+      "personalUseOnly": true
+    },
+    {
+      "file": "khu-olympic-1",
+      "title": "dp.pconline.com.cn",
+      "author": "强哥视界 photo blog (via pconline/Bing)",
+      "license": "không rõ (dùng cá nhân)",
+      "url": "https://dp.pconline.com.cn/photo/1929123.html",
+      "personalUseOnly": true
+    },
+    {
+      "file": "khu-olympic-2",
+      "title": "k.sina.com.cn",
+      "author": "Sina News (出游随拍：手机摄影记录鸟巢)",
+      "license": "không rõ (dùng cá nhân)",
+      "url": "https://k.sina.com.cn/article_1097353192_416847e8055011wr6.html",
+      "personalUseOnly": true
     }
   ]
 }

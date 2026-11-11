@@ -23,3 +23,13 @@ test('fonts.css chỉ trỏ tệp nội bộ, có Playfair nghiêng và subset v
 test('có đủ biểu tượng', () => {
   for (const f of ['icons/icon-192.png', 'icons/icon-512.png', 'icons/apple-touch-icon.png']) assert.ok(exists(f), f);
 });
+
+test('ảnh khung chụp đã gán đều có 2 cỡ và có nguồn ghi "chỉ dùng cá nhân"', () => {
+  const shots = data.places.flatMap(p => p.photo.shots).filter(s => s.img);
+  assert.ok(shots.length >= 15, `mới có ${shots.length} khung có ảnh mẫu`);
+  for (const s of shots) {
+    assert.ok(exists(`img/${s.img}-160.webp`) && exists(`img/${s.img}-900.webp`), s.img);
+    const c = data.credits.find(x => x.file === s.img);
+    assert.ok(c && c.personalUseOnly === true && c.url, `thiếu nguồn cho ${s.img}`);
+  }
+});
