@@ -17,7 +17,7 @@ export function renderPhotos(ctx) {
   for (const { place: p, s, optional } of groups) {
     h += `<section class="pgroup"><span class="eyebrow">${esc(p.name)} · ${esc(s)}${optional ? ' · dự phòng' : ''}</span>
       <div class="pgrid">${p.photo.shots.map((shot, i) =>
-        `<button type="button" class="ptile" data-place="${esc(p.id)}" data-i="${i}" aria-label="${esc(p.name)} · khung ${num(i)}: ${esc(shot.title)}">${imgTag(shotImg(p, shot), 900, '')}${shot.clip ? '<span class="ptile-clip" aria-hidden="true">▶</span>' : ''}<span class="ptile-n">${num(i)}</span></button>`).join('')}</div></section>`;
+        `<button type="button" class="ptile" data-place="${esc(p.id)}" data-i="${i}" aria-label="${esc(p.name)} · khung ${num(i)}: ${esc(shot.title)}${shot.clip ? ' · có video' : ''}">${imgTag(shotImg(p, shot), 900, '')}${shot.clip ? '<span class="ptile-clip" aria-hidden="true">▶</span>' : ''}<span class="ptile-n">${num(i)}</span></button>`).join('')}</div></section>`;
   }
   return h + '</div>';
 }

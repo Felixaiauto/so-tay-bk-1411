@@ -1,4 +1,4 @@
-import { esc, imgTag, clipVideoTag, playClip } from '../dom.js';
+import { esc, imgTag, clipVideoTag, playClip, stopClip } from '../dom.js';
 import { douyinSearch, xhsSearch } from '../links.js';
 import { openStory } from './story.js';
 
@@ -34,13 +34,26 @@ export function photoSectionHtml(place) {
   return h + '</section>';
 }
 
-export function mountPhotoSection(root, place) {
-  for (const b of root.querySelectorAll('[data-story]')) b.addEventListener('click', () => { b.focus(); openStory(place, +b.dataset.story); });
-  for (const b of root.querySelectorAll('.vbox [data-play]')) {
-    b.addEventListener('click', () => {
-      const media = b.closest('.vmedia');
-      media.innerHTML = clipVideoTag(b.closest('.vbox').dataset.clip);
-      playClip(media)?.focus();
-    });
+const posters = new WeakMap();
+
+// Dừng mọi video inline đang phát trong trang, trả khung về poster + nút ▶ (trừ `except`).
+export function stopInlineClips(scope = document, except = null) {
+  for (const media of scope.querySelectorAll('.vbox .vmedia')) {
+    if (media === except || !media.querySelector('video')) continue;
+    stopClip(media);
+    media.innerHTML = posters.get(media) ?? '';
   }
+}
+
+export function mountPhotoSection(root, place) {
+  for (const b of root.querySelectorAll('[data-story]')) b.addEventListener('click', () => { b.focus(); stopInlineClips(document); openStory(place, +b.dataset.story); });
+  root.addEventListener('click', e => {
+    const b = e.target.closest('.vbox [data-play]');
+    if (!b || !root.contains(b)) return;
+    const media = b.closest('.vmedia');
+    stopInlineClips(document, media);
+    posters.set(media, media.innerHTML);
+    media.innerHTML = clipVideoTag(b.closest('.vbox').dataset.clip);
+    playClip(media)?.focus();
+  });
 }

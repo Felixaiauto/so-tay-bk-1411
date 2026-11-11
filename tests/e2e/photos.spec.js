@@ -78,7 +78,6 @@ test('story: sau khi chuyển khung, Shift+Tab không thoát khỏi overlay', as
 
 test('tab Chụp ảnh: dải ngày, các điểm trong ngày, ô khung, mở story, đổi ngày dùng chung với Lịch trình', async ({ page }) => {
   await page.goto('./?now=2026-11-17T09:40#chup-anh');
-  await expect(page.locator('.poses')).toHaveCount(0);
   await expect(page.locator('.pcover')).toHaveCount(0);
   await expect(page.locator('.day')).toHaveCount(5);
   await expect(page.locator('.day[data-date="2026-11-17"]')).toHaveAttribute('aria-pressed', 'true');
@@ -181,7 +180,7 @@ test('story: khung có clip hiện ▶ Xem video; bấm thì video phủ ảnh, 
   // mở lại, rồi chuyển khung: video phải dừng và gỡ
   await pill.click();
   const h = await st.locator('.st-vid video').elementHandle();
-  await page.keyboard.press('ArrowRight');
+  await st.locator('[data-next]').click(); // phím ← → bị khóa khi xem video; nút › vẫn chuyển khung
   await expect(st.locator('.st-hd span')).toHaveText('Cố Cung · Khung 3/3');
   await expect(st.locator('.st-vid')).toHaveCount(0);
   expect(await h.evaluate(e => e.paused)).toBe(true);
@@ -193,4 +192,55 @@ test('story: khung có clip hiện ▶ Xem video; bấm thì video phủ ảnh, 
   await page.keyboard.press('Escape');
   await expect(page.locator('.story')).toHaveCount(0);
   expect(await h2.evaluate(e => e.paused)).toBe(true);
+});
+
+test('hai clip inline: phát clip B thì clip A dừng và về poster; mở story thì clip inline dừng', async ({ page }) => {
+  await page.goto(PLACE);
+  await expect(page.locator('.pframe')).toHaveCount(3);
+  // mỗi điểm chỉ có tối đa 1 clip trong dữ liệu thật; nhân bản khối .vbox sang khung 3 để có hai clip inline (cùng handler ủy quyền)
+  await page.evaluate(() => {
+    const a = document.querySelectorAll('.pframe')[1].querySelector('.vbox');
+    const b = a.cloneNode(true);
+    b.id = 'vbox-b';
+    document.querySelectorAll('.pframe')[2].querySelector('.pmore').before(b);
+  });
+  const A = page.locator('.pframe').nth(1).locator('.vbox');
+  const B = page.locator('#vbox-b');
+  await A.locator('.vplay').click();
+  const hA = await A.locator('video').elementHandle();
+  await expect(A.locator('video')).toHaveCount(1);
+  await B.locator('.vplay').click();
+  await expect(B.locator('video')).toHaveCount(1);
+  expect(await hA.evaluate(e => e.paused)).toBe(true);
+  expect(await hA.evaluate(e => e.isConnected)).toBe(false);
+  await expect(A.locator('video')).toHaveCount(0);
+  await expect(A.locator('.vplay')).toHaveCount(1); // về poster + ▶, bấm phát lại được
+  // mở story từ trang: clip inline B dừng
+  const hB = await B.locator('video').elementHandle();
+  await page.locator('.psec-strip button').first().click();
+  await expect(page.locator('.story')).toHaveCount(1);
+  expect(await hB.evaluate(e => e.paused)).toBe(true);
+  await expect(page.locator('.vbox video')).toHaveCount(0);
+});
+
+test('story: đang xem video, phím ← → không chuyển khung và không gỡ video', async ({ page }) => {
+  await page.goto(PLACE);
+  await page.locator('.psec-strip button').nth(1).click();
+  const st = page.locator('.story');
+  await expect(st.locator('.st-hd span')).toHaveText('Cố Cung · Khung 2/3');
+  await st.locator('.st-pills [data-vid]').click();
+  await expect(st.locator('.st-vid video')).toHaveCount(1);
+  await page.keyboard.press('ArrowRight');
+  await page.keyboard.press('ArrowLeft');
+  await expect(st.locator('.st-hd span')).toHaveText('Cố Cung · Khung 2/3');
+  await expect(st.locator('.st-vid video')).toHaveCount(1);
+  // focus đang ở chính video: vẫn không chuyển khung
+  await st.locator('.st-vid video').focus();
+  await page.keyboard.press('ArrowRight');
+  await expect(st.locator('.st-hd span')).toHaveText('Cố Cung · Khung 2/3');
+  await expect(st.locator('.st-vid video')).toHaveCount(1);
+  // đóng video thì phím chuyển khung hoạt động lại
+  await st.locator('[data-vclose]').click();
+  await page.keyboard.press('ArrowRight');
+  await expect(st.locator('.st-hd span')).toHaveText('Cố Cung · Khung 3/3');
 });

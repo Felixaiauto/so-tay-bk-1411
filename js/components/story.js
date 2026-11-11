@@ -47,7 +47,10 @@ export function openStory(place, start = 0) {
     root.classList.toggle('is-clean', clean);
     root.focus();
   };
-  const onKey = e => { if (e.key === 'ArrowLeft') go(-1); else if (e.key === 'ArrowRight') go(1); };
+  const onKey = e => {
+    if (root.classList.contains('is-vid') || e.target?.tagName === 'VIDEO') return;
+    if (e.key === 'ArrowLeft') go(-1); else if (e.key === 'ArrowRight') go(1);
+  };
   const ov = openOverlay(`<div class="story" data-story-root tabindex="-1">${storyInner(place, i)}</div>`, {
     label: `Ảnh mẫu ${place.name}`, cls: 'ov-story',
     onClose: () => { stopVid(); document.removeEventListener('keydown', onKey); },
