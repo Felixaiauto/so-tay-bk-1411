@@ -49,3 +49,27 @@ test('địa điểm không tồn tại → danh sách', async ({ page }) => {
   await page.goto(`${NOW}#dd-khong-co`);
   await expect(page.locator('.pl')).toHaveCount(10);
 });
+
+test('dải mục dính nằm dưới thanh lưu offline, không bị che', async ({ page }) => {
+  await page.goto(`${NOW}#dd-co-cung`);
+  await page.evaluate(() => scrollTo(0, 900));
+  // Đặt --bar-h rồi đo trong cùng một lượt chạy, để offline.js không chen vào giữa chừng.
+  const top = await page.evaluate(() => {
+    document.body.classList.add('has-bar');
+    document.body.style.setProperty('--bar-h', '48px');
+    return document.querySelector('.pchips').getBoundingClientRect().top;
+  });
+  expect(top).toBeGreaterThanOrEqual(48);
+  const secTop = await page.evaluate(() => {
+    document.body.style.setProperty('--bar-h', '48px');
+    document.querySelector('[data-sec="luu-y"]').scrollIntoView({ block: 'start', behavior: 'instant' });
+    return document.querySelector('[data-sec="luu-y"] .sec-h').getBoundingClientRect().top;
+  });
+  expect(secTop).toBeGreaterThanOrEqual(48 + 44);
+});
+
+test('chép từ khóa hiện thông báo trạng thái', async ({ page }) => {
+  await page.goto(`${NOW}#dd-co-cung`);
+  await page.evaluate(() => { const b = document.createElement('button'); b.dataset.copy = 'x'; document.body.appendChild(b); b.click(); });
+  await expect(page.locator('#toast[role="status"]')).toContainText('Đã chép từ khóa');
+});
