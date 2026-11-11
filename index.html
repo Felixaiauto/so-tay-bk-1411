@@ -1,3 +1,29 @@
 <!DOCTYPE html>
-<html lang="vi"><head><meta charset="utf-8"><title>Sổ tay đoàn Bắc Kinh</title></head>
-<body><main id="app">Đang dựng</main></body></html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#1E1A16">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="Bắc Kinh">
+<title>Sổ tay đoàn Bắc Kinh</title>
+<link rel="manifest" href="./manifest.webmanifest">
+<link rel="apple-touch-icon" href="./icons/apple-touch-icon.png">
+<link rel="icon" href="./icons/icon-192.png">
+<link rel="stylesheet" href="./css/fonts.css">
+<link rel="stylesheet" href="./css/styles.css">
+<script src="./assets.js"></script>
+<script type="module" src="./js/main.js"></script>
+</head>
+<body>
+<div id="offline-bar" class="offline-bar" role="status" aria-live="polite" hidden></div>
+<main id="app" class="app"><p class="boot">Đang mở sổ tay…</p></main>
+<footer class="foot">
+  <span id="checkedOn"></span>
+  <details><summary>Nguồn ảnh</summary><ul id="credList"></ul></details>
+</footer>
+<nav class="tabbar" aria-label="Mục chính"><ul id="tabs"></ul></nav>
+</body>
+</html>
