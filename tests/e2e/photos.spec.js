@@ -78,7 +78,7 @@ test('story: sau khi chuyển khung, Shift+Tab không thoát khỏi overlay', as
 
 test('tab Chụp ảnh: thư viện 9 dáng, 10 bộ ảnh theo ngày, mở story, dẫn tới chỉ dẫn đầy đủ', async ({ page }) => {
   await page.goto('./?now=2026-11-17T09:40#chup-anh');
-  await expect(page.locator('.poses > div')).toHaveCount(9);
+  await expect(page.locator('.poses')).toHaveCount(0);
   await expect(page.locator('.pcover')).toHaveCount(10);
   await page.locator('[data-open-story="mo-dien-du"]').click();
   await expect(page.locator('.story .st-hd span')).toHaveText('Vạn Lý Trường Thành · Mộ Điền Dụ · Khung 1/3');

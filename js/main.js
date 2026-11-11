@@ -62,7 +62,7 @@ function render() {
 
 function renderChrome(data) {
   document.getElementById('tabs').innerHTML = enabledTabs(FEATURES).map(v =>
-    `<li><a href="#${v}" data-v="${v}"><svg viewBox="0 0 24 24" aria-hidden="true">${ICONS[v]}</svg>${LABELS[v]}</a></li>`).join('');
+    `<li${v === 'chup-anh' ? ' class="tab-main"' : ''}><a href="#${v}" data-v="${v}">${v === 'chup-anh' ? '<span class="fab">' : ''}<svg viewBox="0 0 24 24" aria-hidden="true">${ICONS[v]}</svg>${v === 'chup-anh' ? '</span>' : ''}${LABELS[v]}</a></li>`).join('');
   const [y, m, d] = data.tour.checkedOn.split('-');
   document.getElementById('checkedOn').textContent = `Giờ mở cửa và giá vé kiểm tra ngày ${+d}/${+m}/${y}. Xem lại trên kênh chính thức trước khi đi.`;
   document.getElementById('credList').innerHTML = data.credits.map(c =>

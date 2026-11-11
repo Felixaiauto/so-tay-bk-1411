@@ -1,13 +1,12 @@
 import { esc, imgTag } from '../dom.js';
 import { placesByDay } from '../places.js';
 import { fmtDM, dowOf } from '../time.js';
-import { poseLibraryHtml } from '../components/poses.js';
 import { openStory } from '../components/story.js';
 import { shotImg } from '../components/photo-section.js';
 
 export function renderPhotos(ctx) {
   const d = ctx.data;
-  let h = `<h1 class="view-h">Chụp ảnh</h1><div class="stack">${poseLibraryHtml(d.poses)}`;
+  let h = `<h1 class="view-h">Chụp ảnh</h1><div class="stack">`;
   for (const g of placesByDay(d)) {
     h += `<section class="pday"><span class="eyebrow">${esc(dowOf(g.date))} ${fmtDM(g.date)}</span>${g.places.map(p =>
       `<article class="pcover"><button type="button" class="pcover-img" data-open-story="${esc(p.id)}" aria-label="Xem bộ ảnh ${esc(p.name)} · ${p.photo.shots.length} khung">${imgTag(shotImg(p, p.photo.shots[0]), 900, '')}<span class="pcover-n">${p.photo.shots.length} khung</span></button>
