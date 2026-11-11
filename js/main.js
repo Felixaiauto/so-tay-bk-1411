@@ -38,6 +38,8 @@ function render() {
     data: state.data, now, viewDate: state.viewDate, route, features: FEATURES, ui: state.ui,
     setViewDate: d => { const y = scrollY; state.viewDate = d; render(); scrollTo(0, y); },
   };
+  const d = app.querySelector('details.past'); // đọc trạng thái mở ngay trước khi thay DOM (sự kiện toggle đến chậm)
+  if (d) state.ui.pastOpen = d.open;
   const [r, m] = VIEWS[view];
   app.innerHTML = r(ctx);
   m(app, ctx);

@@ -43,12 +43,30 @@ def build(root=ROOT):
     }
 
 
+
+
+def stamp_sw(root, a):
+    """Ghi dòng đầu sw.js = '// version: <app>-<media>' để byte của sw.js đổi mỗi lần đăng (iOS mới nhận ra SW mới)."""
+    path = os.path.join(root, "sw.js")
+    line = f"// version: {a['app']['version']}-{a['media']['version']}"
+    body = ""
+    if os.path.exists(path):
+        with open(path, encoding="utf-8", newline="") as f:
+            body = f.read().replace("\r\n", "\n")
+    first, sep, rest = body.partition("\n")
+    if first.startswith("// version:"):
+        body = rest if sep else ""
+    with open(path, "w", encoding="utf-8", newline="\n") as f:
+        f.write(line + "\n" + body)
+
+
 def main():
     if hasattr(sys.stdout, "reconfigure"):
         sys.stdout.reconfigure(encoding="utf-8")  # console Windows cp1252 không in được tiếng Việt
     a = build()
-    with open(os.path.join(ROOT, "assets.js"), "w", encoding="utf-8") as f:
+    with open(os.path.join(ROOT, "assets.js"), "w", encoding="utf-8", newline="\n") as f:
         f.write("self.ASSETS = " + json.dumps(a, ensure_ascii=False, indent=1) + ";\n")
+    stamp_sw(ROOT, a)
     print(f"app {a['app']['version']} ({len(a['app']['files'])} tệp) · media {a['media']['version']} ({len(a['media']['files'])} tệp)")
 
 

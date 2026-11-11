@@ -1,9 +1,13 @@
+// version: 9721350304-c1e853b2cf
 /* Service worker sổ tay Bắc Kinh. Đường dẫn tương đối theo vị trí sw.js. */
 importScripts('./assets.js', './sw-range.js');
 
 const A = self.ASSETS;
-const APP = 'app-' + A.app.version;
-const MEDIA = 'media-' + A.media.version;
+// Tiền tố kho theo đường dẫn phạm vi SW, để nhiều site chung một origin github.io không xóa nhầm kho của nhau.
+// Giữ phép biến đổi này đồng bộ với cachePrefix() trong js/offline.js (SW không import được module ES).
+const P = 'bk' + new URL(self.registration.scope).pathname.replace(/[^a-z0-9]/gi, '-') + '-';
+const APP = P + 'app-' + A.app.version;
+const MEDIA = P + 'media-' + A.media.version;
 const TOTAL = A.app.files.length + A.media.files.length;
 
 async function post(msg) {
@@ -39,44 +43,58 @@ async function fillAll() {
   if (appFailed.length) throw new Error('Thiếu tệp app: ' + appFailed.join(', '));
 }
 
+let filling = null; // chặn hai lượt lưu chạy chồng nhau (cài đặt + bấm Thử lại)
+const fillAllOnce = () => (filling ||= fillAll().finally(() => { filling = null; }));
+
 self.addEventListener('install', e => {
-  e.waitUntil(fillAll().then(() => self.skipWaiting()));
+  e.waitUntil(fillAllOnce().then(() => self.skipWaiting()));
 });
 
 self.addEventListener('activate', e => {
   e.waitUntil((async () => {
-    for (const k of await caches.keys()) if (k !== APP && k !== MEDIA) await caches.delete(k);
+    for (const k of await caches.keys()) if (k.startsWith(P) && k !== APP && k !== MEDIA) await caches.delete(k);
     await self.clients.claim();
   })());
 });
 
 self.addEventListener('message', e => {
-  if (e.data && e.data.type === 'retry') e.waitUntil(fillAll().catch(() => {}));
+  if (e.data && e.data.type === 'retry') e.waitUntil(fillAllOnce().catch(() => {}));
 });
 
 async function networkFirst(req, ms) {
   const cache = await caches.open(APP);
+  let timer;
   try {
     const r = await Promise.race([
       fetch(req, { cache: 'no-store' }),
-      new Promise((_, rej) => setTimeout(() => rej(new Error('timeout')), ms)),
+      new Promise((_, rej) => { timer = setTimeout(() => rej(new Error('timeout')), ms); }),
     ]);
     if (r.ok) { await cache.put('./data/tour.json', r.clone()); return r; }
-  } catch (e) { /* mạng chậm/bị chặn: dùng bản đã lưu */ }
+    await r.arrayBuffer().catch(() => {}); // đọc bỏ thân phản hồi lỗi
+  } catch (e) { /* mạng chậm/bị chặn: dùng bản đã lưu */ } finally { clearTimeout(timer); }
   return (await cache.match('./data/tour.json')) || new Response('{}', { status: 503, headers: { 'Content-Type': 'application/json' } });
 }
 
+// Chỉ tìm trong hai kho của site này (không tra cứu toàn cục).
+async function fromCaches(req) {
+  for (const name of [APP, MEDIA]) {
+    const r = await (await caches.open(name)).match(req, { ignoreSearch: true });
+    if (r) return r;
+  }
+  return undefined;
+}
+
 async function rangeFromCache(req) {
-  const cached = await caches.match(req.url, { ignoreSearch: true });
+  const cached = await fromCaches(req.url);
   if (!cached) return fetch(req);
-  const buf = await cached.arrayBuffer();
-  const r = parseRange(req.headers.get('range'), buf.byteLength);
-  if (!r) return new Response(null, { status: 416, headers: { 'Content-Range': 'bytes */' + buf.byteLength } });
-  return new Response(buf.slice(r.start, r.end + 1), {
+  const blob = await cached.blob();
+  const r = parseRange(req.headers.get('range'), blob.size);
+  if (!r) return new Response(null, { status: 416, headers: { 'Content-Range': 'bytes */' + blob.size } });
+  return new Response(blob.slice(r.start, r.end + 1), {
     status: 206,
     headers: {
       'Content-Type': cached.headers.get('Content-Type') || 'video/mp4',
-      'Content-Range': 'bytes ' + r.start + '-' + r.end + '/' + buf.byteLength,
+      'Content-Range': 'bytes ' + r.start + '-' + r.end + '/' + blob.size,
       'Content-Length': String(r.end - r.start + 1),
       'Accept-Ranges': 'bytes',
     },
@@ -88,10 +106,10 @@ self.addEventListener('fetch', e => {
   const url = new URL(req.url);
   if (req.method !== 'GET' || url.origin !== self.location.origin) return;
   if (req.mode === 'navigate') {
-    e.respondWith(caches.match('./index.html', { ignoreSearch: true }).then(r => r || fetch(req)));
+    e.respondWith(fromCaches('./index.html').then(r => r || fetch(req)));
     return;
   }
   if (url.pathname.endsWith('/data/tour.json')) { e.respondWith(networkFirst(req, 3000)); return; }
   if (req.headers.has('range')) { e.respondWith(rangeFromCache(req)); return; }
-  e.respondWith(caches.match(req, { ignoreSearch: true }).then(r => r || fetch(req)));
+  e.respondWith(fromCaches(req).then(r => r || fetch(req)));
 });

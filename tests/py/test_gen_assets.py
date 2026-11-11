@@ -42,6 +42,36 @@ class GenAssetsTest(unittest.TestCase):
         touch(self.root, "assets.js", b"self.ASSETS = {}")
         self.assertEqual(a1["app"]["version"], gen_assets.build(self.root)["app"]["version"])
 
+    def read_sw(self):
+        with open(os.path.join(self.root, "sw.js"), encoding="utf-8", newline="") as f:
+            return f.read()
+
+    def test_stamp_sw_prepends_then_replaces_first_line(self):
+        touch(self.root, "sw.js", b"/* sw */\nconsole.log(1);\n")
+        a = gen_assets.build(self.root)
+        gen_assets.stamp_sw(self.root, a)
+        want = f"// version: {a['app']['version']}-{a['media']['version']}"
+        self.assertEqual(self.read_sw(), want + "\n/* sw */\nconsole.log(1);\n")
+        touch(self.root, "data/tour.json", b"changed")
+        a2 = gen_assets.build(self.root)
+        gen_assets.stamp_sw(self.root, a2)
+        want2 = f"// version: {a2['app']['version']}-{a2['media']['version']}"
+        self.assertNotEqual(want, want2)
+        self.assertEqual(self.read_sw(), want2 + "\n/* sw */\nconsole.log(1);\n")
+
+    def test_stamp_sw_creates_missing_file_and_is_idempotent(self):
+        a = gen_assets.build(self.root)
+        gen_assets.stamp_sw(self.root, a)
+        once = self.read_sw()
+        self.assertTrue(once.startswith("// version: "))
+        gen_assets.stamp_sw(self.root, a)
+        self.assertEqual(self.read_sw(), once)
+
+    def test_sw_js_is_not_in_the_lists(self):
+        touch(self.root, "sw.js")
+        a = gen_assets.build(self.root)
+        self.assertNotIn("./sw.js", a["app"]["files"])
+
 
 if __name__ == "__main__":
     unittest.main()
