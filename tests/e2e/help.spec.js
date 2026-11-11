@@ -40,3 +40,45 @@ test('câu giao tiếp phóng to, Esc và × đều đóng', async ({ page }) =>
   await expect(page.getByRole('dialog')).toHaveCount(0);
   await expect(page).toHaveURL(/#tro-giup$/);
 });
+
+test('chưa có dữ liệu xe: không hiện khối "Xe của đoàn"', async ({ page }) => {
+  await go(page);
+  await expect(page.locator('.car')).toHaveCount(0);
+});
+
+// Dữ liệu giả cho nhánh đã điền liên hệ (dữ liệu thật anh chưa gửi).
+async function withContacts(context, patch) {
+  const fs = await import('node:fs');
+  const data = JSON.parse(fs.readFileSync('data/tour.json', 'utf8'));
+  Object.assign(data.contacts, patch);
+  await context.route('**/data/tour.json', r => r.fulfill({ status: 200, contentType: 'application/json', body: JSON.stringify(data) }));
+}
+
+test('xe của đoàn: biển số to, tên tài xế, gọi điện và gọi WeChat chép ID', async ({ page, context }) => {
+  await context.grantPermissions(['clipboard-read', 'clipboard-write']);
+  await withContacts(context, { driver: { zh: '王强', nameVi: 'Vương Cường', phone: '+86 138 0000 1234', plate: '京A·12345', wechat: 'wangqiang_bj' } });
+  await go(page);
+  const car = page.locator('.car');
+  await expect(car.locator('.plate')).toHaveText('Biển số 京A·12345');
+  expect(await car.locator('.plate').evaluate(e => parseFloat(getComputedStyle(e).fontSize))).toBeGreaterThanOrEqual(40);
+  await expect(car).toContainText('Vương Cường');
+  await expect(car).toContainText('王强');
+  await expect(car.getByRole('link', { name: 'Gọi điện' })).toHaveAttribute('href', 'tel:+8613800001234');
+  await car.getByRole('button', { name: 'Gọi WeChat' }).click();
+  await expect(car.locator('.car-note')).toContainText('wangqiang_bj');
+  expect(await page.evaluate(() => navigator.clipboard.readText())).toBe('wangqiang_bj');
+});
+
+test('chỉ có biển số: hiện biển số, không có nút gọi', async ({ page, context }) => {
+  await withContacts(context, { driver: { zh: '', nameVi: '', phone: '', plate: '京B·88888', wechat: '' } });
+  await go(page);
+  await expect(page.locator('.car .plate')).toContainText('京B·88888');
+  await expect(page.locator('.car .btn')).toHaveCount(0);
+});
+
+test('có khách sạn: nút "Về khách sạn" mở thẻ tài xế chữ Trung', async ({ page, context }) => {
+  await withContacts(context, { hotel: { name: 'Khách sạn Thử', zh: '测试酒店', addressZh: '北京市东城区测试路1号', addressVi: 'Số 1 đường Thử', lat: null, lng: null, phone: '' } });
+  await go(page);
+  await page.locator('[data-hotel]').click();
+  await expect(page.getByRole('dialog')).toContainText('北京市东城区测试路1号');
+});

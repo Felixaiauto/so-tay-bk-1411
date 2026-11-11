@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-12h",
+  "version": "2026-11-12i",
   "tour": {
     "id": "bac-kinh-2026-11",
     "title": "Bắc Kinh",
@@ -19,9 +19,11 @@
       "phone": ""
     },
     "driver": {
-      "name": "",
+      "zh": "",
+      "nameVi": "",
       "phone": "",
-      "plate": ""
+      "plate": "",
+      "wechat": ""
     },
     "hotline": "",
     "zalo": "",

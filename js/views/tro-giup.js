@@ -3,14 +3,30 @@ import { telHref } from '../links.js';
 import { openOverlay } from '../overlay.js';
 import { openDriverCard, hotelTarget, hasHotel } from '../components/driver-card.js';
 
+// Xe của đoàn: biển số to để tìm xe ở bãi đỗ; gọi điện hoặc gọi WeChat (SIM khách thường không gọi thoại được).
+export function carHtml(d) {
+  if (!d || !(d.plate || d.phone || d.wechat)) return '';
+  const who = [d.nameVi && `<b>${esc(d.nameVi)}</b>`, d.zh && `<span lang="zh-CN">${esc(d.zh)}</span>`].filter(Boolean).join(' ');
+  const acts = [
+    d.phone && `<a class="btn btn-pri" href="${telHref(d.phone)}">Gọi điện</a>`,
+    d.wechat && '<button type="button" class="btn btn-sec" data-wechat>Gọi WeChat</button>',
+  ].filter(Boolean).join('');
+  return `<section class="card car" aria-labelledby="h-car"><h2 class="eyebrow" id="h-car">Xe của đoàn</h2>
+    ${d.plate ? `<p class="plate"><span class="sr">Biển số </span>${esc(d.plate)}</p>` : ''}
+    ${who ? `<p class="car-drv">Tài xế ${who}</p>` : ''}
+    ${d.phone || d.wechat ? `<p class="car-ids">${[d.phone && esc(d.phone), d.wechat && `WeChat: ${esc(d.wechat)}`].filter(Boolean).join('<br>')}</p>` : ''}
+    ${acts ? `<div class="car-acts">${acts}</div>` : ''}
+    <p class="car-note" role="status" hidden></p></section>`;
+}
+
 export function renderHelp(ctx) {
   const c = ctx.data.contacts;
   let h = '<h1 class="view-h">Trợ giúp</h1><div class="stack">';
   h += hasHotel(c.hotel)
     ? `<button type="button" class="help-big" data-hotel><span class="eyebrow">Về khách sạn</span><b lang="zh-CN">${esc(c.hotel.zh)}</b><span class="sub">${esc(c.hotel.name)} · mở thẻ cho tài xế</span></button>`
     : '';
+  h += carHtml(c.driver);
   const rows = [];
-  if (c.driver?.phone) rows.push(`<a class="help-row" href="${telHref(c.driver.phone)}"><b>Gọi tài xế</b><span>${esc([c.driver.name, c.driver.plate, c.driver.phone].filter(Boolean).join(' · '))}</span></a>`);
   if (c.hotline) rows.push(`<a class="help-row" href="${telHref(c.hotline)}"><b>Gọi hotline</b><span>${esc(c.hotline)}</span></a>`);
   if (c.zalo) rows.push(`<a class="help-row" href="${esc(c.zalo)}" target="_blank" rel="noopener"><b>Nhóm Zalo của đoàn</b><span>Mở Zalo</span></a>`);
   if (rows.length) h += `<div class="card help-list">${rows.join('')}</div>`;
@@ -26,6 +42,14 @@ export function renderHelp(ctx) {
 export function mountHelp(root, ctx) {
   const c = ctx.data.contacts;
   root.querySelector('[data-hotel]')?.addEventListener('click', () => openDriverCard(hotelTarget(c.hotel), null));
+  root.querySelector('[data-wechat]')?.addEventListener('click', () => {
+    const id = c.driver.wechat;
+    navigator.clipboard?.writeText(id).catch(() => {});
+    const note = root.querySelector('.car-note');
+    note.textContent = `Đã chép ID WeChat của tài xế: ${id}. Trong WeChat, chạm biểu tượng kính lúp, dán ID, mở khung chat rồi chọn Gọi thoại.`;
+    note.hidden = false;
+    location.href = 'weixin://';
+  });
   root.querySelector('[data-embassy]')?.addEventListener('click', () => openDriverCard({ ...c.embassy, zhFull: c.embassy.zh }, c.hotel));
   for (const b of root.querySelectorAll('[data-phrase]')) {
     b.addEventListener('click', () => {
