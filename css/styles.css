@@ -239,3 +239,16 @@ body.has-bar{padding-top:var(--bar-h,0px)}
 .story.is-clean .st-bt,.story.is-clean .st-hd span,.story.is-clean .st-nav{opacity:0;pointer-events:none;visibility:hidden}
 .story.is-clean .st-img::after{opacity:0}
 @media (prefers-reduced-motion:reduce){.st-img::after{transition:none}}
+
+/* ===== Đợt 2 — tab chụp ảnh ===== */
+.poses{display:grid;grid-template-columns:repeat(3,1fr);gap:12px 8px}
+.poses div{display:flex;flex-direction:column;align-items:center;gap:4px;text-align:center}
+.poses svg{width:54px;height:76px}
+.poses span{font-size:13px;line-height:1.3;color:var(--muted)}
+.pday{display:flex;flex-direction:column;gap:12px}
+.pcover{display:flex;flex-direction:column;gap:8px}
+.pcover-img{position:relative;display:block;width:100%;border-radius:6px;overflow:hidden;background:var(--line)}
+.pcover-img img{width:100%;aspect-ratio:3/2;object-fit:cover}
+.pcover-n{position:absolute;right:10px;bottom:10px;font-size:12px;font-weight:600;background:rgba(0,0,0,.55);color:#fff;border-radius:99px;padding:3px 10px}
+.pcover-h{font:700 22px/1.15 var(--f-display)}
+.pcover-b .link{display:inline-flex;align-items:center;min-height:44px}

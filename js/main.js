@@ -7,9 +7,10 @@ import { renderPrep, mountPrep } from './views/chuan-bi.js';
 import { renderHelp, mountHelp } from './views/tro-giup.js';
 import './copy.js';
 import { renderPlaces, renderPlace, mountPlace } from './views/dia-diem.js';
+import { renderPhotos, mountPhotos } from './views/chup-anh.js';
 import { initOffline, notifyVersion } from './offline.js';
 
-export const FEATURES = { places: true, photos: false, afterTour: false };
+export const FEATURES = { places: true, photos: true, afterTour: false };
 export const enabledTabs = f => ['lich-trinh', ...(f.places && f.photos ? ['dia-diem', 'chup-anh'] : []), 'chuan-bi', 'tro-giup'];
 
 const ICONS = {
@@ -25,6 +26,7 @@ const VIEWS = {
   'chuan-bi': [renderPrep, mountPrep],
   'tro-giup': [renderHelp, mountHelp],
   'dia-diem': [renderPlaces, () => {}],
+  'chup-anh': [renderPhotos, mountPhotos],
   'place': [renderPlace, mountPlace],
 };
 

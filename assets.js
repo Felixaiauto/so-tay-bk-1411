@@ -1,6 +1,6 @@
 self.ASSETS = {
  "app": {
-  "version": "e198d579e7",
+  "version": "ed5fc947b4",
   "files": [
    "./",
    "./index.html",
@@ -38,6 +38,7 @@ self.ASSETS = {
    "./icons/icon-512.png",
    "./js/components/driver-card.js",
    "./js/components/photo-section.js",
+   "./js/components/poses.js",
    "./js/components/story.js",
    "./js/copy.js",
    "./js/dom.js",
@@ -51,6 +52,7 @@ self.ASSETS = {
    "./js/store.js",
    "./js/time.js",
    "./js/views/chuan-bi.js",
+   "./js/views/chup-anh.js",
    "./js/views/dia-diem.js",
    "./js/views/lich-trinh.js",
    "./js/views/tro-giup.js"

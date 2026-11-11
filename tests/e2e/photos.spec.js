@@ -75,3 +75,15 @@ test('story: sau khi chuyển khung, Shift+Tab không thoát khỏi overlay', as
   await page.keyboard.press('Tab');
   expect(await page.evaluate(() => document.querySelector('.overlay').contains(document.activeElement))).toBe(true);
 });
+
+test('tab Chụp ảnh: thư viện 9 dáng, 10 bộ ảnh theo ngày, mở story, dẫn tới chỉ dẫn đầy đủ', async ({ page }) => {
+  await page.goto('./?now=2026-11-17T09:40#chup-anh');
+  await expect(page.locator('.poses > div')).toHaveCount(9);
+  await expect(page.locator('.pcover')).toHaveCount(10);
+  await page.locator('[data-open-story="mo-dien-du"]').click();
+  await expect(page.locator('.story .st-hd span')).toHaveText('Vạn Lý Trường Thành · Mộ Điền Dụ · Khung 1/3');
+  await page.keyboard.press('Escape');
+  await page.locator('.pcover', { hasText: 'Cố Cung' }).locator('a.link').click();
+  await expect(page).toHaveURL(/#dd-co-cung\/chup-anh$/);
+  await expect(page.locator('[data-sec="chup-anh"] .psec-h')).toBeInViewport();
+});
