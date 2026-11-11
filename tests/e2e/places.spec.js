@@ -52,6 +52,7 @@ test('địa điểm không tồn tại → danh sách', async ({ page }) => {
 
 test('dải mục dính nằm dưới thanh lưu offline, không bị che', async ({ page }) => {
   await page.goto(`${NOW}#dd-co-cung`);
+  await expect(page.locator('.pchips')).toBeVisible();
   await page.evaluate(() => scrollTo(0, 900));
   // Đặt --bar-h rồi đo trong cùng một lượt chạy, để offline.js không chen vào giữa chừng.
   const top = await page.evaluate(() => {
