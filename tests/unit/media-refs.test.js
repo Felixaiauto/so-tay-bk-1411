@@ -30,6 +30,6 @@ test('ảnh khung chụp đã gán đều có 2 cỡ và có nguồn ghi "chỉ 
   for (const s of shots) {
     assert.ok(exists(`img/${s.img}-160.webp`) && exists(`img/${s.img}-900.webp`), s.img);
     const c = data.credits.find(x => x.file === s.img);
-    assert.ok(c && c.personalUseOnly === true && c.url, `thiếu nguồn cho ${s.img}`);
+    assert.ok(c && c.url && (c.personalUseOnly === true || /^(Unsplash|Pexels) License$/.test(c.license)), `thiếu nguồn cho ${s.img}`);
   }
 });

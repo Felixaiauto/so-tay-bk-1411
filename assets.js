@@ -1,6 +1,6 @@
 self.ASSETS = {
  "app": {
-  "version": "1533ab8567",
+  "version": "84e34b51bc",
   "files": [
    "./",
    "./index.html",
@@ -59,7 +59,7 @@ self.ASSETS = {
   ]
  },
  "media": {
-  "version": "d7deb510d2",
+  "version": "4ec459ba4e",
   "files": [
    "./img/bao-tang-khoa-hoc-1-160.webp",
    "./img/bao-tang-khoa-hoc-1-900.webp",

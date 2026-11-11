@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-12c",
+  "version": "2026-11-12d",
   "tour": {
     "id": "bac-kinh-2026-11",
     "title": "Bắc Kinh",
@@ -2021,14 +2021,6 @@
       "personalUseOnly": true
     },
     {
-      "file": "bao-tang-tu-nhien-2",
-      "title": "beijing.qianlong.com",
-      "author": "",
-      "license": "không rõ (dùng cá nhân)",
-      "url": "https://beijing.qianlong.com/2022/0921/7642841.shtml",
-      "personalUseOnly": true
-    },
-    {
       "file": "tien-mon-1",
       "title": "www.aihanfu.com",
       "author": "",
@@ -2117,14 +2109,6 @@
       "personalUseOnly": true
     },
     {
-      "file": "di-hoa-vien-3",
-      "title": "www.aihanfu.com",
-      "author": "爱汉服 aihanfu.com photo feature (Yiheyuan hanfu photography)",
-      "license": "không rõ (dùng cá nhân)",
-      "url": "https://www.aihanfu.com/wen/8451/",
-      "personalUseOnly": true
-    },
-    {
       "file": "co-cung-1",
       "title": "zhuanlan.zhihu.com",
       "author": "",
@@ -2181,20 +2165,36 @@
       "personalUseOnly": true
     },
     {
-      "file": "khu-olympic-1",
-      "title": "dp.pconline.com.cn",
-      "author": "",
-      "license": "không rõ (dùng cá nhân)",
-      "url": "https://dp.pconline.com.cn/photo/1929123.html",
-      "personalUseOnly": true
-    },
-    {
       "file": "khu-olympic-2",
       "title": "k.sina.com.cn",
       "author": "Sina News (出游随拍：手机摄影记录鸟巢)",
       "license": "không rõ (dùng cá nhân)",
       "url": "https://k.sina.com.cn/article_1097353192_416847e8055011wr6.html",
       "personalUseOnly": true
+    },
+    {
+      "file": "bao-tang-tu-nhien-2",
+      "title": "unsplash",
+      "author": "Phuong Nguyen",
+      "license": "Unsplash License",
+      "url": "https://unsplash.com/photos/woman-observing-artwork-in-a-dimly-lit-gallery-m7JGbj5mnY0",
+      "personalUseOnly": false
+    },
+    {
+      "file": "di-hoa-vien-3",
+      "title": "pexels",
+      "author": "Valentina Bešker",
+      "license": "Pexels License",
+      "url": "https://www.pexels.com/photo/traditional-chinese-attire-at-summer-palace-40598834/",
+      "personalUseOnly": false
+    },
+    {
+      "file": "khu-olympic-1",
+      "title": "pexels",
+      "author": "Rain Lü",
+      "license": "Pexels License",
+      "url": "https://www.pexels.com/photo/illuminated-beijing-national-stadium-at-night-30027099/",
+      "personalUseOnly": false
     }
   ]
 }
