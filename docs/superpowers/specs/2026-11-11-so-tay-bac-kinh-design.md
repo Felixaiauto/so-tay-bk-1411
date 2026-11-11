@@ -200,7 +200,7 @@ Chân trang của mọi tab, giữ lại từ bản nháp:
 ### 5.7 Trợ giúp (`#tro-giup`) — đợt 1
 Thứ tự từ trên xuống:
 1. **Về khách sạn:** mở thẻ tài xế của khách sạn.
-2. **Xe của đoàn:** biển số chữ to (để tìm xe ở bãi đỗ), tên tài xế (phiên âm tiếng Việt + chữ Hán), nút **Gọi điện** và **Gọi WeChat** (chép ID WeChat rồi mở WeChat — SIM khách thường không gọi thoại được). Sau đó **Gọi hotline**, **Nhóm Zalo**. Số điện thoại lưu dạng quốc tế (`+86…`, `+84…`) để `tel:` gọi đúng khi đang ở Trung Quốc. Dòng nào chưa có dữ liệu thì ẩn.
+2. **Xe của đoàn:** biển số chữ to (để tìm xe ở bãi đỗ), tên tài xế (phiên âm tiếng Việt + chữ Hán), nút **Gọi điện** và **Gọi WeChat** (mở WeChat, kèm hướng dẫn gọi tài xế từ nhóm WeChat của đoàn — SIM khách thường không gọi thoại được; tên nhóm lấy từ `contacts.wechatGroup` nếu có). Sau đó **Gọi hotline**, **Nhóm Zalo**. Số điện thoại lưu dạng quốc tế (`+86…`, `+84…`) để `tel:` gọi đúng khi đang ở Trung Quốc. Dòng nào chưa có dữ liệu thì ẩn.
 3. **Khẩn cấp:** 110 · 120 · 119 (`tel:`).
 4. **Câu giao tiếp hay dùng** (5 câu của bản nháp). Chạm vào câu nào thì phóng to toàn màn hình (overlay).
 5. **Đại sứ quán Việt Nam:** địa chỉ, nút mở thẻ tài xế (dùng `contacts.embassy`).
@@ -216,7 +216,7 @@ Danh sách vé từng điểm của bản nháp bị bỏ, vì đã có trong t�
             "brand": "Landtour Mẫu", "checkedOn": "2026-11-11" },
   "contacts": {
     "hotel":   { "name": "", "zh": "", "addressZh": "", "addressVi": "", "lat": null, "lng": null, "phone": "" },
-    "driver":  { "zh": "", "nameVi": "", "phone": "", "plate": "", "wechat": "" },
+    "driver":  { "zh": "", "nameVi": "", "phone": "", "plate": "" }, "wechatGroup": "",
     "hotline": "", "zalo": "",
     "flightBack": { "airport": "PEK|PKX", "time": "" },
     "embassy": { "name": "Đại sứ quán Việt Nam", "zh": "越南大使馆", "addressZh": "朝阳区光华路32号", "addressVi": "Số 32 đường Quang Hoa, quận Triều Dương", "lat": null, "lng": null, "phone": "" }

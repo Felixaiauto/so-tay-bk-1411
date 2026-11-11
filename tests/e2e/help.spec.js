@@ -54,9 +54,8 @@ async function withContacts(context, patch) {
   await context.route('**/data/tour.json', r => r.fulfill({ status: 200, contentType: 'application/json', body: JSON.stringify(data) }));
 }
 
-test('xe của đoàn: biển số to, tên tài xế, gọi điện và gọi WeChat chép ID', async ({ page, context }) => {
-  await context.grantPermissions(['clipboard-read', 'clipboard-write']);
-  await withContacts(context, { driver: { zh: '王强', nameVi: 'Vương Cường', phone: '+86 138 0000 1234', plate: '京A·12345', wechat: 'wangqiang_bj' } });
+test('xe của đoàn: biển số to, tên tài xế, gọi điện và gọi WeChat qua nhóm của đoàn', async ({ page, context }) => {
+  await withContacts(context, { driver: { zh: '王强', nameVi: 'Vương Cường', phone: '+86 138 0000 1234', plate: '京A·12345' }, wechatGroup: 'Đoàn Bắc Kinh 14/11' });
   await go(page);
   const car = page.locator('.car');
   await expect(car.locator('.plate')).toHaveText('Biển số 京A·12345');
@@ -65,15 +64,17 @@ test('xe của đoàn: biển số to, tên tài xế, gọi điện và gọi W
   await expect(car).toContainText('王强');
   await expect(car.getByRole('link', { name: 'Gọi điện' })).toHaveAttribute('href', 'tel:+8613800001234');
   await car.getByRole('button', { name: 'Gọi WeChat' }).click();
-  await expect(car.locator('.car-note')).toContainText('wangqiang_bj');
-  expect(await page.evaluate(() => navigator.clipboard.readText())).toBe('wangqiang_bj');
+  await expect(car.locator('.car-note')).toContainText('nhóm "Đoàn Bắc Kinh 14/11"');
+  await expect(car.locator('.car-note')).toContainText('Gọi thoại');
 });
 
-test('chỉ có biển số: hiện biển số, không có nút gọi', async ({ page, context }) => {
-  await withContacts(context, { driver: { zh: '', nameVi: '', phone: '', plate: '京B·88888', wechat: '' } });
+test('chỉ có biển số: hiện biển số, không có nút gọi điện, vẫn gọi WeChat qua nhóm', async ({ page, context }) => {
+  await withContacts(context, { driver: { zh: '', nameVi: '', phone: '', plate: '京B·88888' } });
   await go(page);
   await expect(page.locator('.car .plate')).toContainText('京B·88888');
-  await expect(page.locator('.car .btn')).toHaveCount(0);
+  await expect(page.locator('.car a.btn')).toHaveCount(0);
+  await page.locator('.car [data-wechat]').click();
+  await expect(page.locator('.car-note')).toContainText('nhóm WeChat của đoàn');
 });
 
 test('có khách sạn: nút "Về khách sạn" mở thẻ tài xế chữ Trung', async ({ page, context }) => {

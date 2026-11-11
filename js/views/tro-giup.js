@@ -5,17 +5,17 @@ import { openDriverCard, hotelTarget, hasHotel } from '../components/driver-card
 
 // Xe của đoàn: biển số to để tìm xe ở bãi đỗ; gọi điện hoặc gọi WeChat (SIM khách thường không gọi thoại được).
 export function carHtml(d) {
-  if (!d || !(d.plate || d.phone || d.wechat)) return '';
+  if (!d || !(d.plate || d.phone)) return '';
   const who = [d.nameVi && `<b>${esc(d.nameVi)}</b>`, d.zh && `<span lang="zh-CN">${esc(d.zh)}</span>`].filter(Boolean).join(' ');
   const acts = [
     d.phone && `<a class="btn btn-pri" href="${telHref(d.phone)}">Gọi điện</a>`,
-    d.wechat && '<button type="button" class="btn btn-sec" data-wechat>Gọi WeChat</button>',
+    '<button type="button" class="btn btn-sec" data-wechat>Gọi WeChat</button>',
   ].filter(Boolean).join('');
   return `<section class="card car" aria-labelledby="h-car"><h2 class="eyebrow" id="h-car">Xe của đoàn</h2>
     ${d.plate ? `<p class="plate"><span class="sr">Biển số </span>${esc(d.plate)}</p>` : ''}
     ${who ? `<p class="car-drv">Tài xế ${who}</p>` : ''}
-    ${d.phone || d.wechat ? `<p class="car-ids">${[d.phone && esc(d.phone), d.wechat && `WeChat: ${esc(d.wechat)}`].filter(Boolean).join('<br>')}</p>` : ''}
-    ${acts ? `<div class="car-acts">${acts}</div>` : ''}
+    ${d.phone ? `<p class="car-ids">${esc(d.phone)}</p>` : ''}
+    <div class="car-acts">${acts}</div>
     <p class="car-note" role="status" hidden></p></section>`;
 }
 
@@ -42,11 +42,11 @@ export function renderHelp(ctx) {
 export function mountHelp(root, ctx) {
   const c = ctx.data.contacts;
   root.querySelector('[data-hotel]')?.addEventListener('click', () => openDriverCard(hotelTarget(c.hotel), null));
+  // Khách và tài xế ở chung nhóm WeChat của đoàn: mở WeChat, gọi từ nhóm.
   root.querySelector('[data-wechat]')?.addEventListener('click', () => {
-    const id = c.driver.wechat;
-    navigator.clipboard?.writeText(id).catch(() => {});
     const note = root.querySelector('.car-note');
-    note.textContent = `Đã chép ID WeChat của tài xế: ${id}. Trong WeChat, chạm biểu tượng kính lúp, dán ID, mở khung chat rồi chọn Gọi thoại.`;
+    const g = c.wechatGroup ? `nhóm "${c.wechatGroup}"` : 'nhóm WeChat của đoàn';
+    note.textContent = `Trong WeChat, mở ${g}, chạm ảnh đại diện của tài xế rồi chọn Gọi thoại.`;
     note.hidden = false;
     location.href = 'weixin://';
   });

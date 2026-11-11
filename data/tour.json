@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-12i",
+  "version": "2026-11-12j",
   "tour": {
     "id": "bac-kinh-2026-11",
     "title": "Bắc Kinh",
@@ -22,11 +22,11 @@
       "zh": "",
       "nameVi": "",
       "phone": "",
-      "plate": "",
-      "wechat": ""
+      "plate": ""
     },
     "hotline": "",
     "zalo": "",
+    "wechatGroup": "",
     "flightBack": {
       "airport": "",
       "time": ""
