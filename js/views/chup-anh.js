@@ -2,7 +2,7 @@ import { esc, imgTag } from '../dom.js';
 import { placesOnDay } from '../places.js';
 import { dowShort } from '../time.js';
 import { openStory } from '../components/story.js';
-import { shotImg } from '../components/photo-section.js';
+import { shotImg, moreBadge } from '../components/photo-section.js';
 
 const num = i => String(i + 1).padStart(2, '0');
 
@@ -17,7 +17,7 @@ export function renderPhotos(ctx) {
   for (const { place: p, s, optional } of groups) {
     h += `<section class="pgroup"><h2 class="eyebrow"><span class="pg-name">${esc(p.name)}</span><span class="eb-sub pg-time">${esc(s)}${optional ? ', dự phòng' : ''}</span></h2>
       <div class="pgrid">${p.photo.shots.map((shot, i) =>
-        `<button type="button" class="ptile" data-place="${esc(p.id)}" data-i="${i}" aria-label="${esc(p.name)} · khung ${num(i)}: ${esc(shot.title)}${shot.clip ? ' · có video' : ''}">${imgTag(shotImg(p, shot), 900, '')}${shot.clip ? '<span class="ptile-clip" aria-hidden="true">▶</span>' : ''}<span class="ptile-n">${num(i)}</span></button>`).join('')}</div></section>`;
+        `<button type="button" class="ptile" data-place="${esc(p.id)}" data-i="${i}" aria-label="${esc(p.name)} · khung ${num(i)}: ${esc(shot.title)}${shot.more?.length ? ` · ${shot.more.length + 1} ảnh` : ''}${shot.clip ? ' · có video' : ''}">${imgTag(shotImg(p, shot), 900, '')}${moreBadge(shot)}${shot.clip ? '<span class="ptile-clip" aria-hidden="true">▶</span>' : ''}<span class="ptile-n">${num(i)}</span></button>`).join('')}</div></section>`;
   }
   return h + '</div>';
 }

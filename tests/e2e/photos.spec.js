@@ -253,3 +253,46 @@ test('tab Chụp ảnh: điểm có số ảnh lẻ thì ô đầu chiếm cả 
   const cs = page.locator('.pgroup', { hasText: 'Cảnh Sơn' }).locator('.ptile'); // 2 ảnh
   expect(Math.abs((await cs.nth(0).boundingBox()).width - (await cs.nth(1).boundingBox()).width)).toBeLessThan(1);
 });
+
+// Dữ liệu giả: khung 01 của Cố Cung có thêm 2 ảnh (mượn ảnh khung 02, 03) — kiểm nhiều ảnh mỗi khung.
+async function withMore(context) {
+  const fs = await import('node:fs');
+  const data = JSON.parse(fs.readFileSync('data/tour.json', 'utf8'));
+  data.places.find(p => p.id === 'co-cung').photo.shots[0].more = ['co-cung-2', 'co-cung-3'];
+  await context.route('**/data/tour.json', r => r.fulfill({ status: 200, contentType: 'application/json', body: JSON.stringify(data) }));
+}
+
+test('khung nhiều ảnh: nhãn +N, story xem hết ảnh trong khung rồi sang khung sau', async ({ page, context }) => {
+  await withMore(context);
+  await page.goto(PLACE);
+  const s = page.locator('[data-sec="chup-anh"]');
+  await expect(s.locator('.psec-lead .nmore')).toHaveText('+2');
+  await expect(s.locator('.psec-strip button').first().locator('.nmore')).toHaveText('+2');
+  await expect(s.locator('.psec-strip button').nth(1).locator('.nmore')).toHaveCount(0);
+  await s.locator('.psec-lead').click();
+  const st = page.locator('.story');
+  const hd = st.locator('.st-hd span');
+  await expect(hd).toHaveText('Cố Cung · Khung 1/3 · ảnh 1/3');
+  await expect(st.locator('.st-prev')).toBeDisabled();
+  await expect(st.locator('.st-prog i.part')).toHaveCount(1);
+  await st.locator('.st-next').click();
+  await expect(hd).toHaveText('Cố Cung · Khung 1/3 · ảnh 2/3');
+  await expect(st.locator('.st-img img')).toHaveAttribute('src', /co-cung-2-900\.webp/);
+  await page.keyboard.press('ArrowRight');
+  await expect(hd).toHaveText('Cố Cung · Khung 1/3 · ảnh 3/3');
+  await st.locator('.st-next').click();
+  await expect(hd).toHaveText('Cố Cung · Khung 2/3');
+  await expect(st.locator('.st-prog i.on')).toHaveCount(2);
+  await st.locator('.st-prev').click();
+  await expect(hd).toHaveText('Cố Cung · Khung 1/3 · ảnh 3/3');
+});
+
+test('tab Chụp ảnh: ô khung nhiều ảnh có +N, mở story từ ảnh đầu của khung', async ({ page, context }) => {
+  await withMore(context);
+  await page.goto('./?now=2026-11-17T09:40#chup-anh');
+  const co = page.locator('.pgroup', { hasText: 'Cố Cung' }).locator('.ptile');
+  await expect(co.first().locator('.nmore')).toHaveText('+2');
+  await expect(co.first()).toHaveAttribute('aria-label', /3 ảnh/);
+  await co.first().click();
+  await expect(page.locator('.story .st-hd span')).toHaveText('Cố Cung · Khung 1/3 · ảnh 1/3');
+});

@@ -34,6 +34,19 @@ test('ảnh khung chụp đã gán đều có 2 cỡ và có nguồn ghi "chỉ 
   }
 });
 
+test('ảnh mẫu thêm của khung (shot.more) có đủ 2 cỡ, không trùng, có nguồn dùng cá nhân', () => {
+  for (const s of data.places.flatMap(p => p.photo.shots)) {
+    if (s.more === undefined) continue;
+    assert.ok(Array.isArray(s.more), `more của ${s.id} phải là mảng`);
+    assert.equal(new Set([s.img, ...s.more]).size, s.more.length + 1, `ảnh trùng trong ${s.id}`);
+    for (const f of s.more) {
+      assert.ok(exists(`img/${f}-160.webp`) && exists(`img/${f}-900.webp`), f);
+      const c = data.credits.find(x => x.file === f);
+      assert.ok(c && c.personalUseOnly === true, `thiếu nguồn cho ${f}`);
+    }
+  }
+});
+
 test('khung có clip thì có video/<clip>.mp4, poster 900 và nguồn ghi "chỉ dùng cá nhân"', () => {
   const shots = data.places.flatMap(p => p.photo.shots).filter(s => s.clip);
   assert.ok(shots.length >= 4, `mới có ${shots.length} khung có clip`);

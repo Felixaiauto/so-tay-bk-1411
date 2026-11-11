@@ -1,8 +1,12 @@
 # Danh sách tìm ảnh/video mẫu — sổ tay Bắc Kinh
 
-Cách gửi: lưu ảnh/video vào thư mục `d:\Landtour\anh-mau\`, đặt tên đúng **mã khung** (ví dụ `co-cung-1.jpg`, `co-cung-1.mp4`). Mỗi khung 1 ảnh (hoặc 1 video ngắn). Khung nào chưa có thì bỏ qua.
+Cách gửi:
+- Mỗi địa điểm một thư mục trong `d:\Landtour\anh-mau\`, tên thư mục ghi ở từng mục dưới đây (ví dụ `anh-mau\co-cung\`).
+- Thả bao nhiêu ảnh/video cũng được, tên tệp tùy ý. Em xem từng ảnh rồi xếp vào khung hợp góc chụp; ảnh không hợp khung nào thì em lập khung mới.
+- Muốn chỉ định khung thì đặt tên tệp bắt đầu bằng mã khung, ví dụ `co-cung-1 (2).jpg`.
+- Nên giữ khoảng 10 ảnh mỗi khung trở xuống để cả đoàn lưu app nhanh. Video nên dưới 30 giây (em cắt còn 10–15 giây).
 
-## Thiên Đàn (天坛) — 14/11
+## Thiên Đàn (天坛) — 14/11 · thư mục `thien-dan`
 
 ### `thien-dan-1` — Toàn thân với Kỳ Niên Điện
 - Đứng ở đâu: Chính giữa lối đá phía nam, cách bậc thềm khoảng 30 mét.
@@ -19,7 +23,7 @@ Cách gửi: lưu ảnh/video vào thư mục `d:\Landtour\anh-mau\`, đặt tê
 - Dáng: Dang hai tay, mặt hơi ngửa lên trời. Hợp với ảnh quay lưng.
 - Từ khóa: `天坛 丹陛桥 拍照` · `天坛 拍照 机位` · `Thiên Đàn chụp ảnh` · `temple of heaven photo spot`
 
-## Bảo tàng Lịch sử Tự nhiên (国家自然博物馆) — 14/11
+## Bảo tàng Lịch sử Tự nhiên (国家自然博物馆) — 14/11 · thư mục `bao-tang-tu-nhien`
 
 ### `bao-tang-tu-nhien-1` — Nhỏ bé bên bộ xương khủng long
 - Đứng ở đâu: Đứng sát chân bệ trưng bày, lệch về một đầu của bộ xương.
@@ -31,7 +35,7 @@ Cách gửi: lưu ảnh/video vào thư mục `d:\Landtour\anh-mau\`, đặt tê
 - Dáng: Hơi cúi về phía tủ kính, tay đặt hờ lên mép tủ, không nhìn máy.
 - Từ khóa: `国家自然博物馆 拍照` · `国家自然博物馆 拍照 机位` · `Bảo tàng Lịch sử Tự nhiên chụp ảnh` · `beijing natural history museum photo spot`
 
-## Phố Tiền Môn (前门大街) — 14/11
+## Phố Tiền Môn (前门大街) — 14/11 · thư mục `tien-mon`
 
 ### `tien-mon-1` — Giữa phố, lầu Tiễn Lâu sau lưng
 - Đứng ở đâu: Giữa phố đi bộ, quay lưng về phía bắc. Đẹp nhất lúc lên đèn, 17:15–17:30.
@@ -48,7 +52,7 @@ Cách gửi: lưu ảnh/video vào thư mục `d:\Landtour\anh-mau\`, đặt tê
 - Dáng: Đứng so le trước sau, người thấp đứng trước. Mỗi người nhìn một hướng tự nhiên hơn xếp hàng ngang.
 - Từ khóa: `前门 五牌楼 拍照` · `前门大街 拍照 机位` · `Phố Tiền Môn chụp ảnh` · `qianmen street beijing photo spot`
 
-## Universal Bắc Kinh (北京环球影城) — 15/11
+## Universal Bắc Kinh (北京环球影城) — 15/11 · thư mục `universal`
 
 ### `universal-1` — Quả địa cầu ở cổng
 - Đứng ở đâu: Trước quả địa cầu, tới trước 9:00 khi chưa đông.
@@ -65,7 +69,7 @@ Cách gửi: lưu ảnh/video vào thư mục `d:\Landtour\anh-mau\`, đặt tê
 - Dáng: Khoác vai nhau bước về phía máy, vừa đi vừa cười.
 - Từ khóa: `北京环球城市大道 拍照` · `北京环球影城 拍照 机位` · `Universal Bắc Kinh chụp ảnh` · `universal studios beijing photo spot`
 
-## Vạn Lý Trường Thành · Mộ Điền Dụ (慕田峪长城) — 16/11
+## Vạn Lý Trường Thành · Mộ Điền Dụ (慕田峪长城) — 16/11 · thư mục `mo-dien-du`
 
 ### `mo-dien-du-1` — Tường thành uốn lượn sau lưng
 - Đứng ở đâu: Vọng lâu 15–16, đứng sát tường chắn, nhìn ngược về phía đông.
@@ -82,7 +86,7 @@ Cách gửi: lưu ảnh/video vào thư mục `d:\Landtour\anh-mau\`, đặt tê
 - Dáng: Đứng nghiêng, một tay chạm thành cửa. Dáng càng rõ đường nét càng đẹp.
 - Từ khóa: `长城 敌楼 窗口 剪影` · `慕田峪长城 拍照 机位` · `Vạn Lý Trường Thành · Mộ Điền Dụ chụp ảnh` · `mutianyu great wall photo spot`
 
-## Di Hòa Viên (颐和园) — 16/11
+## Di Hòa Viên (颐和园) — 16/11 · thư mục `di-hoa-vien`
 
 ### `di-hoa-vien-1` — Cầu 17 nhịp trong nắng chiều
 - Đứng ở đâu: Bờ đông hồ, phía nam chân cầu, khoảng 16:00.
@@ -99,7 +103,7 @@ Cách gửi: lưu ảnh/video vào thư mục `d:\Landtour\anh-mau\`, đặt tê
 - Dáng: Ngồi nghiêng, một chân duỗi, mắt nhìn ra hồ.
 - Từ khóa: `颐和园 昆明湖 佛香阁 拍照` · `颐和园 拍照 机位` · `Di Hòa Viên chụp ảnh` · `summer palace beijing photo spot`
 
-## Cố Cung (故宫) — 17/11
+## Cố Cung (故宫) — 17/11 · thư mục `co-cung`
 
 ### `co-cung-1` — Một mình giữa sân Thái Hòa Điện
 - Đứng ở đâu: Trục giữa, ngay sau Thái Hòa Môn. Chụp lúc 8:30–9:00 khi sân còn trống.
@@ -116,7 +120,7 @@ Cách gửi: lưu ảnh/video vào thư mục `d:\Landtour\anh-mau\`, đặt tê
 - Dáng: Một tay chạm lên đinh cửa, mặt nghiêng nhìn theo tay.
 - Từ khóa: `故宫 门钉 拍照` · `故宫 拍照 机位` · `Cố Cung chụp ảnh` · `forbidden city photo spot`
 
-## Công viên Cảnh Sơn (景山公园) — 17/11
+## Công viên Cảnh Sơn (景山公园) — 17/11 · thư mục `canh-son`
 
 ### `canh-son-1` — Cố Cung trải dưới chân
 - Đứng ở đâu: Lan can phía nam của Vạn Xuân Đình.
@@ -128,7 +132,7 @@ Cách gửi: lưu ảnh/video vào thư mục `d:\Landtour\anh-mau\`, đặt tê
 - Dáng: Tựa khuỷu tay lên lan can, người xoay nửa về phía Cố Cung.
 - Từ khóa: `景山 万春亭 拍照` · `景山公园 拍照 机位` · `Công viên Cảnh Sơn chụp ảnh` · `jingshan park photo spot`
 
-## Bảo tàng Khoa học (中国科学技术馆) — 17/11
+## Bảo tàng Khoa học (中国科学技术馆) — 17/11 · thư mục `bao-tang-khoa-hoc`
 
 ### `bao-tang-khoa-hoc-1` — Ngước nhìn giữa sảnh thông tầng
 - Đứng ở đâu: Giữa sảnh chính, dưới mô hình treo.
@@ -140,7 +144,7 @@ Cách gửi: lưu ảnh/video vào thư mục `d:\Landtour\anh-mau\`, đặt tê
 - Dáng: Không cần nhìn máy. Ảnh lúc đang thử nghiệm tự nhiên hơn ảnh đứng tạo dáng.
 - Từ khóa: `中国科技馆 亲子 拍照` · `中国科学技术馆 拍照 机位` · `Bảo tàng Khoa học chụp ảnh` · `china science and technology museum photo spot`
 
-## Khu Olympic (奥林匹克公园) — 17/11
+## Khu Olympic (奥林匹克公园) — 17/11 · thư mục `khu-olympic`
 
 ### `khu-olympic-1` — Tổ Chim lúc lên đèn
 - Đứng ở đâu: Giữa quảng trường trung tâm, 17:00–17:15.
