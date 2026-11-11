@@ -1,6 +1,5 @@
 import { esc, imgTag, clipVideoTag, playClip, stopClip } from '../dom.js';
 import { openOverlay } from '../overlay.js';
-import { xhsSearch } from '../links.js';
 
 const shotImg = (place, shot) => shot.img || place.hero;
 
@@ -13,7 +12,7 @@ export function storyInner(place, i) {
     <button type="button" class="st-nav st-next" data-next aria-label="Khung sau"${i === n - 1 ? ' disabled' : ''}>›</button>
     <div class="st-bt"><h2 class="st-h">${esc(s.title)}</h2>
       <dl class="st-dl"><dt>Đứng</dt><dd>${esc(s.where)}</dd><dt>Máy</dt><dd>${esc(s.camera)}</dd><dt>Dáng</dt><dd>${esc(s.pose)}</dd></dl>
-      <div class="st-pills">${s.clip ? '<button type="button" data-vid>▶ Xem video</button>' : ''}<a href="${esc(xhsSearch(s.searchZh))}" target="_blank" rel="noopener" data-copy="${esc(s.searchZh)}">Thêm ảnh mẫu</a></div></div>`;
+      ${s.clip ? '<div class="st-pills"><button type="button" data-vid>▶ Xem video</button></div>' : ''}</div>`;
 }
 
 export function openStory(place, start = 0) {

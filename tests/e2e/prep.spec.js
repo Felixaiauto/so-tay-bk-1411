@@ -22,5 +22,5 @@ test('việc cần làm và đồ cần mang được lưu sau khi tải lại',
 test('thời tiết 5 ngày', async ({ page }) => {
   await page.goto('./?now=2026-11-12T10:00#chuan-bi');
   await expect(page.locator('.wxrow')).toHaveCount(5);
-  await expect(page.locator('.wxrow').nth(3)).toContainText('−4 / 10°C');
+  await expect(page.locator('.wxrow').nth(3)).toContainText('−4° / 10°C');
 });

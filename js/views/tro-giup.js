@@ -8,7 +8,7 @@ export function renderHelp(ctx) {
   let h = '<h1 class="view-h">Trợ giúp</h1><div class="stack">';
   h += hasHotel(c.hotel)
     ? `<button type="button" class="help-big" data-hotel><span class="eyebrow">Về khách sạn</span><b lang="zh-CN">${esc(c.hotel.zh)}</b><span class="sub">${esc(c.hotel.name)} · mở thẻ cho tài xế</span></button>`
-    : '<div class="card"><span class="eyebrow">Về khách sạn</span><p class="sub">Chưa có thông tin khách sạn</p></div>';
+    : '';
   const rows = [];
   if (c.driver?.phone) rows.push(`<a class="help-row" href="${telHref(c.driver.phone)}"><b>Gọi tài xế</b><span>${esc([c.driver.name, c.driver.plate, c.driver.phone].filter(Boolean).join(' · '))}</span></a>`);
   if (c.hotline) rows.push(`<a class="help-row" href="${telHref(c.hotline)}"><b>Gọi hotline</b><span>${esc(c.hotline)}</span></a>`);
@@ -16,10 +16,10 @@ export function renderHelp(ctx) {
   if (rows.length) h += `<div class="card help-list">${rows.join('')}</div>`;
   h += `<section><span class="eyebrow">Khẩn cấp tại Trung Quốc</span><div class="sos">${[['110', 'Công an'], ['120', 'Cấp cứu'], ['119', 'Cứu hỏa']]
     .map(([n, l]) => `<a href="tel:${n}"><b>${n}</b><span>${l}</span></a>`).join('')}</div></section>`;
-  h += `<section class="card"><span class="eyebrow">Câu hay dùng · chạm để phóng to</span>${ctx.data.phrases
-    .map((p, i) => `<button type="button" class="phr" data-phrase="${i}"><b lang="zh-CN">${esc(p.zh)}</b><span>${esc(p.vi)}</span></button>`).join('')}</section>`;
+  h += `<section class="card"><span class="eyebrow">Câu hay dùng</span>${ctx.data.phrases
+    .map((p, i) => `<button type="button" class="phr" data-phrase="${i}"><b lang="zh-CN">${esc(p.zh)}</b><span>${esc(p.vi)}</span><i class="chev" aria-hidden="true">›</i></button>`).join('')}</section>`;
   const e = c.embassy;
-  h += `<button type="button" class="card help-emb" data-embassy><span class="eyebrow">${esc(e.name)}</span><span>${esc(e.addressVi)}</span><span class="zhline" lang="zh-CN">${esc(e.addressZh)} ${esc(e.zh)}</span><span class="link">Mở thẻ cho tài xế</span></button>`;
+  h += `<button type="button" class="card help-emb" data-embassy><span class="eyebrow">${esc(e.name)}</span><span>${esc(e.addressVi)}</span><span class="zhline" lang="zh-CN">${esc(e.addressZh)} ${esc(e.zh)}</span><span class="link">Mở thẻ cho tài xế</span><i class="chev" aria-hidden="true">›</i></button>`;
   return h + '</div>';
 }
 

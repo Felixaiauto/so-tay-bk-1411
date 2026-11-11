@@ -8,9 +8,10 @@ test('khẩn cấp gọi được', async ({ page }) => {
   await expect(page.locator('.sos a').first()).toHaveAttribute('href', 'tel:110');
 });
 
-test('chưa có khách sạn: hiện thông báo, không có nút', async ({ page }) => {
+test('chưa có khách sạn: không hiện khối "Về khách sạn", không có nút', async ({ page }) => {
   await go(page);
-  await expect(page.getByText('Chưa có thông tin khách sạn')).toBeVisible();
+  await expect(page.locator('h1')).toHaveText('Trợ giúp');
+  await expect(page.locator('#app')).not.toContainText('Về khách sạn');
   await expect(page.locator('[data-hotel]')).toHaveCount(0);
 });
 

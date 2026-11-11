@@ -16,7 +16,7 @@ for (const [now, label, title] of cases) {
     await go(page, now);
     await expect(page.locator('.live')).toHaveText(label);
     await expect(page.locator('.hero-title')).toHaveText(title);
-    await expect(page.locator('.hero-tz')).toHaveText('Giờ Bắc Kinh · nhanh hơn Việt Nam 1 tiếng');
+    await expect(page.locator('.hero-tz')).toHaveCount(0); // múi giờ nằm ở Chuẩn bị
   });
 }
 
@@ -30,10 +30,11 @@ test('mặc định chọn hôm nay; bấm ngày 16 đổi ảnh và danh sách'
   await expect(page.locator('.stop-title').first()).toHaveText('Xe đưa đi Mộ Điền Dụ');
 });
 
-test('hôm nay: mục đã qua gom vào "Đã qua", mục hiện tại có chấm đỏ', async ({ page }) => {
+test('hôm nay: mục đã qua gom vào "Đã qua", mục hiện tại có giờ đỏ', async ({ page }) => {
   await go(page, '2026-11-17T12:40');
   await expect(page.locator('details.past summary')).toContainText('Đã qua');
   await expect(page.locator('.stop.is-now .stop-title')).toHaveText('Công viên Cảnh Sơn');
+  await expect(page.locator('.stop.is-now .stop-t')).toHaveCSS('color', 'rgb(180, 48, 28)');
 });
 
 test('"Đã qua" giữ trạng thái mở sau khi vẽ lại', async ({ page }) => {
@@ -80,9 +81,11 @@ test('mục dự phòng ngày 18 có nhãn và không là đang diễn ra', asyn
   await expect(page.locator('.stop.is-now')).toHaveCount(0);
 });
 
-test('ảnh món có chú thích minh họa; sân bay lấy từ contacts', async ({ page }) => {
+test('ảnh món ghi "minh họa" ở nguồn ảnh, không ở hàng; sân bay lấy từ contacts', async ({ page }) => {
   await go(page, '2026-11-14T08:00');
-  await expect(page.locator('.stop', { hasText: 'Đô Nhất Xứ' }).locator('.stop-note')).toHaveText('Ảnh minh họa món');
+  await expect(page.locator('.stop', { hasText: 'Đô Nhất Xứ' }).locator('.stop-thumb')).toHaveCount(1);
+  await expect(page.locator('.stop', { hasText: 'Đô Nhất Xứ' })).not.toContainText('Ảnh minh họa món');
+  await expect(page.locator('#credList li', { hasText: 'Shaomai' })).toContainText('Ảnh minh họa món');
   await page.locator('.day[data-date="2026-11-18"]').click();
   await expect(page.locator('.stop', { hasText: 'Lên xe ra sân bay' }).locator('.stop-sub')).toHaveText('Sân bay PEK hoặc PKX tùy vé');
 });

@@ -1,5 +1,5 @@
 import { esc } from '../dom.js';
-import { deg } from '../hero.js';
+import { tempRange } from '../hero.js';
 import { fmtDM } from '../time.js';
 import { get, set } from '../store.js';
 
@@ -12,8 +12,7 @@ export function installGuideHtml() {
        'Mở sổ tay từ biểu tượng vừa tạo, giữ wifi, chờ hiện "Đã lưu ✓".', 'Bật chế độ máy bay, mở lại biểu tượng để thử.']
     : ['Mở link này bằng Chrome, đang có wifi.', 'Bấm menu ⋮ → "Cài đặt ứng dụng" hoặc "Thêm vào màn hình chính".',
        'Mở sổ tay từ biểu tượng vừa tạo, giữ wifi, chờ hiện "Đã lưu ✓".', 'Bật chế độ máy bay, mở lại biểu tượng để thử.'];
-  return `<div class="card install"><span class="eyebrow">Lưu sổ tay vào máy trước khi bay</span><ol>${steps.map(s => `<li>${esc(s)}</li>`).join('')}</ol>
-    <p class="sub">Ở Trung Quốc nhiều trang nước ngoài bị chặn. Làm xong 4 bước này, sổ tay chạy không cần mạng.</p></div>`;
+  return `<div class="card install"><span class="eyebrow">Lưu sổ tay vào máy trước khi bay</span><ol>${steps.map(s => `<li>${esc(s)}</li>`).join('')}</ol></div>`;
 }
 
 function tbar(lo, hi, min, max) {
@@ -31,11 +30,11 @@ export function renderPrep(ctx) {
   if (!isStandalone()) h += installGuideHtml();
   h += `<div class="card"><span class="eyebrow">Việc cần làm trước chuyến</span><div class="checks">${checks('prep', d.prepTasks)}</div></div>`;
   h += `<div class="card"><span class="eyebrow">Thời tiết 5 ngày</span>${d.days.map(x =>
-    `<div class="wxrow"><span class="dd">${fmtDM(x.date)}</span>${tbar(x.lo, x.hi, min, max)}<span class="tt">${deg(x.lo)} / ${x.hi}°C</span><span class="wxnote">${esc(x.wx)}</span></div>`).join('')}
-    <p class="sub">Dự báo lúc lập lịch. Vạch mảnh là mốc 0°C. Mặt trời lặn khoảng 17:00.</p></div>`;
+    `<div class="wxrow"><span class="dd">${fmtDM(x.date)}</span>${tbar(x.lo, x.hi, min, max)}<span class="tt">${tempRange(x.lo, x.hi)}</span><span class="wxnote">${esc(x.wx)}</span></div>`).join('')}
+    <p class="sub">Mặt trời lặn khoảng 17:00.</p></div>`;
   h += `<div class="card"><span class="eyebrow">Trang phục chung</span>${d.wearGeneral.map(p => `<p>${esc(p)}</p>`).join('')}</div>`;
-  h += `<div class="card"><span class="eyebrow">Danh sách cần mang</span><div class="checks">${checks('pack', d.checklist)}</div><p class="sub">Đánh dấu được lưu trên máy này.</p></div>`;
-  h += `<div class="card"><span class="eyebrow">Lưu ý về Bắc Kinh</span><dl class="kv">${d.prepNotes.map(n => `<dt>${esc(n.k)}</dt><dd>${esc(n.v)}</dd>`).join('')}</dl></div>`;
+  h += `<div class="card"><span class="eyebrow">Danh sách cần mang</span><div class="checks">${checks('pack', d.checklist)}</div></div>`;
+  h += `<div class="card"><span class="eyebrow">Lưu ý về Bắc Kinh</span><dl class="kv">${d.prepNotes.map(n => `<div><dt>${esc(n.k)}</dt><dd>${esc(n.v)}</dd></div>`).join('')}</dl></div>`;
   return h + '</div>';
 }
 

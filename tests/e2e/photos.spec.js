@@ -14,18 +14,15 @@ test('mục chụp ảnh: tiêu đề, giờ đẹp, ảnh 01, dải 3 ảnh, 3 
   await expect(s).not.toContainText('sưu tầm');
 });
 
-test('nút xem thêm: tiếng Việt, đúng app, chép từ khóa', async ({ page, context }) => {
-  await context.route(/douyin\.com|xiaohongshu\.com/, r => r.abort());
+test('không còn nút tìm trên Douyin / Xiaohongshu ở khung và story', async ({ page }) => {
   await page.goto(PLACE);
-  const f = page.locator('.pframe').first();
-  await expect(f.locator('.pmore a').nth(0)).toHaveText('Xem thêm video mẫu');
-  await expect(f.locator('.pmore a').nth(0)).toHaveAttribute('href', /^https:\/\/www\.douyin\.com\/search\//);
-  await expect(f.locator('.pmore a').nth(1)).toHaveText('Xem thêm ảnh mẫu');
-  await expect(f.locator('.pmore a').nth(1)).toHaveAttribute('href', /^https:\/\/www\.xiaohongshu\.com\/search_result\?keyword=/);
-  const popup = page.waitForEvent('popup');
-  await f.locator('.pmore a').nth(1).click();
-  await (await popup).close();
-  await expect(page.locator('#toast')).toHaveText('Đã chép từ khóa · dán vào ô tìm kiếm nếu app không tự tìm');
+  await expect(page.locator('.pframe')).toHaveCount(3);
+  await expect(page.locator('a[href*="douyin.com"], a[href*="xiaohongshu.com"]')).toHaveCount(0);
+  await page.locator('.psec-strip button').first().click();
+  await expect(page.locator('.story a[href*="xiaohongshu.com"]')).toHaveCount(0);
+  await expect(page.locator('.story .st-pills')).toHaveCount(0); // khung 01 không có clip
+  await page.locator('.st-next').click();
+  await expect(page.locator('.story .st-pills [data-vid]')).toHaveText('▶ Xem video');
 });
 
 test('story: mở từ dải ảnh, chạm phải/trái, giữa ẩn chữ, phím, Back đóng', async ({ page }) => {
@@ -83,7 +80,8 @@ test('tab Chụp ảnh: dải ngày, các điểm trong ngày, ô khung, mở st
   await expect(page.locator('.day[data-date="2026-11-17"]')).toHaveAttribute('aria-pressed', 'true');
   await expect(page.locator('.pgroup')).toHaveCount(4);
   await expect(page.locator('.ptile')).toHaveCount(9);
-  await expect(page.locator('.pgroup').first().locator('.eyebrow')).toHaveText('Cố Cung · 08:30');
+  await expect(page.locator('.pgroup').first().locator('.pg-name')).toHaveText('Cố Cung');
+  await expect(page.locator('.pgroup').first().locator('.pg-time')).toHaveText('08:30');
   const co = page.locator('.pgroup', { hasText: 'Cố Cung' }).locator('.ptile');
   await expect(co).toHaveCount(3);
   await expect(co.nth(0).locator('.ptile-clip')).toHaveCount(0);
@@ -100,13 +98,14 @@ test('tab Chụp ảnh: dải ngày, các điểm trong ngày, ô khung, mở st
   await expect(page.locator('.day[data-date="2026-11-16"]')).toHaveAttribute('aria-pressed', 'true');
   await expect(page.locator('.ptile')).toHaveCount(6);
   await expect(page.locator('.pgroup')).toHaveCount(2);
-  await expect(page.locator('.pgroup .eyebrow')).toHaveText(['Vạn Lý Trường Thành · Mộ Điền Dụ · 09:00', 'Di Hòa Viên · 14:45']);
+  await expect(page.locator('.pgroup .pg-name')).toHaveText(['Vạn Lý Trường Thành · Mộ Điền Dụ', 'Di Hòa Viên']);
+  await expect(page.locator('.pgroup .pg-time')).toHaveText(['09:00', '14:45']);
   await page.locator('#tabs a[data-v="lich-trinh"]').click();
   await expect(page.locator('.day[data-date="2026-11-16"]')).toHaveAttribute('aria-pressed', 'true');
   await page.locator('.day[data-date="2026-11-18"]').click();
   await page.locator('#tabs a[data-v="chup-anh"]').click();
   await expect(page.locator('.day[data-date="2026-11-18"]')).toHaveAttribute('aria-pressed', 'true');
-  await expect(page.locator('.pgroup .eyebrow').first()).toContainText('dự phòng');
+  await expect(page.locator('.pgroup .pg-time').first()).toHaveText('08:30, dự phòng');
 });
 
 test('story trên màn hình thấp: ‹ › nằm trên khối chữ và vẫn bấm được', async ({ page }) => {
@@ -202,7 +201,7 @@ test('hai clip inline: phát clip B thì clip A dừng và về poster; mở sto
     const a = document.querySelectorAll('.pframe')[1].querySelector('.vbox');
     const b = a.cloneNode(true);
     b.id = 'vbox-b';
-    document.querySelectorAll('.pframe')[2].querySelector('.pmore').before(b);
+    document.querySelectorAll('.pframe')[2].append(b);
   });
   const A = page.locator('.pframe').nth(1).locator('.vbox');
   const B = page.locator('#vbox-b');
@@ -243,4 +242,14 @@ test('story: đang xem video, phím ← → không chuyển khung và không g�
   await st.locator('[data-vclose]').click();
   await page.keyboard.press('ArrowRight');
   await expect(st.locator('.st-hd span')).toHaveText('Cố Cung · Khung 3/3');
+});
+
+test('tab Chụp ảnh: điểm có số ảnh lẻ thì ô đầu chiếm cả hàng', async ({ page }) => {
+  await page.goto('./?now=2026-11-17T09:40#chup-anh');
+  const co = page.locator('.pgroup', { hasText: 'Cố Cung' }).locator('.ptile'); // 3 ảnh
+  const [a, b, c] = [await co.nth(0).boundingBox(), await co.nth(1).boundingBox(), await co.nth(2).boundingBox()];
+  expect(a.width).toBeGreaterThan(b.width * 1.8);
+  expect(Math.abs(b.y - c.y)).toBeLessThan(1);
+  const cs = page.locator('.pgroup', { hasText: 'Cảnh Sơn' }).locator('.ptile'); // 2 ảnh
+  expect(Math.abs((await cs.nth(0).boundingBox()).width - (await cs.nth(1).boundingBox()).width)).toBeLessThan(1);
 });

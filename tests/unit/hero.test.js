@@ -2,17 +2,18 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import { bjNow } from '../../js/time.js';
-import { heroState, deg } from '../../js/hero.js';
+import { heroState, deg, tempRange } from '../../js/hero.js';
 
 const data = JSON.parse(fs.readFileSync(new URL('../../data/tour.json', import.meta.url), 'utf8'));
 const H = (nowStr, view) => { const now = bjNow(nowStr); return heroState(data, now, view ?? now.date); };
 
 test('deg', () => { assert.equal(deg(-4), '−4'); assert.equal(deg(10), '10'); });
+test('tempRange: dấu trừ U+2212, độ ở cả hai đầu', () => assert.equal(tempRange(-4, 10), '−4° / 10°C'));
 test('trước chuyến', () => {
   const h = H('2026-11-12T10:00', '2026-11-14');
   assert.equal(h.label, 'Còn 2 ngày nữa khởi hành');
   assert.equal(h.title, 'Bắc Kinh');
-  assert.equal(h.sub, '08:30 thứ bảy 14/11 · Hạ cánh Bắc Kinh');
+  assert.equal(h.sub, 'Thứ Bảy 14/11, 08:30 — Hạ cánh Bắc Kinh');
   assert.equal(h.img, 'thien-dan');
 });
 test('trước chuyến, xem ngày khác: không nhãn', () => assert.equal(H('2026-11-12T10:00', '2026-11-16').label, ''));
@@ -22,7 +23,7 @@ test('đang ở Cố Cung', () => {
   assert.equal(h.title, 'Cố Cung');
   assert.equal(h.zh, '故宫');
   assert.equal(h.img, 'co-cung');
-  assert.equal(h.sub, 'Thứ Ba 17/11 · −4 / 10°C · Ngày 4/5');
+  assert.equal(h.sub, 'Thứ Ba 17/11 · −4° / 10°C · Ngày 4/5');
 });
 test('đang uống cà phê: ảnh của ngày, tên kèm loại', () => {
   const h = H('2026-11-17T11:20');

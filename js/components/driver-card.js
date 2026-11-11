@@ -11,6 +11,7 @@ export function driverCardHtml(t, showHotel) {
     <button type="button" class="ov-close" data-close aria-label="Đóng">×</button>
     <p class="drv-hint">Đưa màn hình này cho tài xế</p>
     <p class="drv-say"><span lang="zh-CN">请带我去这里</span><small>Xin chở tôi tới đây</small></p>
+    <div class="drv-mid">
     <div class="drv-dest">
       <p class="drv-name" lang="zh-CN">${esc(t.zhFull || t.zh)}</p>
       ${py ? `<p class="drv-py">${esc(py)}</p>` : ''}
@@ -18,6 +19,7 @@ export function driverCardHtml(t, showHotel) {
       ${t.addressVi ? `<p class="drv-vi">${esc(t.addressVi)}</p>` : ''}
     </div>
     ${t.dropOffZh ? `<p class="drv-gate"><span lang="zh-CN">${esc(t.dropOffZh)}</span><small>${esc(t.dropOffVi)}</small></p>` : ''}
+    </div>
     <div class="drv-acts">
       <a class="btn btn-pri" href="${esc(amapLink(t))}" target="_blank" rel="noopener">Mở Amap</a>
       ${showHotel ? '<button type="button" class="btn btn-sec" data-hotel-card>Về khách sạn</button>' : ''}

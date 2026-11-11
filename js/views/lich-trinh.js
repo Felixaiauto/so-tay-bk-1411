@@ -1,5 +1,5 @@
 import { esc, zh, imgTag } from '../dom.js';
-import { heroState, deg } from '../hero.js';
+import { heroState, tempRange } from '../hero.js';
 import { stopStatus, dowShort, dowOf, fmtDM, currentAndNext } from '../time.js';
 import { openDriverCard } from '../components/driver-card.js';
 
@@ -24,7 +24,6 @@ function stopRow(data, s, ctx, status, isNow) {
       <span class="stop-title">${esc(s.title)}</span>
       ${s.zh ? `<span class="stop-zh">${zh(s.zh)}</span>` : ''}
       ${sub ? `<span class="stop-sub">${esc(sub)}</span>` : ''}
-      ${s.thumb && s.thumbNote ? `<span class="stop-note">${esc(s.thumbNote)}</span>` : ''}
       ${flags ? `<span class="stop-flags">${flags}</span>` : ''}
       ${!placeLink && (s.addressZh || placeCard) ? '<span class="stop-drv">Thẻ tài xế ›</span>' : ''}
     </span>
@@ -53,7 +52,6 @@ export function renderItinerary(ctx) {
       ${h.zh ? `<p class="hero-zh">${zh(h.zh)}</p>` : ''}
       ${h.sub ? `<p class="hero-sub">${esc(h.sub)}</p>` : ''}
       ${h.cta && ctx.features.afterTour ? `<a class="hero-cta" href="#sau-tour" data-after>${esc(h.cta)}</a>` : ''}
-      <p class="hero-tz">Giờ Bắc Kinh · nhanh hơn Việt Nam 1 tiếng</p>
     </div></header>`;
 
   out += `<nav class="days" aria-label="Chọn ngày"><div class="days-in">${data.days.map(d =>
@@ -65,9 +63,9 @@ export function renderItinerary(ctx) {
     const past = rows.filter(r => r.st === 'past' && r.s !== cur);
     const rest = rows.filter(r => !past.includes(r));
     list = (past.length ? `<details class="past"${ctx.ui?.pastOpen ? ' open' : ''}><summary>Đã qua (${past.length})</summary><ol>${past.map(r => stopRow(data, r.s, ctx, 'past', false)).join('')}</ol></details>` : '')
-      + (rest.length ? `<span class="eyebrow">Tiếp theo hôm nay</span><ol>${rest.map(r => stopRow(data, r.s, ctx, r.st, r.s === cur)).join('')}</ol>` : '');
+      + (rest.length ? `<h2 class="eyebrow">Tiếp theo hôm nay</h2><ol>${rest.map(r => stopRow(data, r.s, ctx, r.st, r.s === cur)).join('')}</ol>` : '');
   } else {
-    list = `<span class="eyebrow">${esc(dowOf(day.date))} ${fmtDM(day.date)} · ${deg(day.lo)} đến ${day.hi}°C · ${esc(day.wx)}</span>
+    list = `<h2 class="eyebrow">${esc(dowOf(day.date))} ${fmtDM(day.date)}<span class="eb-sub">${tempRange(day.lo, day.hi)}, ${esc(day.wx.toLowerCase())}</span></h2>
       <ol>${rows.map(r => stopRow(data, r.s, ctx, r.st, false)).join('')}</ol>`;
   }
   out += `<section class="stops" aria-label="Lịch trong ngày">${list}</section>`;

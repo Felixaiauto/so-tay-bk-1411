@@ -15,7 +15,7 @@ export function renderPhotos(ctx) {
   if (!groups.length) return h + '<p class="sub pnone">Ngày này không có điểm chụp ảnh.</p>';
   h += '<div class="pgroups">';
   for (const { place: p, s, optional } of groups) {
-    h += `<section class="pgroup"><span class="eyebrow">${esc(p.name)} · ${esc(s)}${optional ? ' · dự phòng' : ''}</span>
+    h += `<section class="pgroup"><h2 class="eyebrow"><span class="pg-name">${esc(p.name)}</span><span class="eb-sub pg-time">${esc(s)}${optional ? ', dự phòng' : ''}</span></h2>
       <div class="pgrid">${p.photo.shots.map((shot, i) =>
         `<button type="button" class="ptile" data-place="${esc(p.id)}" data-i="${i}" aria-label="${esc(p.name)} · khung ${num(i)}: ${esc(shot.title)}${shot.clip ? ' · có video' : ''}">${imgTag(shotImg(p, shot), 900, '')}${shot.clip ? '<span class="ptile-clip" aria-hidden="true">▶</span>' : ''}<span class="ptile-n">${num(i)}</span></button>`).join('')}</div></section>`;
   }

@@ -5,15 +5,18 @@ const NOW = './?now=2026-11-17T09:40';
 test('danh sách: 10 địa điểm nhóm theo ngày, có khung giờ', async ({ page }) => {
   await page.goto(`${NOW}#dia-diem`);
   await expect(page.locator('.pl')).toHaveCount(10);
-  await expect(page.locator('.pl', { hasText: 'Bảo tàng Lịch sử Tự nhiên' }).locator('.pl-when'))
-    .toHaveText('14/11 · 15:30–17:00 (dự phòng 18/11 · 08:30–10:00)');
+  const tn = page.locator('.pl', { hasText: 'Bảo tàng Lịch sử Tự nhiên' });
+  await expect(tn.locator('.pl-when')).toHaveText('15:30–17:00');
+  await expect(tn.locator('.pl-alt')).toHaveText('Dự phòng 18/11, 08:30–10:00');
+  await expect(page.locator('.pl', { hasText: 'Phố Tiền Môn' }).locator('.pl-alt')).toHaveText('Ghé lại 18/11, 10:15–11:15');
+  await expect(page.locator('section', { has: tn }).locator('.eyebrow')).toHaveText('Thứ Bảy 14/11');
 });
 
 test('chi tiết Cố Cung: ảnh, 2 nút, 3 ô, các mục', async ({ page }) => {
   await page.goto(`${NOW}#dd-co-cung`);
   await expect(page.locator('.hero-title')).toHaveText('Cố Cung');
   await expect(page.locator('.pacts a.btn-pri')).toHaveAttribute('href', /^https:\/\/uri\.amap\.com\//);
-  await expect(page.locator('.pfacts')).toContainText('17/11 · 08:30–11:15');
+  await expect(page.locator('.pf-when b')).toHaveText(['17/11', '08:30–11:15']);
   await expect(page.locator('.pfacts')).toContainText('40 tệ');
   for (const k of ['cau-chuyen', 'tham-quan', 'mac-gi', 'luu-y']) await expect(page.locator(`[data-sec="${k}"]`)).toHaveCount(1);
   await expect(page.locator('.swatches li')).toHaveText(['Trắng', 'Kem', 'Be', 'Đen']);
@@ -23,6 +26,8 @@ test('dải mục dính: bấm "Lưu ý" cuộn tới mục đó', async ({ page
   await page.goto(`${NOW}#dd-co-cung`);
   await page.locator('.pchips button[data-goto="luu-y"]').click();
   await expect(page.locator('[data-sec="luu-y"]')).toBeInViewport();
+  await expect(page.locator('.pchips button[data-goto="luu-y"]')).toHaveAttribute('aria-current', 'true');
+  await expect(page.locator('.pchips button[aria-current]')).toHaveCount(1);
 });
 
 test('thẻ tài xế của địa điểm có tên đầy đủ và chỗ xuống xe', async ({ page }) => {
@@ -67,10 +72,4 @@ test('dải mục dính nằm dưới thanh lưu offline, không bị che', asyn
     return document.querySelector('[data-sec="luu-y"] .sec-h').getBoundingClientRect().top;
   });
   expect(secTop).toBeGreaterThanOrEqual(48 + 44);
-});
-
-test('chép từ khóa hiện thông báo trạng thái', async ({ page }) => {
-  await page.goto(`${NOW}#dd-co-cung`);
-  await page.evaluate(() => { const b = document.createElement('button'); b.dataset.copy = 'x'; document.body.appendChild(b); b.click(); });
-  await expect(page.locator('#toast[role="status"]')).toContainText('Đã chép từ khóa');
 });

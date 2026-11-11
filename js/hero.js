@@ -1,6 +1,7 @@
 import { tripPhase, currentAndNext, firstStop, daysUntil, dowOf, fmtDM, remainingText, stopWindow } from './time.js';
 
 export const deg = n => (n < 0 ? '−' + -n : String(n));
+export const tempRange = (lo, hi) => `${deg(lo)}° / ${deg(hi)}°C`;
 export const stopLabel = s => (s.kind ? `${s.title} · ${s.kind}` : s.title);
 
 export function heroState(data, now, viewDate) {
@@ -9,7 +10,7 @@ export function heroState(data, now, viewDate) {
   const day = days[di];
   const placeOf = id => data.places.find(p => p.id === id);
   const dayHero = placeOf(day.heroPlace);
-  const dayLine = `${dowOf(day.date)} ${fmtDM(day.date)} · ${deg(day.lo)} / ${day.hi}°C · Ngày ${di + 1}/${n}`;
+  const dayLine = `${dowOf(day.date)} ${fmtDM(day.date)} · ${tempRange(day.lo, day.hi)} · Ngày ${di + 1}/${n}`;
   const mk = (o) => ({ img: dayHero.hero, label: '', title: '', zh: '', sub: dayLine, kind: 'day', cta: '', ...o });
   const base = mk({ title: dayHero.name, zh: dayHero.zh });
   const ended = mk({ label: 'Chuyến đi đã kết thúc', title: 'Cảm ơn anh chị đã đi cùng đoàn', sub: '', kind: 'ended', cta: 'Chuyến đi thế nào?' });
@@ -19,7 +20,7 @@ export function heroState(data, now, viewDate) {
     if (viewDate !== T.start) return base;
     const f = firstStop(day);
     return mk({ label: `Còn ${daysUntil(T.start, now)} ngày nữa khởi hành`, title: T.title,
-      sub: `${f.s} ${dowOf(day.date).toLowerCase()} ${fmtDM(day.date)} · ${f.title}`, kind: 'before' });
+      sub: `${dowOf(day.date)} ${fmtDM(day.date)}, ${f.s} — ${f.title}`, kind: 'before' });
   }
   if (phase === 'after') return viewDate === T.end ? ended : base;
   if (viewDate !== now.date) return base;
