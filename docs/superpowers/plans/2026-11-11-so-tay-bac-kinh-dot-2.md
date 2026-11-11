@@ -151,7 +151,7 @@ Co-Authored-By: <model> <noreply@anthropic.com>"
 - Modify: `tests/unit/media-refs.test.js` (thêm ảnh khung), `data/tour.json` (sinh: `shots[].img`, `credits`), `img/<shot-id>-160.webp`, `img/<shot-id>-900.webp` (sinh)
 
 **Interfaces:**
-- Consumes: `.superpowers/staging/shots.json` (mảng `{id, file|null, personInPhoto, sourcePage, imageUrl, title, author, license, note}`) và `.superpowers/staging/shots/<file>`; `make(src, name)` từ `tools/img.py`.
+- Consumes: `.superpowers/staging2/manifest.json` (`{"shots": [{id, file ("shots/<id>.jpg") | null, personInPhoto, sourcePage, imageUrl, site, author, note}], "videos": [...]}` — video dùng ở đợt 3) và các tệp ảnh theo đường dẫn `file` tương đối với `.superpowers/staging2/`; `make(src, name)` từ `tools/img.py`. Anh đã duyệt tạm toàn bộ 26 ảnh (11/11).
 - Produces: `places[].photo.shots[].img = "<shot-id>"` cho khung có ảnh; mục `credits` mới `{file: shot-id, …, personalUseOnly: true}`.
 
 - [ ] **Step 1: Mở rộng test (fail)**
@@ -174,7 +174,7 @@ Run: `node --test tests/unit/media-refs.test.js` → Expected: FAIL `mới có 0
 - [ ] **Step 2: Viết `tools/merge_shots.py`**
 
 ```python
-"""Gộp ảnh mẫu đã duyệt trong .superpowers/staging vào img/ và data/tour.json. Chạy lại an toàn (ghi đè)."""
+"""Gộp ảnh mẫu đã duyệt trong .superpowers/staging2 vào img/ và data/tour.json. Chạy lại an toàn (ghi đè)."""
 import json
 import os
 import sys
@@ -184,12 +184,12 @@ sys.path.insert(0, HERE)
 import img  # noqa: E402  (tools/img.py)
 
 ROOT = os.path.dirname(HERE)
-STAGE = os.path.join(ROOT, ".superpowers", "staging")
+STAGE = os.path.join(ROOT, ".superpowers", "staging2")
 DATA = os.path.join(ROOT, "data", "tour.json")
 
 
 def main():
-    manifest = json.load(open(os.path.join(STAGE, "shots.json"), encoding="utf-8"))
+    manifest = json.load(open(os.path.join(STAGE, "manifest.json"), encoding="utf-8"))["shots"]
     data = json.load(open(DATA, encoding="utf-8"))
     shots = {s["id"]: s for p in data["places"] for s in p["photo"]["shots"]}
     credits = [c for c in data["credits"] if c["file"] not in shots]
@@ -197,10 +197,10 @@ def main():
     for m in manifest:
         if not m.get("file") or m["id"] not in shots:
             continue
-        img.make(os.path.join(STAGE, "shots", m["file"]), m["id"])
+        img.make(os.path.join(STAGE, m["file"]), m["id"])
         shots[m["id"]]["img"] = m["id"]
-        credits.append({"file": m["id"], "title": m.get("title", ""), "author": m.get("author", ""),
-                        "license": m.get("license", ""), "url": m.get("sourcePage", ""), "personalUseOnly": True})
+        credits.append({"file": m["id"], "title": m.get("site", "") or "Ảnh sưu tầm", "author": m.get("author", ""),
+                        "license": "không rõ (dùng cá nhân)", "url": m.get("sourcePage", ""), "personalUseOnly": True})
         used += 1
     data["credits"] = credits
     with open(DATA, "w", encoding="utf-8") as f:
@@ -215,7 +215,7 @@ if __name__ == "__main__":
 
 - [ ] **Step 3: Duyệt nhanh rồi chạy**
 
-Mở `.superpowers/staging/shots.json`, xem từng ảnh được chọn bằng Read tool. Ảnh nào sai địa điểm/xấu/có watermark: đặt `"file": null` cho mục đó trong manifest (khung sẽ dùng ảnh địa điểm). Rồi:
+Anh đã duyệt tạm cả 26 ảnh — không loại ảnh nào. Chạy:
 ```bash
 python tools/merge_shots.py
 npm test
