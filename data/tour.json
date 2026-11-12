@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-12j",
+  "version": "2026-11-12k",
   "tour": {
     "id": "bac-kinh-2026-11",
     "title": "Bắc Kinh",
@@ -909,12 +909,15 @@
             "img": "thien-dan-1",
             "where": "Chính giữa lối đá phía nam, cách bậc thềm khoảng 30 mét.",
             "camera": "Máy dọc, hạ ngang hông và ngửa nhẹ để mái điện vươn cao.",
-            "pose": "Bước chậm về phía điện rồi ngoái đầu qua vai. Chụp liên tiếp khi đang bước.",
+            "pose": "Bước chậm về phía điện rồi ngoái đầu qua vai. Chụp liên tiếp khi đang bước. Hoặc đứng yên, một tay vuốt tóc, nghiêng đầu nhìn máy; để bàn chân sát mép dưới khung cho chân dài.",
             "poseKey": "ngoai",
             "clip": "",
             "clipDur": "",
             "clipTitle": "",
-            "searchZh": "天坛 祈年殿 拍照 机位"
+            "searchZh": "天坛 祈年殿 拍照 机位",
+            "more": [
+              "thien-dan-1-2"
+            ]
           },
           {
             "id": "thien-dan-2",
@@ -922,12 +925,16 @@
             "img": "thien-dan-2",
             "where": "Góc tây nam của sân, nơi ít người đi ngang.",
             "camera": "Máy ngang tầm mắt. Người chụp lùi xa rồi zoom 2x để điện to ra sau lưng.",
-            "pose": "Xoay người 45°, một tay giữ khăn quàng, mắt nhìn về phía điện.",
+            "pose": "Xoay người 45°, một tay giữ khăn quàng, mắt nhìn về phía điện. Hoặc đặt tay lên lan can đá, nghiêng đầu nhìn ra xa; cầm thêm khăn hay túi cho tay tự nhiên.",
             "poseKey": "dung",
             "clip": "thien-dan-2",
             "clipDur": "0:14",
             "clipTitle": "Tựa lan can, Kỳ Niên Điện phía sau",
-            "searchZh": "天坛 祈年殿 人像"
+            "searchZh": "天坛 祈年殿 人像",
+            "more": [
+              "thien-dan-2-2",
+              "thien-dan-2-3"
+            ]
           },
           {
             "id": "thien-dan-3",
@@ -941,6 +948,23 @@
             "clipDur": "",
             "clipTitle": "",
             "searchZh": "天坛 丹陛桥 拍照"
+          },
+          {
+            "id": "thien-dan-4",
+            "title": "Ngồi trên bậc đá",
+            "img": "thien-dan-4",
+            "where": "Bậc thềm và thành bậc đá trắng quanh nền Kỳ Niên Điện. Ngồi ở mép, không chắn lối đi.",
+            "camera": "Máy dọc, hạ thấp và ngửa lên để mái điện vào góc trên. Đặt người theo đường chéo khung hình.",
+            "pose": "Ngồi nghiêng, một tay chống ra sau, tay kia giơ lên hoặc chạm tóc, nghiêng đầu cười. Co một chân lên bậc cho dáng có góc cạnh.",
+            "poseKey": "ngoi",
+            "clip": "",
+            "clipDur": "",
+            "clipTitle": "",
+            "searchZh": "天坛 祈年殿 坐姿 拍照",
+            "more": [
+              "thien-dan-4-2",
+              "thien-dan-4-3"
+            ]
           }
         ]
       }
@@ -1009,6 +1033,24 @@
             "clipDur": "",
             "clipTitle": "",
             "searchZh": "国家自然博物馆 拍照"
+          },
+          {
+            "id": "bao-tang-tu-nhien-3",
+            "title": "Đường hầm thủy cung",
+            "img": "bao-tang-tu-nhien-3",
+            "where": "Khu thủy sinh (水生生物馆) trong bảo tàng, đoạn đường hầm kính có cá bơi phía trên.",
+            "camera": "Máy dọc, tắt flash. Chụp từ bên hông để thấy cả vòm kính cong. Chờ đàn cá hoặc cá mập bơi qua rồi bấm liên tục.",
+            "pose": "Một tay chạm nhẹ lên kính, mặt ngửa nhìn theo cá. Quay lưng hoặc nghiêng mặt đều đẹp.",
+            "poseKey": "giotay",
+            "clip": "",
+            "clipDur": "",
+            "clipTitle": "",
+            "searchZh": "国家自然博物馆 水族馆 拍照",
+            "more": [
+              "bao-tang-tu-nhien-3-2",
+              "bao-tang-tu-nhien-3-3",
+              "bao-tang-tu-nhien-3-4"
+            ]
           }
         ]
       }
@@ -2228,6 +2270,86 @@
       "author": "蚂蚁摄影APP-源儿",
       "license": "không rõ (dùng cá nhân)",
       "url": "https://www.bilibili.com/video/BV1dVCzYUEHP",
+      "personalUseOnly": true
+    },
+    {
+      "file": "thien-dan-1-2",
+      "title": "Xiaohongshu: 天坛拍照机位+穿搭公式📷新手直接抄作业",
+      "author": "🍑桃子（角楼拍照）",
+      "license": "không rõ (dùng cá nhân)",
+      "url": "https://www.xiaohongshu.com/search_result?keyword=%E5%A4%A9%E5%9D%9B%E6%8B%8D%E7%85%A7%E6%9C%BA%E4%BD%8D%2B%E7%A9%BF%E6%90%AD%E5%85%AC%E5%BC%8F%F0%9F%93%B7%E6%96%B0%E6%89%8B%E7%9B%B4%E6%8E%A5%E6%8A%84%E4%BD%9C%E4%B8%9A",
+      "personalUseOnly": true
+    },
+    {
+      "file": "thien-dan-2-2",
+      "title": "Xiaohongshu: 天坛拍照机位+穿搭公式📷新手直接抄作业",
+      "author": "🍑桃子（角楼拍照）",
+      "license": "không rõ (dùng cá nhân)",
+      "url": "https://www.xiaohongshu.com/search_result?keyword=%E5%A4%A9%E5%9D%9B%E6%8B%8D%E7%85%A7%E6%9C%BA%E4%BD%8D%2B%E7%A9%BF%E6%90%AD%E5%85%AC%E5%BC%8F%F0%9F%93%B7%E6%96%B0%E6%89%8B%E7%9B%B4%E6%8E%A5%E6%8A%84%E4%BD%9C%E4%B8%9A",
+      "personalUseOnly": true
+    },
+    {
+      "file": "thien-dan-2-3",
+      "title": "Xiaohongshu: 天坛拍照机位+穿搭公式📷新手直接抄作业",
+      "author": "🍑桃子（角楼拍照）",
+      "license": "không rõ (dùng cá nhân)",
+      "url": "https://www.xiaohongshu.com/search_result?keyword=%E5%A4%A9%E5%9D%9B%E6%8B%8D%E7%85%A7%E6%9C%BA%E4%BD%8D%2B%E7%A9%BF%E6%90%AD%E5%85%AC%E5%BC%8F%F0%9F%93%B7%E6%96%B0%E6%89%8B%E7%9B%B4%E6%8E%A5%E6%8A%84%E4%BD%9C%E4%B8%9A",
+      "personalUseOnly": true
+    },
+    {
+      "file": "thien-dan-4-3",
+      "title": "Xiaohongshu: 天坛拍照机位+穿搭公式📷新手直接抄作业",
+      "author": "🍑桃子（角楼拍照）",
+      "license": "không rõ (dùng cá nhân)",
+      "url": "https://www.xiaohongshu.com/search_result?keyword=%E5%A4%A9%E5%9D%9B%E6%8B%8D%E7%85%A7%E6%9C%BA%E4%BD%8D%2B%E7%A9%BF%E6%90%AD%E5%85%AC%E5%BC%8F%F0%9F%93%B7%E6%96%B0%E6%89%8B%E7%9B%B4%E6%8E%A5%E6%8A%84%E4%BD%9C%E4%B8%9A",
+      "personalUseOnly": true
+    },
+    {
+      "file": "thien-dan-4",
+      "title": "Xiaohongshu: 天坛真的好适合拍照📷",
+      "author": "lyqlyq",
+      "license": "không rõ (dùng cá nhân)",
+      "url": "https://www.xiaohongshu.com/search_result?keyword=%E5%A4%A9%E5%9D%9B%E7%9C%9F%E7%9A%84%E5%A5%BD%E9%80%82%E5%90%88%E6%8B%8D%E7%85%A7%F0%9F%93%B7",
+      "personalUseOnly": true
+    },
+    {
+      "file": "thien-dan-4-2",
+      "title": "Xiaohongshu: 天坛真的好适合拍照📷",
+      "author": "lyqlyq",
+      "license": "không rõ (dùng cá nhân)",
+      "url": "https://www.xiaohongshu.com/search_result?keyword=%E5%A4%A9%E5%9D%9B%E7%9C%9F%E7%9A%84%E5%A5%BD%E9%80%82%E5%90%88%E6%8B%8D%E7%85%A7%F0%9F%93%B7",
+      "personalUseOnly": true
+    },
+    {
+      "file": "bao-tang-tu-nhien-3",
+      "title": "Xiaohongshu: 国自然水族馆绝美拍照攻略✨",
+      "author": "FINE.",
+      "license": "không rõ (dùng cá nhân)",
+      "url": "https://www.xiaohongshu.com/search_result?keyword=%E5%9B%BD%E8%87%AA%E7%84%B6%E6%B0%B4%E6%97%8F%E9%A6%86%E7%BB%9D%E7%BE%8E%E6%8B%8D%E7%85%A7%E6%94%BB%E7%95%A5%E2%9C%A8",
+      "personalUseOnly": true
+    },
+    {
+      "file": "bao-tang-tu-nhien-3-2",
+      "title": "Xiaohongshu: 国自然水族馆绝美拍照攻略✨",
+      "author": "FINE.",
+      "license": "không rõ (dùng cá nhân)",
+      "url": "https://www.xiaohongshu.com/search_result?keyword=%E5%9B%BD%E8%87%AA%E7%84%B6%E6%B0%B4%E6%97%8F%E9%A6%86%E7%BB%9D%E7%BE%8E%E6%8B%8D%E7%85%A7%E6%94%BB%E7%95%A5%E2%9C%A8",
+      "personalUseOnly": true
+    },
+    {
+      "file": "bao-tang-tu-nhien-3-3",
+      "title": "Xiaohongshu: 国家自然博物馆📍藏了一个水族馆",
+      "author": "光芒鼠儿",
+      "license": "không rõ (dùng cá nhân)",
+      "url": "https://www.xiaohongshu.com/search_result?keyword=%E5%9B%BD%E5%AE%B6%E8%87%AA%E7%84%B6%E5%8D%9A%E7%89%A9%E9%A6%86%F0%9F%93%8D%E8%97%8F%E4%BA%86%E4%B8%80%E4%B8%AA%E6%B0%B4%E6%97%8F%E9%A6%86",
+      "personalUseOnly": true
+    },
+    {
+      "file": "bao-tang-tu-nhien-3-4",
+      "title": "Xiaohongshu: 国家自然博物馆📍藏了一个水族馆",
+      "author": "光芒鼠儿",
+      "license": "không rõ (dùng cá nhân)",
+      "url": "https://www.xiaohongshu.com/search_result?keyword=%E5%9B%BD%E5%AE%B6%E8%87%AA%E7%84%B6%E5%8D%9A%E7%89%A9%E9%A6%86%F0%9F%93%8D%E8%97%8F%E4%BA%86%E4%B8%80%E4%B8%AA%E6%B0%B4%E6%97%8F%E9%A6%86",
       "personalUseOnly": true
     }
   ]
