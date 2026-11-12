@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-12l",
+  "version": "2026-11-12m",
   "tour": {
     "id": "bac-kinh-2026-11",
     "title": "Bắc Kinh",
@@ -914,7 +914,10 @@
             "clip": "",
             "clipDur": "",
             "clipTitle": "",
-            "searchZh": "天坛 祈年殿 拍照 机位"
+            "searchZh": "天坛 祈年殿 拍照 机位",
+            "more": [
+              "thien-dan-1-2"
+            ]
           },
           {
             "id": "thien-dan-2",
@@ -927,7 +930,11 @@
             "clip": "thien-dan-2",
             "clipDur": "0:14",
             "clipTitle": "Tựa lan can, Kỳ Niên Điện phía sau",
-            "searchZh": "天坛 祈年殿 人像"
+            "searchZh": "天坛 祈年殿 人像",
+            "more": [
+              "thien-dan-2-2",
+              "thien-dan-2-3"
+            ]
           },
           {
             "id": "thien-dan-3",
@@ -1011,7 +1018,11 @@
             "clip": "",
             "clipDur": "",
             "clipTitle": "",
-            "searchZh": "国家自然博物馆 恐龙 拍照"
+            "searchZh": "国家自然博物馆 恐龙 拍照",
+            "more": [
+              "bao-tang-tu-nhien-1-2",
+              "bao-tang-tu-nhien-1-3"
+            ]
           },
           {
             "id": "bao-tang-tu-nhien-2",
@@ -1097,7 +1108,11 @@
             "clip": "",
             "clipDur": "",
             "clipTitle": "",
-            "searchZh": "前门大街 箭楼 拍照"
+            "searchZh": "前门大街 箭楼 拍照",
+            "more": [
+              "tien-mon-1-2",
+              "tien-mon-1-3"
+            ]
           },
           {
             "id": "tien-mon-2",
@@ -1110,7 +1125,10 @@
             "clip": "",
             "clipDur": "",
             "clipTitle": "",
-            "searchZh": "杨梅竹斜街 拍照"
+            "searchZh": "杨梅竹斜街 拍照",
+            "more": [
+              "tien-mon-2-2"
+            ]
           },
           {
             "id": "tien-mon-3",
@@ -1179,7 +1197,10 @@
             "clip": "universal-1",
             "clipDur": "0:13",
             "clipTitle": "Các dáng chụp bên quả địa cầu",
-            "searchZh": "北京环球影城 地球 拍照"
+            "searchZh": "北京环球影城 地球 拍照",
+            "more": [
+              "universal-1-2"
+            ]
           },
           {
             "id": "universal-2",
@@ -1210,7 +1231,11 @@
             "clip": "",
             "clipDur": "",
             "clipTitle": "",
-            "searchZh": "北京环球城市大道 拍照"
+            "searchZh": "北京环球城市大道 拍照",
+            "more": [
+              "universal-3-2",
+              "universal-3-3"
+            ]
           }
         ]
       }
@@ -1297,7 +1322,11 @@
             "clip": "",
             "clipDur": "",
             "clipTitle": "",
-            "searchZh": "慕田峪长城 台阶 拍照"
+            "searchZh": "慕田峪长城 台阶 拍照",
+            "more": [
+              "mo-dien-du-2-2",
+              "mo-dien-du-2-3"
+            ]
           },
           {
             "id": "mo-dien-du-3",
@@ -1310,7 +1339,11 @@
             "clip": "",
             "clipDur": "",
             "clipTitle": "",
-            "searchZh": "长城 敌楼 窗口 剪影"
+            "searchZh": "长城 敌楼 窗口 剪影",
+            "more": [
+              "mo-dien-du-3-2",
+              "mo-dien-du-3-3"
+            ]
           }
         ]
       }
@@ -1380,7 +1413,11 @@
             "clip": "",
             "clipDur": "",
             "clipTitle": "",
-            "searchZh": "颐和园 十七孔桥 拍照"
+            "searchZh": "颐和园 十七孔桥 拍照",
+            "more": [
+              "di-hoa-vien-1-2",
+              "di-hoa-vien-1-3"
+            ]
           },
           {
             "id": "di-hoa-vien-2",
@@ -1508,7 +1545,11 @@
             "clip": "",
             "clipDur": "",
             "clipTitle": "",
-            "searchZh": "故宫 太和殿 机位"
+            "searchZh": "故宫 太和殿 机位",
+            "more": [
+              "co-cung-1-2",
+              "co-cung-1-3"
+            ]
           },
           {
             "id": "co-cung-2",
@@ -1538,7 +1579,10 @@
             "clip": "",
             "clipDur": "",
             "clipTitle": "",
-            "searchZh": "故宫 门钉 拍照"
+            "searchZh": "故宫 门钉 拍照",
+            "more": [
+              "co-cung-3-2"
+            ]
           }
         ]
       }
@@ -1609,7 +1653,11 @@
             "clip": "",
             "clipDur": "",
             "clipTitle": "",
-            "searchZh": "景山公园 万春亭 故宫全景"
+            "searchZh": "景山公园 万春亭 故宫全景",
+            "more": [
+              "canh-son-1-2",
+              "canh-son-1-3"
+            ]
           },
           {
             "id": "canh-son-2",
@@ -1622,7 +1670,10 @@
             "clip": "",
             "clipDur": "",
             "clipTitle": "",
-            "searchZh": "景山 万春亭 拍照"
+            "searchZh": "景山 万春亭 拍照",
+            "more": [
+              "canh-son-2-2"
+            ]
           }
         ]
       }
@@ -1678,7 +1729,11 @@
             "clip": "",
             "clipDur": "",
             "clipTitle": "",
-            "searchZh": "中国科技馆 拍照"
+            "searchZh": "中国科技馆 拍照",
+            "more": [
+              "bao-tang-khoa-hoc-1-2",
+              "bao-tang-khoa-hoc-1-3"
+            ]
           },
           {
             "id": "bao-tang-khoa-hoc-2",
@@ -1691,7 +1746,10 @@
             "clip": "",
             "clipDur": "",
             "clipTitle": "",
-            "searchZh": "中国科技馆 亲子 拍照"
+            "searchZh": "中国科技馆 亲子 拍照",
+            "more": [
+              "bao-tang-khoa-hoc-2-2"
+            ]
           }
         ]
       }
@@ -1744,7 +1802,11 @@
             "clip": "",
             "clipDur": "",
             "clipTitle": "",
-            "searchZh": "鸟巢 夜景 拍照"
+            "searchZh": "鸟巢 夜景 拍照",
+            "more": [
+              "khu-olympic-1-2",
+              "khu-olympic-1-3"
+            ]
           },
           {
             "id": "khu-olympic-2",
@@ -1757,7 +1819,11 @@
             "clip": "",
             "clipDur": "",
             "clipTitle": "",
-            "searchZh": "奥林匹克公园 鸟巢 水立方 拍照"
+            "searchZh": "奥林匹克公园 鸟巢 水立方 拍照",
+            "more": [
+              "khu-olympic-2-2",
+              "khu-olympic-2-3"
+            ]
           }
         ]
       }
@@ -2461,6 +2527,246 @@
       "license": "không rõ (dùng cá nhân)",
       "url": "https://www.xiaohongshu.com/search_result?keyword=%E6%9D%A5%E7%8E%AF%E7%90%83%E5%B0%B1%E6%98%AF%E4%B8%BA%E4%BA%86%E6%8B%8D%E8%BF%99%E4%B8%80%E5%BC%A0%F0%9F%8C%8D",
       "personalUseOnly": true
+    },
+    {
+      "file": "thien-dan-1-2",
+      "title": "Temple of Heaven - Hall of Prayer for Good Harvests.jpg",
+      "author": "xiquinhosilva",
+      "license": "CC BY 2.0",
+      "url": "https://commons.wikimedia.org/wiki/File:Temple_of_Heaven_-_Hall_of_Prayer_for_Good_Harvests.jpg",
+      "personalUseOnly": false
+    },
+    {
+      "file": "thien-dan-2-2",
+      "title": "20200110 Temple of Heaven-1.jpg",
+      "author": "Balon Greyjoy",
+      "license": "CC0",
+      "url": "https://commons.wikimedia.org/wiki/File:20200110_Temple_of_Heaven-1.jpg",
+      "personalUseOnly": false
+    },
+    {
+      "file": "thien-dan-2-3",
+      "title": "Temple of Heaven - Hall of Prayer for Good Harvests 03.jpg",
+      "author": "xiquinhosilva",
+      "license": "CC BY 2.0",
+      "url": "https://commons.wikimedia.org/wiki/File:Temple_of_Heaven_-_Hall_of_Prayer_for_Good_Harvests_03.jpg",
+      "personalUseOnly": false
+    },
+    {
+      "file": "bao-tang-tu-nhien-1-2",
+      "title": "Beijing Museum of Natural History Dinosaur Hall.jpg",
+      "author": "BleachedRice",
+      "license": "CC BY-SA 4.0",
+      "url": "https://commons.wikimedia.org/wiki/File:Beijing_Museum_of_Natural_History_Dinosaur_Hall.jpg",
+      "personalUseOnly": false
+    },
+    {
+      "file": "bao-tang-tu-nhien-1-3",
+      "title": "Tuojiangosaurus multispinus IMG 5137 Beijing Museum of Natural History.jpg",
+      "author": "Bjoertvedt",
+      "license": "CC BY-SA 4.0",
+      "url": "https://commons.wikimedia.org/wiki/File:Tuojiangosaurus_multispinus_IMG_5137_Beijing_Museum_of_Natural_History.jpg",
+      "personalUseOnly": false
+    },
+    {
+      "file": "tien-mon-1-2",
+      "title": "Qianmen street, Beijing, China - 北京，中国 (10226037583).jpg",
+      "author": "Romain Pontida",
+      "license": "CC BY-SA 2.0",
+      "url": "https://commons.wikimedia.org/wiki/File:Qianmen_street,_Beijing,_China_-_%E5%8C%97%E4%BA%AC%EF%BC%8C%E4%B8%AD%E5%9B%BD_(10226037583).jpg",
+      "personalUseOnly": false
+    },
+    {
+      "file": "tien-mon-1-3",
+      "title": "201902 Qianmen Street in snow.jpg",
+      "author": "Zheng sun",
+      "license": "CC BY-SA 4.0",
+      "url": "https://commons.wikimedia.org/wiki/File:201902_Qianmen_Street_in_snow.jpg",
+      "personalUseOnly": false
+    },
+    {
+      "file": "tien-mon-2-2",
+      "title": "Yangmeizhu Xiejie (20240210151543).jpg",
+      "author": "N509FZ",
+      "license": "CC BY-SA 4.0",
+      "url": "https://commons.wikimedia.org/wiki/File:Yangmeizhu_Xiejie_(20240210151543).jpg",
+      "personalUseOnly": false
+    },
+    {
+      "file": "universal-1-2",
+      "title": "Universal Beijing Resort.jpg",
+      "author": "Hhhh2",
+      "license": "CC BY-SA 4.0",
+      "url": "https://commons.wikimedia.org/wiki/File:Universal_Beijing_Resort.jpg",
+      "personalUseOnly": false
+    },
+    {
+      "file": "universal-3-2",
+      "title": "Overview of Universal CityWalk Beijing (20210907124718).jpg",
+      "author": "N509FZ",
+      "license": "CC BY-SA 4.0",
+      "url": "https://commons.wikimedia.org/wiki/File:Overview_of_Universal_CityWalk_Beijing_(20210907124718).jpg",
+      "personalUseOnly": false
+    },
+    {
+      "file": "universal-3-3",
+      "title": "Universal Studios Store, Beijing (20210907112755).jpg",
+      "author": "N509FZ",
+      "license": "CC BY-SA 4.0",
+      "url": "https://commons.wikimedia.org/wiki/File:Universal_Studios_Store,_Beijing_(20210907112755).jpg",
+      "personalUseOnly": false
+    },
+    {
+      "file": "mo-dien-du-2-2",
+      "title": "Mutianyu, grande muraglia cinese, veduta (autunno 2024) 11.jpg",
+      "author": "Francesco Bini",
+      "license": "CC BY-SA 4.0",
+      "url": "https://commons.wikimedia.org/wiki/File:Mutianyu,_grande_muraglia_cinese,_veduta_(autunno_2024)_11.jpg",
+      "personalUseOnly": false
+    },
+    {
+      "file": "mo-dien-du-2-3",
+      "title": "67054-The-Great-Wall, Mutianyu.jpg",
+      "author": "xiquinhosilva",
+      "license": "CC BY 2.0",
+      "url": "https://commons.wikimedia.org/wiki/File:67054-The-Great-Wall,_Mutianyu.jpg",
+      "personalUseOnly": false
+    },
+    {
+      "file": "mo-dien-du-3-2",
+      "title": "Mutianyu guard tower interior 2.JPG",
+      "author": "BrokenSphere",
+      "license": "CC BY 3.0",
+      "url": "https://commons.wikimedia.org/wiki/File:Mutianyu_guard_tower_interior_2.JPG",
+      "personalUseOnly": false
+    },
+    {
+      "file": "mo-dien-du-3-3",
+      "title": "Mutianyu guard tower interior 1.JPG",
+      "author": "BrokenSphere",
+      "license": "CC BY 3.0",
+      "url": "https://commons.wikimedia.org/wiki/File:Mutianyu_guard_tower_interior_1.JPG",
+      "personalUseOnly": false
+    },
+    {
+      "file": "di-hoa-vien-1-2",
+      "title": "Seventeen Arch Bridge at winter solstice sunset (20201222160731).jpg",
+      "author": "N509FZ",
+      "license": "CC BY-SA 4.0",
+      "url": "https://commons.wikimedia.org/wiki/File:Seventeen_Arch_Bridge_at_winter_solstice_sunset_(20201222160731).jpg",
+      "personalUseOnly": false
+    },
+    {
+      "file": "di-hoa-vien-1-3",
+      "title": "Peking Sommerpalast Seventeen Arch Bridge-20071020-RM-122654.jpg",
+      "author": "Ermell",
+      "license": "CC BY-SA 4.0",
+      "url": "https://commons.wikimedia.org/wiki/File:Peking_Sommerpalast_Seventeen_Arch_Bridge-20071020-RM-122654.jpg",
+      "personalUseOnly": false
+    },
+    {
+      "file": "co-cung-1-2",
+      "title": "Hall of Supreme Harmony, Forbidden City, from southeast.jpg",
+      "author": "Daniel Case",
+      "license": "CC BY-SA 3.0",
+      "url": "https://commons.wikimedia.org/wiki/File:Hall_of_Supreme_Harmony,_Forbidden_City,_from_southeast.jpg",
+      "personalUseOnly": false
+    },
+    {
+      "file": "co-cung-1-3",
+      "title": "Hall of Supreme Harmony (20220218132012).jpg",
+      "author": "N509FZ",
+      "license": "CC BY-SA 4.0",
+      "url": "https://commons.wikimedia.org/wiki/File:Hall_of_Supreme_Harmony_(20220218132012).jpg",
+      "personalUseOnly": false
+    },
+    {
+      "file": "co-cung-3-2",
+      "title": "Inner door in forbidden city.jpg",
+      "author": "User:Pluke",
+      "license": "CC BY-SA 3.0",
+      "url": "https://commons.wikimedia.org/wiki/File:Inner_door_in_forbidden_city.jpg",
+      "personalUseOnly": false
+    },
+    {
+      "file": "canh-son-1-2",
+      "title": "The Forbidden City - View from Coal Hill.jpg",
+      "author": "Pixelflake",
+      "license": "CC BY-SA 3.0",
+      "url": "https://commons.wikimedia.org/wiki/File:The_Forbidden_City_-_View_from_Coal_Hill.jpg",
+      "personalUseOnly": false
+    },
+    {
+      "file": "canh-son-1-3",
+      "title": "Views of the Forbidden City from Jingshan Park 1.jpg",
+      "author": "EditQ",
+      "license": "CC BY-SA 4.0",
+      "url": "https://commons.wikimedia.org/wiki/File:Views_of_the_Forbidden_City_from_Jingshan_Park_1.jpg",
+      "personalUseOnly": false
+    },
+    {
+      "file": "canh-son-2-2",
+      "title": "Wanchun Pavilion (Jingshan Park) 2.jpg",
+      "author": "EditQ",
+      "license": "CC BY-SA 4.0",
+      "url": "https://commons.wikimedia.org/wiki/File:Wanchun_Pavilion_(Jingshan_Park)_2.jpg",
+      "personalUseOnly": false
+    },
+    {
+      "file": "bao-tang-khoa-hoc-1-2",
+      "title": "China Science and Technology Museum main hall 14 Aug 2010.jpg",
+      "author": "Jason Quinn",
+      "license": "CC BY 3.0",
+      "url": "https://commons.wikimedia.org/wiki/File:China_Science_and_Technology_Museum_main_hall_14_Aug_2010.jpg",
+      "personalUseOnly": false
+    },
+    {
+      "file": "bao-tang-khoa-hoc-1-3",
+      "title": "China Science and Technology Museum exterior (east) 20171110151456.jpg",
+      "author": "XiaYZ2023",
+      "license": "CC BY-SA 4.0",
+      "url": "https://commons.wikimedia.org/wiki/File:China_Science_and_Technology_Museum_exterior_(east)_20171110151456.jpg",
+      "personalUseOnly": false
+    },
+    {
+      "file": "bao-tang-khoa-hoc-2-2",
+      "title": "China Science and Technology Museum.jpg",
+      "author": "IvanWalsh.com",
+      "license": "CC BY 2.0",
+      "url": "https://commons.wikimedia.org/wiki/File:China_Science_and_Technology_Museum.jpg",
+      "personalUseOnly": false
+    },
+    {
+      "file": "khu-olympic-1-2",
+      "title": "National stadium at night (bird's nest), Beijing, China - 国家体育场(鸟巢), 北京，中国 (38200491105).jpg",
+      "author": "Romain Pontida/Herzog & de Meuron ArupSport China Architectural Design & Research Group Ai Weiwei (Artistic consultant)",
+      "license": "CC BY-SA 2.0",
+      "url": "https://commons.wikimedia.org/wiki/File:National_stadium_at_night_(bird%27s_nest),_Beijing,_China_-_%E5%9B%BD%E5%AE%B6%E4%BD%93%E8%82%B2%E5%9C%BA(%E9%B8%9F%E5%B7%A2),_%E5%8C%97%E4%BA%AC%EF%BC%8C%E4%B8%AD%E5%9B%BD_(38200491105).jpg",
+      "personalUseOnly": false
+    },
+    {
+      "file": "khu-olympic-1-3",
+      "title": "Beijing national stadium 4 cropped.jpg",
+      "author": "Arne Müseler",
+      "license": "CC BY-SA 4.0",
+      "url": "https://commons.wikimedia.org/wiki/File:Beijing_national_stadium_4_cropped.jpg",
+      "personalUseOnly": false
+    },
+    {
+      "file": "khu-olympic-2-2",
+      "title": "Beijing Olympic Park (54051517551).jpg",
+      "author": "xiquinhosilva",
+      "license": "CC BY 2.0",
+      "url": "https://commons.wikimedia.org/wiki/File:Beijing_Olympic_Park_(54051517551).jpg",
+      "personalUseOnly": false
+    },
+    {
+      "file": "khu-olympic-2-3",
+      "title": "Olympic stadium of Beijing.JPG",
+      "author": "Usuallysmile",
+      "license": "CC BY-SA 4.0",
+      "url": "https://commons.wikimedia.org/wiki/File:Olympic_stadium_of_Beijing.JPG",
+      "personalUseOnly": false
     }
   ]
 }

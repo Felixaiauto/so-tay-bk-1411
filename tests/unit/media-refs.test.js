@@ -34,7 +34,7 @@ test('ảnh khung chụp đã gán đều có 2 cỡ và có nguồn ghi "chỉ 
   }
 });
 
-test('ảnh mẫu thêm của khung (shot.more) có đủ 2 cỡ, không trùng, có nguồn dùng cá nhân', () => {
+test('ảnh mẫu thêm của khung (shot.more) có đủ 2 cỡ, không trùng, có nguồn (dùng cá nhân hoặc giấy phép CC)', () => {
   for (const s of data.places.flatMap(p => p.photo.shots)) {
     if (s.more === undefined) continue;
     assert.ok(Array.isArray(s.more), `more của ${s.id} phải là mảng`);
@@ -42,7 +42,7 @@ test('ảnh mẫu thêm của khung (shot.more) có đủ 2 cỡ, không trùng,
     for (const f of s.more) {
       assert.ok(exists(`img/${f}-160.webp`) && exists(`img/${f}-900.webp`), f);
       const c = data.credits.find(x => x.file === f);
-      assert.ok(c && c.personalUseOnly === true, `thiếu nguồn cho ${f}`);
+      assert.ok(c && (c.personalUseOnly === true || (c.url && /^(CC|Unsplash|Pexels)/.test(c.license))), `thiếu nguồn cho ${f}`);
     }
   }
 });
