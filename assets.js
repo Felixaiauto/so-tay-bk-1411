@@ -1,6 +1,6 @@
 self.ASSETS = {
  "app": {
-  "version": "960ff3cec8",
+  "version": "6d09bcc1ea",
   "files": [
    "./",
    "./index.html",
@@ -57,12 +57,10 @@ self.ASSETS = {
   ]
  },
  "media": {
-  "version": "04fc16af10",
+  "version": "372cf948b8",
   "files": [
    "./img/bao-tang-khoa-hoc-1-2-160.webp",
    "./img/bao-tang-khoa-hoc-1-2-900.webp",
-   "./img/bao-tang-khoa-hoc-1-3-160.webp",
-   "./img/bao-tang-khoa-hoc-1-3-900.webp",
    "./img/bao-tang-tu-nhien-2-160.webp",
    "./img/bao-tang-tu-nhien-2-900.webp",
    "./img/bao-tang-tu-nhien-3-160.webp",
@@ -138,16 +136,8 @@ self.ASSETS = {
    "./img/khoa-hoc-160.webp",
    "./img/khoa-hoc-900.webp",
    "./img/khu-olympic-1-160.webp",
-   "./img/khu-olympic-1-2-160.webp",
-   "./img/khu-olympic-1-2-900.webp",
-   "./img/khu-olympic-1-3-160.webp",
-   "./img/khu-olympic-1-3-900.webp",
    "./img/khu-olympic-1-900.webp",
    "./img/khu-olympic-2-160.webp",
-   "./img/khu-olympic-2-2-160.webp",
-   "./img/khu-olympic-2-2-900.webp",
-   "./img/khu-olympic-2-3-160.webp",
-   "./img/khu-olympic-2-3-900.webp",
    "./img/khu-olympic-2-900.webp",
    "./img/mo-dien-du-1-160.webp",
    "./img/mo-dien-du-1-2-160.webp",
@@ -190,8 +180,6 @@ self.ASSETS = {
    "./img/thien-dan-900.webp",
    "./img/thieu-mai-160.webp",
    "./img/thieu-mai-900.webp",
-   "./img/tien-mon-1-160.webp",
-   "./img/tien-mon-1-900.webp",
    "./img/tien-mon-2-160.webp",
    "./img/tien-mon-2-900.webp",
    "./img/tu-nhien-160.webp",
