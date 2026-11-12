@@ -57,7 +57,7 @@ self.ASSETS = {
   ]
  },
  "media": {
-  "version": "48f2464406",
+  "version": "04fc16af10",
   "files": [
    "./img/bao-tang-khoa-hoc-1-2-160.webp",
    "./img/bao-tang-khoa-hoc-1-2-900.webp",
