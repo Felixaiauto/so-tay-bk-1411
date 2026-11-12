@@ -1,6 +1,6 @@
 self.ASSETS = {
  "app": {
-  "version": "6d09bcc1ea",
+  "version": "42521d4b6d",
   "files": [
    "./",
    "./index.html",
@@ -57,7 +57,7 @@ self.ASSETS = {
   ]
  },
  "media": {
-  "version": "372cf948b8",
+  "version": "d36578ca2e",
   "files": [
    "./img/bao-tang-khoa-hoc-1-2-160.webp",
    "./img/bao-tang-khoa-hoc-1-2-900.webp",
@@ -96,7 +96,6 @@ self.ASSETS = {
    "./img/co-cung-2-3-160.webp",
    "./img/co-cung-2-3-900.webp",
    "./img/co-cung-2-900.webp",
-   "./img/co-cung-2-poster-900.webp",
    "./img/co-cung-3-160.webp",
    "./img/co-cung-3-2-160.webp",
    "./img/co-cung-3-2-900.webp",
@@ -125,7 +124,6 @@ self.ASSETS = {
    "./img/di-hoa-vien-3-6-160.webp",
    "./img/di-hoa-vien-3-6-900.webp",
    "./img/di-hoa-vien-3-900.webp",
-   "./img/di-hoa-vien-3-poster-900.webp",
    "./img/di-hoa-vien-4-160.webp",
    "./img/di-hoa-vien-4-2-160.webp",
    "./img/di-hoa-vien-4-2-900.webp",
@@ -172,7 +170,6 @@ self.ASSETS = {
    "./img/thien-dan-2-3-160.webp",
    "./img/thien-dan-2-3-900.webp",
    "./img/thien-dan-2-900.webp",
-   "./img/thien-dan-2-poster-900.webp",
    "./img/thien-dan-4-160.webp",
    "./img/thien-dan-4-2-160.webp",
    "./img/thien-dan-4-2-900.webp",
@@ -188,7 +185,6 @@ self.ASSETS = {
    "./img/universal-1-2-160.webp",
    "./img/universal-1-2-900.webp",
    "./img/universal-1-900.webp",
-   "./img/universal-1-poster-900.webp",
    "./img/universal-160.webp",
    "./img/universal-2-160.webp",
    "./img/universal-2-2-160.webp",
@@ -202,11 +198,7 @@ self.ASSETS = {
    "./img/universal-3-2-900.webp",
    "./img/universal-3-3-160.webp",
    "./img/universal-3-3-900.webp",
-   "./img/universal-900.webp",
-   "./video/co-cung-2.mp4",
-   "./video/di-hoa-vien-3.mp4",
-   "./video/thien-dan-2.mp4",
-   "./video/universal-1.mp4"
+   "./img/universal-900.webp"
   ]
  }
 };

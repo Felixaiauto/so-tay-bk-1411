@@ -31,9 +31,7 @@ test('không còn nút tìm trên Douyin / Xiaohongshu ở khung và story', asy
   await expect(page.locator('a[href*="douyin.com"], a[href*="xiaohongshu.com"]')).toHaveCount(0);
   await page.locator('.psec-strip button').first().click();
   await expect(page.locator('.story a[href*="xiaohongshu.com"]')).toHaveCount(0);
-  await expect(page.locator('.story .st-pills')).toHaveCount(0); // khung 01 không có clip
-  await page.locator('.st-next').click();
-  await expect(page.locator('.story .st-pills [data-vid]')).toHaveText('▶ Xem video');
+  await expect(page.locator('.story video, .story [data-vid]')).toHaveCount(0); // đã bỏ video
 });
 
 test('story: mở từ dải ảnh, chạm phải/trái, giữa ẩn chữ, phím, Back đóng', async ({ page }) => {
@@ -95,8 +93,7 @@ test('tab Chụp ảnh: dải ngày, các điểm trong ngày, ô khung, mở st
   await expect(page.locator('.pgroup').first().locator('.pg-time')).toHaveText('08:30');
   const co = page.locator('.pgroup', { hasText: 'Cố Cung' }).locator('.ptile');
   await expect(co).toHaveCount(3);
-  await expect(co.nth(0).locator('.ptile-clip')).toHaveCount(0);
-  await expect(co.nth(1).locator('.ptile-clip')).toHaveText('▶');
+  await expect(page.locator('.ptile-clip')).toHaveCount(0);
   await expect(co.nth(1).locator('.ptile-n')).toHaveText('02');
   await expect(co.nth(1)).toHaveAttribute('aria-label', /^Cố Cung · khung 02: .+/);
   expect((await co.nth(1).boundingBox()).height).toBeGreaterThanOrEqual(44);
@@ -124,135 +121,13 @@ test('story trên màn hình thấp: ‹ › nằm trên khối chữ và vẫn 
   await page.goto(PLACE);
   await page.locator('.psec-strip button').first().click();
   await expect(page.locator('.story .st-hd span')).toHaveText('Cố Cung · Khung 1/3');
+  await page.locator('.st-guide').click();
   const bt = await page.locator('.st-bt').evaluate(e => ({ h: e.getBoundingClientRect().height, vh: innerHeight, over: getComputedStyle(e).overflowY }));
   expect(bt.h).toBeLessThanOrEqual(bt.vh * 0.55 + 1);
   expect(bt.over).toBe('auto');
   await page.locator('.st-next').click({ trial: true }); // báo lỗi nếu có phần tử khác che
   await page.locator('.st-next').click();
   await expect(page.locator('.story .st-hd span')).toHaveText('Cố Cung · Khung 2/3');
-});
-
-test('khung có clip: khối video có poster, ▶ to, thời lượng, một dòng tiêu đề; bấm mới phát', async ({ page }) => {
-  await page.goto(PLACE);
-  await expect(page.locator('.pframe').first().locator('.vbox')).toHaveCount(0);
-  await expect(page.locator('.pframe .vbox')).toHaveCount(1);
-  const box = page.locator('.pframe').nth(1).locator('.vbox');
-  await expect(box.locator('img')).toHaveAttribute('src', './img/co-cung-2-poster-900.webp');
-  await expect(box.locator('.vdur')).toHaveText('0:12');
-  await expect(box.locator('.vcap')).toHaveText('Tạo dáng bên tường đỏ Cố Cung');
-  await expect(box).not.toContainText(/offline|ngoại tuyến|giây/i);
-  await expect(box.locator('video')).toHaveCount(0);
-  const play = box.locator('.vplay');
-  const ico = await box.locator('.vplay-ico').boundingBox();
-  expect(ico.width).toBeGreaterThanOrEqual(56);
-  expect(ico.height).toBeGreaterThanOrEqual(56);
-  const pb = await play.boundingBox();
-  expect(pb.width).toBeGreaterThanOrEqual(44);
-  expect(pb.height).toBeGreaterThanOrEqual(44);
-  expect(await box.evaluate(e => [getComputedStyle(e).backgroundColor, getComputedStyle(e).borderRadius])).toEqual(['rgb(30, 26, 22)', '12px']);
-  await play.click();
-  const v = box.locator('video');
-  await expect(v).toHaveCount(1);
-  await expect(v).toHaveAttribute('src', './video/co-cung-2.mp4');
-  await expect(v).toHaveAttribute('poster', './img/co-cung-2-poster-900.webp');
-  await expect(v).toHaveAttribute('preload', 'none');
-  await expect(v).toHaveAttribute('controls', '');
-  await expect(v).toHaveAttribute('playsinline', '');
-  expect(await v.evaluate(e => e.muted)).toBe(true);
-  await expect(box.locator('.vplay')).toHaveCount(0);
-});
-
-test('story: khung có clip hiện ▶ Xem video; bấm thì video phủ ảnh, chuyển khung hoặc đóng thì video dừng và gỡ', async ({ page }) => {
-  await page.goto(PLACE);
-  await page.locator('.psec-strip button').first().click();
-  const st = page.locator('.story');
-  await expect(st.locator('.st-hd span')).toHaveText('Cố Cung · Khung 1/3');
-  await expect(st.locator('[data-vid]')).toHaveCount(0);
-  await page.keyboard.press('ArrowRight');
-  await expect(st.locator('.st-hd span')).toHaveText('Cố Cung · Khung 2/3');
-  const pill = st.locator('.st-pills [data-vid]');
-  await expect(pill).toHaveText('▶ Xem video');
-  expect((await pill.boundingBox()).height).toBeGreaterThanOrEqual(44);
-  await pill.click();
-  const v = st.locator('.st-vid video');
-  await expect(v).toHaveCount(1);
-  await expect(v).toHaveAttribute('src', './video/co-cung-2.mp4');
-  for (const a of ['controls', 'autoplay', 'playsinline']) await expect(v).toHaveAttribute(a, '');
-  expect(await v.evaluate(e => e.muted)).toBe(true);
-  // chạm vào video không làm story chuyển khung
-  const vb = await v.boundingBox();
-  await page.mouse.click(vb.x + vb.width * 0.9, vb.y + vb.height * 0.3);
-  await expect(st.locator('.st-hd span')).toHaveText('Cố Cung · Khung 2/3');
-  // nút đóng video: về lại ảnh, nút ▶ Xem video còn
-  await st.locator('[data-vclose]').click();
-  await expect(st.locator('.st-vid')).toHaveCount(0);
-  await expect(pill).toBeVisible();
-  // mở lại, rồi chuyển khung: video phải dừng và gỡ
-  await pill.click();
-  const h = await st.locator('.st-vid video').elementHandle();
-  await st.locator('[data-next]').click(); // phím ← → bị khóa khi xem video; nút › vẫn chuyển khung
-  await expect(st.locator('.st-hd span')).toHaveText('Cố Cung · Khung 3/3');
-  await expect(st.locator('.st-vid')).toHaveCount(0);
-  expect(await h.evaluate(e => e.paused)).toBe(true);
-  expect(await h.evaluate(e => e.isConnected)).toBe(false);
-  // đóng story khi video đang chạy: video dừng
-  await page.keyboard.press('ArrowLeft');
-  await st.locator('[data-vid]').click();
-  const h2 = await st.locator('.st-vid video').elementHandle();
-  await page.keyboard.press('Escape');
-  await expect(page.locator('.story')).toHaveCount(0);
-  expect(await h2.evaluate(e => e.paused)).toBe(true);
-});
-
-test('hai clip inline: phát clip B thì clip A dừng và về poster; mở story thì clip inline dừng', async ({ page }) => {
-  await page.goto(PLACE);
-  await expect(page.locator('.pframe')).toHaveCount(3);
-  // mỗi điểm chỉ có tối đa 1 clip trong dữ liệu thật; nhân bản khối .vbox sang khung 3 để có hai clip inline (cùng handler ủy quyền)
-  await page.evaluate(() => {
-    const a = document.querySelectorAll('.pframe')[1].querySelector('.vbox');
-    const b = a.cloneNode(true);
-    b.id = 'vbox-b';
-    document.querySelectorAll('.pframe')[2].append(b);
-  });
-  const A = page.locator('.pframe').nth(1).locator('.vbox');
-  const B = page.locator('#vbox-b');
-  await A.locator('.vplay').click();
-  const hA = await A.locator('video').elementHandle();
-  await expect(A.locator('video')).toHaveCount(1);
-  await B.locator('.vplay').click();
-  await expect(B.locator('video')).toHaveCount(1);
-  expect(await hA.evaluate(e => e.paused)).toBe(true);
-  expect(await hA.evaluate(e => e.isConnected)).toBe(false);
-  await expect(A.locator('video')).toHaveCount(0);
-  await expect(A.locator('.vplay')).toHaveCount(1); // về poster + ▶, bấm phát lại được
-  // mở story từ trang: clip inline B dừng
-  const hB = await B.locator('video').elementHandle();
-  await page.locator('.psec-strip button').first().click();
-  await expect(page.locator('.story')).toHaveCount(1);
-  expect(await hB.evaluate(e => e.paused)).toBe(true);
-  await expect(page.locator('.vbox video')).toHaveCount(0);
-});
-
-test('story: đang xem video, phím ← → không chuyển khung và không gỡ video', async ({ page }) => {
-  await page.goto(PLACE);
-  await page.locator('.psec-strip button').nth(1).click();
-  const st = page.locator('.story');
-  await expect(st.locator('.st-hd span')).toHaveText('Cố Cung · Khung 2/3');
-  await st.locator('.st-pills [data-vid]').click();
-  await expect(st.locator('.st-vid video')).toHaveCount(1);
-  await page.keyboard.press('ArrowRight');
-  await page.keyboard.press('ArrowLeft');
-  await expect(st.locator('.st-hd span')).toHaveText('Cố Cung · Khung 2/3');
-  await expect(st.locator('.st-vid video')).toHaveCount(1);
-  // focus đang ở chính video: vẫn không chuyển khung
-  await st.locator('.st-vid video').focus();
-  await page.keyboard.press('ArrowRight');
-  await expect(st.locator('.st-hd span')).toHaveText('Cố Cung · Khung 2/3');
-  await expect(st.locator('.st-vid video')).toHaveCount(1);
-  // đóng video thì phím chuyển khung hoạt động lại
-  await st.locator('[data-vclose]').click();
-  await page.keyboard.press('ArrowRight');
-  await expect(st.locator('.st-hd span')).toHaveText('Cố Cung · Khung 3/3');
 });
 
 test('tab Chụp ảnh: điểm có số ảnh lẻ thì ô đầu chiếm cả hàng', async ({ page }) => {
@@ -314,4 +189,26 @@ test('điểm chỉ có 1 khung: không hiện dải ảnh nhỏ lặp lại ả
   await expect(s.locator('.psec-lead')).toHaveCount(1);
   await expect(s.locator('.psec-strip')).toHaveCount(0);
   await expect(s.locator('.pframe')).toHaveCount(1);
+});
+
+test('story: hướng dẫn chụp ẩn sẵn, ảnh hiện trọn; nút Hướng dẫn chụp bật/tắt và giữ khi chuyển ảnh', async ({ page }) => {
+  await page.goto(PLACE);
+  await page.locator('.psec-strip button').first().click();
+  const st = page.locator('.story'), btn = st.locator('.st-guide');
+  await expect(st.locator('.st-bt')).toBeHidden();
+  await expect(st.locator('.st-img img')).toHaveCSS('object-fit', 'contain');
+  await expect(btn).toHaveText('Hướng dẫn chụp');
+  await expect(btn).toHaveAttribute('aria-expanded', 'false');
+  await btn.click();
+  await expect(st.locator('.st-bt')).toBeVisible();
+  await expect(st.locator('.st-h')).toHaveText('Một mình giữa sân Thái Hòa Điện');
+  await expect(btn).toHaveText('Ẩn hướng dẫn');
+  await expect(btn).toHaveAttribute('aria-expanded', 'true');
+  await expect(btn).toBeFocused();
+  await st.locator('.st-next').click();
+  await expect(st.locator('.st-hd span')).toHaveText('Cố Cung · Khung 2/3');
+  await expect(st.locator('.st-bt')).toBeVisible();
+  await st.locator('.st-guide').click();
+  await expect(st.locator('.st-bt')).toBeHidden();
+  expect((await st.locator('.st-guide').boundingBox()).height).toBeGreaterThanOrEqual(44);
 });

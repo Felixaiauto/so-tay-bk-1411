@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-12o",
+  "version": "2026-11-12p",
   "tour": {
     "id": "bac-kinh-2026-11",
     "title": "Bắc Kinh",
@@ -911,9 +911,6 @@
             "camera": "Máy dọc, hạ ngang hông và ngửa nhẹ để mái điện vươn cao.",
             "pose": "Bước chậm về phía điện rồi ngoái đầu qua vai. Chụp liên tiếp khi đang bước.",
             "poseKey": "ngoai",
-            "clip": "",
-            "clipDur": "",
-            "clipTitle": "",
             "searchZh": "天坛 祈年殿 拍照 机位",
             "more": [
               "thien-dan-1-2"
@@ -927,9 +924,6 @@
             "camera": "Máy ngang tầm mắt. Người chụp lùi xa rồi zoom 2x để điện to ra sau lưng.",
             "pose": "Xoay người 45°, một tay giữ khăn quàng, mắt nhìn về phía điện. Hoặc đặt tay lên lan can đá, nghiêng đầu nhìn ra xa; cầm thêm khăn hay túi cho tay tự nhiên.",
             "poseKey": "dung",
-            "clip": "thien-dan-2",
-            "clipDur": "0:14",
-            "clipTitle": "Tựa lan can, Kỳ Niên Điện phía sau",
             "searchZh": "天坛 祈年殿 人像",
             "more": [
               "thien-dan-2-2",
@@ -944,9 +938,6 @@
             "camera": "Máy dọc, hạ thấp và ngửa lên để mái điện vào góc trên. Đặt người theo đường chéo khung hình.",
             "pose": "Ngồi nghiêng, một tay chống ra sau, tay kia giơ lên hoặc chạm tóc, nghiêng đầu cười. Co một chân lên bậc cho dáng có góc cạnh.",
             "poseKey": "ngoi",
-            "clip": "",
-            "clipDur": "",
-            "clipTitle": "",
             "searchZh": "天坛 祈年殿 坐姿 拍照",
             "more": [
               "thien-dan-4-2"
@@ -1002,9 +993,6 @@
             "camera": "Máy dọc, chụp ngang từ bên hông để ánh đèn tủ chiếu lên mặt.",
             "pose": "Hơi cúi về phía tủ kính, tay đặt hờ lên mép tủ, không nhìn máy.",
             "poseKey": "quaylung",
-            "clip": "",
-            "clipDur": "",
-            "clipTitle": "",
             "searchZh": "国家自然博物馆 拍照"
           },
           {
@@ -1015,9 +1003,6 @@
             "camera": "Máy dọc, tắt flash. Chụp từ bên hông để thấy cả vòm kính cong. Chờ đàn cá hoặc cá mập bơi qua rồi bấm liên tục.",
             "pose": "Một tay chạm nhẹ lên kính, mặt ngửa nhìn theo cá. Quay lưng hoặc nghiêng mặt đều đẹp.",
             "poseKey": "giotay",
-            "clip": "",
-            "clipDur": "",
-            "clipTitle": "",
             "searchZh": "国家自然博物馆 水族馆 拍照",
             "more": [
               "bao-tang-tu-nhien-3-2",
@@ -1075,9 +1060,6 @@
             "camera": "Máy ngang tầm mắt, để con ngõ chạy sâu vào một bên khung hình.",
             "pose": "Tựa vai vào tường, một chân co nhẹ, tay cầm cốc cà phê.",
             "poseKey": "tua",
-            "clip": "",
-            "clipDur": "",
-            "clipTitle": "",
             "searchZh": "杨梅竹斜街 拍照"
           }
         ]
@@ -1131,9 +1113,6 @@
             "camera": "Máy dọc, hạ thấp ngang gối và ngửa lên để lấy trọn quả cầu.",
             "pose": "Dang hai tay hoặc bật nhảy. Chụp liên tiếp rồi chọn tấm đẹp nhất.",
             "poseKey": "dangtay",
-            "clip": "universal-1",
-            "clipDur": "0:13",
-            "clipTitle": "Các dáng chụp bên quả địa cầu",
             "searchZh": "北京环球影城 地球 拍照",
             "more": [
               "universal-1-2"
@@ -1147,9 +1126,6 @@
             "camera": "Máy dọc, ngang tầm vai người mẫu, để người lệch sang một bên.",
             "pose": "Quay lưng về máy, ngước nhìn lâu đài. Khăn quàng hoặc mũ là đạo cụ tốt. Hoặc ra bờ hồ trước lâu đài, tựa lan can đá nhìn máy.",
             "poseKey": "quaylung",
-            "clip": "",
-            "clipDur": "",
-            "clipTitle": "",
             "searchZh": "北京环球 霍格沃茨 拍照",
             "more": [
               "universal-2-2",
@@ -1165,9 +1141,6 @@
             "camera": "Máy ngang, đo sáng theo mặt người để nền đèn không cháy.",
             "pose": "Khoác vai nhau bước về phía máy, vừa đi vừa cười.",
             "poseKey": "nhom",
-            "clip": "",
-            "clipDur": "",
-            "clipTitle": "",
             "searchZh": "北京环球城市大道 拍照",
             "more": [
               "universal-3-3"
@@ -1239,9 +1212,6 @@
             "camera": "Máy ngang tầm mắt, để người chiếm một phần ba trái và tường thành chạy chéo phần còn lại.",
             "pose": "Xoay người 45°, tay đút túi áo, mắt nhìn theo dãy núi. Hoặc ngồi bậc đá, lưng tựa tường chắn, chân duỗi theo bậc.",
             "poseKey": "dung",
-            "clip": "",
-            "clipDur": "",
-            "clipTitle": "",
             "searchZh": "慕田峪长城 拍照 机位",
             "more": [
               "mo-dien-du-1-2"
@@ -1255,9 +1225,6 @@
             "camera": "Máy dọc, ngửa lên theo hướng dốc.",
             "pose": "Bước lên một bậc rồi ngoái lại nhìn máy, tay vịn nhẹ tường.",
             "poseKey": "ngoai",
-            "clip": "",
-            "clipDur": "",
-            "clipTitle": "",
             "searchZh": "慕田峪长城 台阶 拍照",
             "more": [
               "mo-dien-du-2-2",
@@ -1272,9 +1239,6 @@
             "camera": "Máy dọc, chạm vào vùng trời sáng để đo sáng. Người sẽ thành bóng đen rõ nét.",
             "pose": "Đứng nghiêng, một tay chạm thành cửa. Dáng càng rõ đường nét càng đẹp.",
             "poseKey": "dung",
-            "clip": "",
-            "clipDur": "",
-            "clipTitle": "",
             "searchZh": "长城 敌楼 窗口 剪影",
             "more": [
               "mo-dien-du-3-2",
@@ -1346,9 +1310,6 @@
             "camera": "Máy ngang tầm mắt, để cầu chạy ngang hai phần ba khung hình.",
             "pose": "Quay lưng hoặc nghiêng người nhìn về cầu, hai tay đút túi áo khoác.",
             "poseKey": "quaylung",
-            "clip": "",
-            "clipDur": "",
-            "clipTitle": "",
             "searchZh": "颐和园 十七孔桥 拍照",
             "more": [
               "di-hoa-vien-1-2",
@@ -1363,9 +1324,6 @@
             "camera": "Máy dọc, cao ngang ngực, giữ thẳng để cột không bị nghiêng.",
             "pose": "Bước chậm ra xa máy rồi ngoái lại.",
             "poseKey": "ngoai",
-            "clip": "",
-            "clipDur": "",
-            "clipTitle": "",
             "searchZh": "颐和园 长廊 拍照",
             "more": [
               "di-hoa-vien-2-2"
@@ -1379,9 +1337,6 @@
             "camera": "Máy ngang, hạ ngang tầm người ngồi.",
             "pose": "Ngồi nghiêng, một chân duỗi, mắt nhìn ra hồ. Hoặc đứng tựa lan can, một tay đặt lên trụ đá, nhìn về Phật Hương Các.",
             "poseKey": "ngoi",
-            "clip": "di-hoa-vien-3",
-            "clipDur": "0:10",
-            "clipTitle": "Ngồi lan can bên hồ, Phật Hương Các phía xa",
             "searchZh": "颐和园 昆明湖 佛香阁 拍照",
             "more": [
               "di-hoa-vien-3-2",
@@ -1399,9 +1354,6 @@
             "camera": "Máy dọc, lùi xa. Để tán lá phủ phần trên khung, mặt hồ làm nền, người nhỏ ở dưới.",
             "pose": "Đứng trên đá sát mép nước, nghiêng người nhìn lên tán lá. Hoặc giơ tay chạm cành lá.",
             "poseKey": "giotay",
-            "clip": "",
-            "clipDur": "",
-            "clipTitle": "",
             "searchZh": "颐和园 秋天 拍照",
             "more": [
               "di-hoa-vien-4-2"
@@ -1478,9 +1430,6 @@
             "camera": "Máy dọc, hạ thấp ngang hông để nền gạch kéo dài về phía điện.",
             "pose": "Bước về phía điện, áo khoác mở. Ảnh quay lưng cho cảm giác sân rộng nhất.",
             "poseKey": "buoc",
-            "clip": "",
-            "clipDur": "",
-            "clipTitle": "",
             "searchZh": "故宫 太和殿 机位",
             "more": [
               "co-cung-1-2",
@@ -1495,9 +1444,6 @@
             "camera": "Máy ngang ngực, chụp song song với tường, người ở một phần ba trái.",
             "pose": "Tựa nhẹ vai vào tường, mặt quay ra nắng. Áo trắng hoặc kem nổi nhất. Hoặc ngồi trên bệ đá chân tường, ngửa mặt ra nắng.",
             "poseKey": "tua",
-            "clip": "co-cung-2",
-            "clipDur": "0:12",
-            "clipTitle": "Tạo dáng bên tường đỏ Cố Cung",
             "searchZh": "故宫 红墙 拍照",
             "more": [
               "co-cung-2-2",
@@ -1512,9 +1458,6 @@
             "camera": "Máy dọc, ngang tầm mắt, lấy cửa kín khung hình.",
             "pose": "Một tay chạm lên đinh cửa, mặt nghiêng nhìn theo tay.",
             "poseKey": "giotay",
-            "clip": "",
-            "clipDur": "",
-            "clipTitle": "",
             "searchZh": "故宫 门钉 拍照",
             "more": [
               "co-cung-3-2"
@@ -1586,9 +1529,6 @@
             "camera": "Máy ngang. Buổi trưa ngược sáng nên chạm vào mặt người để đo sáng.",
             "pose": "Đứng nghiêng ở mép phải khung hình, mắt nhìn xuống các mái ngói.",
             "poseKey": "dung",
-            "clip": "",
-            "clipDur": "",
-            "clipTitle": "",
             "searchZh": "景山公园 万春亭 故宫全景",
             "more": [
               "canh-son-1-2",
@@ -1603,9 +1543,6 @@
             "camera": "Máy dọc, cao ngang ngực.",
             "pose": "Tựa khuỷu tay lên lan can, người xoay nửa về phía Cố Cung.",
             "poseKey": "tua",
-            "clip": "",
-            "clipDur": "",
-            "clipTitle": "",
             "searchZh": "景山 万春亭 拍照",
             "more": [
               "canh-son-2-2"
@@ -1662,9 +1599,6 @@
             "camera": "Máy dọc, hạ thấp ngang gối và ngửa hẳn lên.",
             "pose": "Ngước mặt, một tay chỉ lên mô hình.",
             "poseKey": "giotay",
-            "clip": "",
-            "clipDur": "",
-            "clipTitle": "",
             "searchZh": "中国科技馆 拍照"
           }
         ]
@@ -1715,9 +1649,6 @@
             "camera": "Máy ngang, chạm vào công trình để đo sáng và giữ chắc tay vì trời tối.",
             "pose": "Quay lưng hoặc nghiêng người nhìn về sân vận động.",
             "poseKey": "quaylung",
-            "clip": "",
-            "clipDur": "",
-            "clipTitle": "",
             "searchZh": "鸟巢 夜景 拍照"
           },
           {
@@ -1728,9 +1659,6 @@
             "camera": "Máy dọc, hạ thấp ngang hông.",
             "pose": "Dang rộng tay, áo khoác mở để gió thổi.",
             "poseKey": "dangtay",
-            "clip": "",
-            "clipDur": "",
-            "clipTitle": "",
             "searchZh": "奥林匹克公园 鸟巢 水立方 拍照"
           }
         ]
@@ -2186,38 +2114,6 @@
       "author": "hanvinatravel.vn (Vietnamese travel blog)",
       "license": "không rõ (dùng cá nhân)",
       "url": "https://hanvinatravel.vn/tin-tuc/check-in-san-van-dong-to-chim-bieu-tuong-olympic-bac-kinh",
-      "personalUseOnly": true
-    },
-    {
-      "file": "co-cung-2.mp4",
-      "title": "bilibili.com",
-      "author": "蚂蚁摄影APP-源儿",
-      "license": "không rõ (dùng cá nhân)",
-      "url": "https://www.bilibili.com/video/BV1r3DpYaE7a",
-      "personalUseOnly": true
-    },
-    {
-      "file": "thien-dan-2.mp4",
-      "title": "bilibili.com",
-      "author": "蓝甜恬",
-      "license": "không rõ (dùng cá nhân)",
-      "url": "https://www.bilibili.com/video/BV1gWopBsEJL",
-      "personalUseOnly": true
-    },
-    {
-      "file": "universal-1.mp4",
-      "title": "bilibili.com",
-      "author": "沐沐喵格",
-      "license": "không rõ (dùng cá nhân)",
-      "url": "https://www.bilibili.com/video/BV1BZpseSEW7",
-      "personalUseOnly": true
-    },
-    {
-      "file": "di-hoa-vien-3.mp4",
-      "title": "bilibili.com",
-      "author": "蚂蚁摄影APP-源儿",
-      "license": "không rõ (dùng cá nhân)",
-      "url": "https://www.bilibili.com/video/BV1dVCzYUEHP",
       "personalUseOnly": true
     },
     {

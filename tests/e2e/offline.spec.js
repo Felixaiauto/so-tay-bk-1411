@@ -235,18 +235,3 @@ test('lần cài đầu không nạp lại trang khi bản mới nhận quyền 
   expect(await page.evaluate(() => window.__marker)).toBe(1);
 });
 
-test('đã lưu rồi mất mạng: clip mẫu vẫn phát được (SW trả 206 theo Range)', async ({ page, context }) => {
-  await page.goto('./?now=2026-11-17T09:40#dd-co-cung/chup-anh');
-  await savedAndControlled(page);
-  await context.setOffline(true);
-  await page.reload();
-  const box = page.locator('.vbox').first();
-  await expect(box).toBeVisible();
-  await box.locator('.vplay').click();
-  const v = box.locator('video');
-  await expect(v).toHaveAttribute('src', './video/co-cung-2.mp4');
-  await page.waitForFunction(() => { const e = document.querySelector('.vbox video'); return e && !e.error && e.readyState >= 2; }, null, { timeout: 15_000 });
-  expect(await v.evaluate(e => e.error)).toBeNull();
-  expect(await v.evaluate(e => e.duration)).toBeGreaterThan(5);
-  await context.setOffline(false);
-});
