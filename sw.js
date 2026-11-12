@@ -1,4 +1,4 @@
-// version: 6cc58906ca-ea17370bd0
+// version: da318eee4e-cb78a82324
 /* Service worker sổ tay Bắc Kinh. Đường dẫn tương đối theo vị trí sw.js. */
 importScripts('./assets.js', './sw-range.js');
 

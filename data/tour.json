@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-12k",
+  "version": "2026-11-12l",
   "tour": {
     "id": "bac-kinh-2026-11",
     "title": "Bắc Kinh",
@@ -909,15 +909,12 @@
             "img": "thien-dan-1",
             "where": "Chính giữa lối đá phía nam, cách bậc thềm khoảng 30 mét.",
             "camera": "Máy dọc, hạ ngang hông và ngửa nhẹ để mái điện vươn cao.",
-            "pose": "Bước chậm về phía điện rồi ngoái đầu qua vai. Chụp liên tiếp khi đang bước. Hoặc đứng yên, một tay vuốt tóc, nghiêng đầu nhìn máy; để bàn chân sát mép dưới khung cho chân dài.",
+            "pose": "Bước chậm về phía điện rồi ngoái đầu qua vai. Chụp liên tiếp khi đang bước.",
             "poseKey": "ngoai",
             "clip": "",
             "clipDur": "",
             "clipTitle": "",
-            "searchZh": "天坛 祈年殿 拍照 机位",
-            "more": [
-              "thien-dan-1-2"
-            ]
+            "searchZh": "天坛 祈年殿 拍照 机位"
           },
           {
             "id": "thien-dan-2",
@@ -930,11 +927,7 @@
             "clip": "thien-dan-2",
             "clipDur": "0:14",
             "clipTitle": "Tựa lan can, Kỳ Niên Điện phía sau",
-            "searchZh": "天坛 祈年殿 人像",
-            "more": [
-              "thien-dan-2-2",
-              "thien-dan-2-3"
-            ]
+            "searchZh": "天坛 祈年殿 人像"
           },
           {
             "id": "thien-dan-3",
@@ -962,8 +955,7 @@
             "clipTitle": "",
             "searchZh": "天坛 祈年殿 坐姿 拍照",
             "more": [
-              "thien-dan-4-2",
-              "thien-dan-4-3"
+              "thien-dan-4-2"
             ]
           }
         ]
@@ -1195,12 +1187,17 @@
             "img": "universal-2",
             "where": "Lối vào làng trong khu Harry Potter, lâu đài nằm cuối đường.",
             "camera": "Máy dọc, ngang tầm vai người mẫu, để người lệch sang một bên.",
-            "pose": "Quay lưng về máy, ngước nhìn lâu đài. Khăn quàng hoặc mũ là đạo cụ tốt.",
+            "pose": "Quay lưng về máy, ngước nhìn lâu đài. Khăn quàng hoặc mũ là đạo cụ tốt. Hoặc ra bờ hồ trước lâu đài, tựa lan can đá nhìn máy.",
             "poseKey": "quaylung",
             "clip": "",
             "clipDur": "",
             "clipTitle": "",
-            "searchZh": "北京环球 霍格沃茨 拍照"
+            "searchZh": "北京环球 霍格沃茨 拍照",
+            "more": [
+              "universal-2-2",
+              "universal-2-3",
+              "universal-2-4"
+            ]
           },
           {
             "id": "universal-3",
@@ -1279,12 +1276,15 @@
             "img": "mo-dien-du-1",
             "where": "Vọng lâu 15–16, đứng sát tường chắn, nhìn ngược về phía đông.",
             "camera": "Máy ngang tầm mắt, để người chiếm một phần ba trái và tường thành chạy chéo phần còn lại.",
-            "pose": "Xoay người 45°, tay đút túi áo, mắt nhìn theo dãy núi.",
+            "pose": "Xoay người 45°, tay đút túi áo, mắt nhìn theo dãy núi. Hoặc ngồi bậc đá, lưng tựa tường chắn, chân duỗi theo bậc.",
             "poseKey": "dung",
             "clip": "",
             "clipDur": "",
             "clipTitle": "",
-            "searchZh": "慕田峪长城 拍照 机位"
+            "searchZh": "慕田峪长城 拍照 机位",
+            "more": [
+              "mo-dien-du-1-2"
+            ]
           },
           {
             "id": "mo-dien-du-2",
@@ -1393,7 +1393,10 @@
             "clip": "",
             "clipDur": "",
             "clipTitle": "",
-            "searchZh": "颐和园 长廊 拍照"
+            "searchZh": "颐和园 长廊 拍照",
+            "more": [
+              "di-hoa-vien-2-2"
+            ]
           },
           {
             "id": "di-hoa-vien-3",
@@ -1401,12 +1404,35 @@
             "img": "di-hoa-vien-3",
             "where": "Bờ hồ Côn Minh, chọn chỗ thấy Phật Hương Các ở xa.",
             "camera": "Máy ngang, hạ ngang tầm người ngồi.",
-            "pose": "Ngồi nghiêng, một chân duỗi, mắt nhìn ra hồ.",
+            "pose": "Ngồi nghiêng, một chân duỗi, mắt nhìn ra hồ. Hoặc đứng tựa lan can, một tay đặt lên trụ đá, nhìn về Phật Hương Các.",
             "poseKey": "ngoi",
             "clip": "di-hoa-vien-3",
             "clipDur": "0:10",
             "clipTitle": "Ngồi lan can bên hồ, Phật Hương Các phía xa",
-            "searchZh": "颐和园 昆明湖 佛香阁 拍照"
+            "searchZh": "颐和园 昆明湖 佛香阁 拍照",
+            "more": [
+              "di-hoa-vien-3-2",
+              "di-hoa-vien-3-3",
+              "di-hoa-vien-3-4",
+              "di-hoa-vien-3-5",
+              "di-hoa-vien-3-6"
+            ]
+          },
+          {
+            "id": "di-hoa-vien-4",
+            "title": "Lá thu bên mép nước",
+            "img": "di-hoa-vien-4",
+            "where": "Bờ hồ Côn Minh hoặc quanh các đình, chọn cây lá đỏ, lá vàng nghiêng ra mặt nước.",
+            "camera": "Máy dọc, lùi xa. Để tán lá phủ phần trên khung, mặt hồ làm nền, người nhỏ ở dưới.",
+            "pose": "Đứng trên đá sát mép nước, nghiêng người nhìn lên tán lá. Hoặc giơ tay chạm cành lá.",
+            "poseKey": "giotay",
+            "clip": "",
+            "clipDur": "",
+            "clipTitle": "",
+            "searchZh": "颐和园 秋天 拍照",
+            "more": [
+              "di-hoa-vien-4-2"
+            ]
           }
         ]
       }
@@ -1490,12 +1516,16 @@
             "img": "co-cung-2",
             "where": "Các lối đi dài ở phía đông nội đình, chọn đoạn tường có nắng.",
             "camera": "Máy ngang ngực, chụp song song với tường, người ở một phần ba trái.",
-            "pose": "Tựa nhẹ vai vào tường, mặt quay ra nắng. Áo trắng hoặc kem nổi nhất.",
+            "pose": "Tựa nhẹ vai vào tường, mặt quay ra nắng. Áo trắng hoặc kem nổi nhất. Hoặc ngồi trên bệ đá chân tường, ngửa mặt ra nắng.",
             "poseKey": "tua",
             "clip": "co-cung-2",
             "clipDur": "0:12",
             "clipTitle": "Tạo dáng bên tường đỏ Cố Cung",
-            "searchZh": "故宫 红墙 拍照"
+            "searchZh": "故宫 红墙 拍照",
+            "more": [
+              "co-cung-2-2",
+              "co-cung-2-3"
+            ]
           },
           {
             "id": "co-cung-3",
@@ -2273,38 +2303,6 @@
       "personalUseOnly": true
     },
     {
-      "file": "thien-dan-1-2",
-      "title": "Xiaohongshu: 天坛拍照机位+穿搭公式📷新手直接抄作业",
-      "author": "🍑桃子（角楼拍照）",
-      "license": "không rõ (dùng cá nhân)",
-      "url": "https://www.xiaohongshu.com/search_result?keyword=%E5%A4%A9%E5%9D%9B%E6%8B%8D%E7%85%A7%E6%9C%BA%E4%BD%8D%2B%E7%A9%BF%E6%90%AD%E5%85%AC%E5%BC%8F%F0%9F%93%B7%E6%96%B0%E6%89%8B%E7%9B%B4%E6%8E%A5%E6%8A%84%E4%BD%9C%E4%B8%9A",
-      "personalUseOnly": true
-    },
-    {
-      "file": "thien-dan-2-2",
-      "title": "Xiaohongshu: 天坛拍照机位+穿搭公式📷新手直接抄作业",
-      "author": "🍑桃子（角楼拍照）",
-      "license": "không rõ (dùng cá nhân)",
-      "url": "https://www.xiaohongshu.com/search_result?keyword=%E5%A4%A9%E5%9D%9B%E6%8B%8D%E7%85%A7%E6%9C%BA%E4%BD%8D%2B%E7%A9%BF%E6%90%AD%E5%85%AC%E5%BC%8F%F0%9F%93%B7%E6%96%B0%E6%89%8B%E7%9B%B4%E6%8E%A5%E6%8A%84%E4%BD%9C%E4%B8%9A",
-      "personalUseOnly": true
-    },
-    {
-      "file": "thien-dan-2-3",
-      "title": "Xiaohongshu: 天坛拍照机位+穿搭公式📷新手直接抄作业",
-      "author": "🍑桃子（角楼拍照）",
-      "license": "không rõ (dùng cá nhân)",
-      "url": "https://www.xiaohongshu.com/search_result?keyword=%E5%A4%A9%E5%9D%9B%E6%8B%8D%E7%85%A7%E6%9C%BA%E4%BD%8D%2B%E7%A9%BF%E6%90%AD%E5%85%AC%E5%BC%8F%F0%9F%93%B7%E6%96%B0%E6%89%8B%E7%9B%B4%E6%8E%A5%E6%8A%84%E4%BD%9C%E4%B8%9A",
-      "personalUseOnly": true
-    },
-    {
-      "file": "thien-dan-4-3",
-      "title": "Xiaohongshu: 天坛拍照机位+穿搭公式📷新手直接抄作业",
-      "author": "🍑桃子（角楼拍照）",
-      "license": "không rõ (dùng cá nhân)",
-      "url": "https://www.xiaohongshu.com/search_result?keyword=%E5%A4%A9%E5%9D%9B%E6%8B%8D%E7%85%A7%E6%9C%BA%E4%BD%8D%2B%E7%A9%BF%E6%90%AD%E5%85%AC%E5%BC%8F%F0%9F%93%B7%E6%96%B0%E6%89%8B%E7%9B%B4%E6%8E%A5%E6%8A%84%E4%BD%9C%E4%B8%9A",
-      "personalUseOnly": true
-    },
-    {
       "file": "thien-dan-4",
       "title": "Xiaohongshu: 天坛真的好适合拍照📷",
       "author": "lyqlyq",
@@ -2350,6 +2348,118 @@
       "author": "光芒鼠儿",
       "license": "không rõ (dùng cá nhân)",
       "url": "https://www.xiaohongshu.com/search_result?keyword=%E5%9B%BD%E5%AE%B6%E8%87%AA%E7%84%B6%E5%8D%9A%E7%89%A9%E9%A6%86%F0%9F%93%8D%E8%97%8F%E4%BA%86%E4%B8%80%E4%B8%AA%E6%B0%B4%E6%97%8F%E9%A6%86",
+      "personalUseOnly": true
+    },
+    {
+      "file": "co-cung-2-2",
+      "title": "Xiaohongshu: 一身素白，赴一场朱红古墙之约",
+      "author": "小野的穿搭日记",
+      "license": "không rõ (dùng cá nhân)",
+      "url": "https://www.xiaohongshu.com/search_result?keyword=%E4%B8%80%E8%BA%AB%E7%B4%A0%E7%99%BD%EF%BC%8C%E8%B5%B4%E4%B8%80%E5%9C%BA%E6%9C%B1%E7%BA%A2%E5%8F%A4%E5%A2%99%E4%B9%8B%E7%BA%A6",
+      "personalUseOnly": true
+    },
+    {
+      "file": "co-cung-2-3",
+      "title": "Xiaohongshu: 一身素白，赴一场朱红古墙之约",
+      "author": "小野的穿搭日记",
+      "license": "không rõ (dùng cá nhân)",
+      "url": "https://www.xiaohongshu.com/search_result?keyword=%E4%B8%80%E8%BA%AB%E7%B4%A0%E7%99%BD%EF%BC%8C%E8%B5%B4%E4%B8%80%E5%9C%BA%E6%9C%B1%E7%BA%A2%E5%8F%A4%E5%A2%99%E4%B9%8B%E7%BA%A6",
+      "personalUseOnly": true
+    },
+    {
+      "file": "mo-dien-du-1-2",
+      "title": "Xiaohongshu: 北京慕田峪长城｜懒人治愈版攻略✨人少巨出片",
+      "author": "无敌可爱美少女",
+      "license": "không rõ (dùng cá nhân)",
+      "url": "https://www.xiaohongshu.com/search_result?keyword=%E5%8C%97%E4%BA%AC%E6%85%95%E7%94%B0%E5%B3%AA%E9%95%BF%E5%9F%8E%EF%BD%9C%E6%87%92%E4%BA%BA%E6%B2%BB%E6%84%88%E7%89%88%E6%94%BB%E7%95%A5%E2%9C%A8%E4%BA%BA%E5%B0%91%E5%B7%A8%E5%87%BA%E7%89%87",
+      "personalUseOnly": true
+    },
+    {
+      "file": "di-hoa-vien-2-2",
+      "title": "Xiaohongshu: 北京约拍｜一袭白裙把颐和园的盛夏穿成诗意",
+      "author": "镜头里的北京（约拍）",
+      "license": "không rõ (dùng cá nhân)",
+      "url": "https://www.xiaohongshu.com/search_result?keyword=%E5%8C%97%E4%BA%AC%E7%BA%A6%E6%8B%8D%EF%BD%9C%E4%B8%80%E8%A2%AD%E7%99%BD%E8%A3%99%E6%8A%8A%E9%A2%90%E5%92%8C%E5%9B%AD%E7%9A%84%E7%9B%9B%E5%A4%8F%E7%A9%BF%E6%88%90%E8%AF%97%E6%84%8F",
+      "personalUseOnly": true
+    },
+    {
+      "file": "di-hoa-vien-3-2",
+      "title": "Xiaohongshu: 颐和园的秋🍂",
+      "author": "栗奈尤尼尼",
+      "license": "không rõ (dùng cá nhân)",
+      "url": "https://www.xiaohongshu.com/search_result?keyword=%E9%A2%90%E5%92%8C%E5%9B%AD%E7%9A%84%E7%A7%8B%F0%9F%8D%82",
+      "personalUseOnly": true
+    },
+    {
+      "file": "di-hoa-vien-3-3",
+      "title": "Xiaohongshu: 颐和园的秋🍂",
+      "author": "栗奈尤尼尼",
+      "license": "không rõ (dùng cá nhân)",
+      "url": "https://www.xiaohongshu.com/search_result?keyword=%E9%A2%90%E5%92%8C%E5%9B%AD%E7%9A%84%E7%A7%8B%F0%9F%8D%82",
+      "personalUseOnly": true
+    },
+    {
+      "file": "di-hoa-vien-3-4",
+      "title": "Xiaohongshu: 北京约拍｜一袭白裙把颐和园的盛夏穿成诗意",
+      "author": "镜头里的北京（约拍）",
+      "license": "không rõ (dùng cá nhân)",
+      "url": "https://www.xiaohongshu.com/search_result?keyword=%E5%8C%97%E4%BA%AC%E7%BA%A6%E6%8B%8D%EF%BD%9C%E4%B8%80%E8%A2%AD%E7%99%BD%E8%A3%99%E6%8A%8A%E9%A2%90%E5%92%8C%E5%9B%AD%E7%9A%84%E7%9B%9B%E5%A4%8F%E7%A9%BF%E6%88%90%E8%AF%97%E6%84%8F",
+      "personalUseOnly": true
+    },
+    {
+      "file": "di-hoa-vien-3-5",
+      "title": "Xiaohongshu: 北京约拍｜一袭白裙把颐和园的盛夏穿成诗意",
+      "author": "镜头里的北京（约拍）",
+      "license": "không rõ (dùng cá nhân)",
+      "url": "https://www.xiaohongshu.com/search_result?keyword=%E5%8C%97%E4%BA%AC%E7%BA%A6%E6%8B%8D%EF%BD%9C%E4%B8%80%E8%A2%AD%E7%99%BD%E8%A3%99%E6%8A%8A%E9%A2%90%E5%92%8C%E5%9B%AD%E7%9A%84%E7%9B%9B%E5%A4%8F%E7%A9%BF%E6%88%90%E8%AF%97%E6%84%8F",
+      "personalUseOnly": true
+    },
+    {
+      "file": "di-hoa-vien-3-6",
+      "title": "Xiaohongshu: 我与颐和｜立夏北京",
+      "author": "jiu酱_",
+      "license": "không rõ (dùng cá nhân)",
+      "url": "https://www.xiaohongshu.com/search_result?keyword=%E6%88%91%E4%B8%8E%E9%A2%90%E5%92%8C%EF%BD%9C%E7%AB%8B%E5%A4%8F%E5%8C%97%E4%BA%AC",
+      "personalUseOnly": true
+    },
+    {
+      "file": "di-hoa-vien-4",
+      "title": "Xiaohongshu: 立冬后的🍁颐和园依然美爆了！附（📷全路线）",
+      "author": "章鱼walking",
+      "license": "không rõ (dùng cá nhân)",
+      "url": "https://www.xiaohongshu.com/search_result?keyword=%E7%AB%8B%E5%86%AC%E5%90%8E%E7%9A%84%F0%9F%8D%81%E9%A2%90%E5%92%8C%E5%9B%AD%E4%BE%9D%E7%84%B6%E7%BE%8E%E7%88%86%E4%BA%86%EF%BC%81%E9%99%84%EF%BC%88%F0%9F%93%B7%E5%85%A8%E8%B7%AF%E7%BA%BF%EF%BC%89",
+      "personalUseOnly": true
+    },
+    {
+      "file": "di-hoa-vien-4-2",
+      "title": "Xiaohongshu: 立冬后的🍁颐和园依然美爆了！附（📷全路线）",
+      "author": "章鱼walking",
+      "license": "không rõ (dùng cá nhân)",
+      "url": "https://www.xiaohongshu.com/search_result?keyword=%E7%AB%8B%E5%86%AC%E5%90%8E%E7%9A%84%F0%9F%8D%81%E9%A2%90%E5%92%8C%E5%9B%AD%E4%BE%9D%E7%84%B6%E7%BE%8E%E7%88%86%E4%BA%86%EF%BC%81%E9%99%84%EF%BC%88%F0%9F%93%B7%E5%85%A8%E8%B7%AF%E7%BA%BF%EF%BC%89",
+      "personalUseOnly": true
+    },
+    {
+      "file": "universal-2-2",
+      "title": "Xiaohongshu: ✨北京环球｜霍格沃茨拍照攻略📸",
+      "author": "乔梦儿",
+      "license": "không rõ (dùng cá nhân)",
+      "url": "https://www.xiaohongshu.com/search_result?keyword=%E2%9C%A8%E5%8C%97%E4%BA%AC%E7%8E%AF%E7%90%83%EF%BD%9C%E9%9C%8D%E6%A0%BC%E6%B2%83%E8%8C%A8%E6%8B%8D%E7%85%A7%E6%94%BB%E7%95%A5%F0%9F%93%B8",
+      "personalUseOnly": true
+    },
+    {
+      "file": "universal-2-3",
+      "title": "Xiaohongshu: ✨北京环球｜霍格沃茨拍照攻略📸",
+      "author": "乔梦儿",
+      "license": "không rõ (dùng cá nhân)",
+      "url": "https://www.xiaohongshu.com/search_result?keyword=%E2%9C%A8%E5%8C%97%E4%BA%AC%E7%8E%AF%E7%90%83%EF%BD%9C%E9%9C%8D%E6%A0%BC%E6%B2%83%E8%8C%A8%E6%8B%8D%E7%85%A7%E6%94%BB%E7%95%A5%F0%9F%93%B8",
+      "personalUseOnly": true
+    },
+    {
+      "file": "universal-2-4",
+      "title": "Xiaohongshu: 来环球就是为了拍这一张🌍",
+      "author": "DeerEvans",
+      "license": "không rõ (dùng cá nhân)",
+      "url": "https://www.xiaohongshu.com/search_result?keyword=%E6%9D%A5%E7%8E%AF%E7%90%83%E5%B0%B1%E6%98%AF%E4%B8%BA%E4%BA%86%E6%8B%8D%E8%BF%99%E4%B8%80%E5%BC%A0%F0%9F%8C%8D",
       "personalUseOnly": true
     }
   ]

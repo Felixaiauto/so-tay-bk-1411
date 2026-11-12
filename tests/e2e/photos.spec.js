@@ -2,6 +2,17 @@ import { test, expect } from '@playwright/test';
 
 const PLACE = './?now=2026-11-17T09:40#dd-co-cung';
 
+// Các test ở đây kiểm hành vi, không phụ thuộc số ảnh mẫu thật: bỏ hết shot.more (ảnh anh gửi thêm dần).
+async function baseData() {
+  const fs = await import('node:fs');
+  const data = JSON.parse(fs.readFileSync('data/tour.json', 'utf8'));
+  for (const p of data.places) for (const s of p.photo.shots) delete s.more;
+  return data;
+}
+const serve = (context, data) =>
+  context.route('**/data/tour.json', r => r.fulfill({ status: 200, contentType: 'application/json', body: JSON.stringify(data) }));
+test.beforeEach(async ({ context }) => { await serve(context, await baseData()); });
+
 test('mục chụp ảnh: tiêu đề, giờ đẹp, ảnh 01, dải 3 ảnh, 3 khung có 3 cột', async ({ page }) => {
   await page.goto(PLACE);
   const s = page.locator('[data-sec="chup-anh"]');
@@ -96,7 +107,7 @@ test('tab Chụp ảnh: dải ngày, các điểm trong ngày, ô khung, mở st
   await expect(co.nth(1)).toBeFocused();
   await page.locator('.day[data-date="2026-11-16"]').click();
   await expect(page.locator('.day[data-date="2026-11-16"]')).toHaveAttribute('aria-pressed', 'true');
-  await expect(page.locator('.ptile')).toHaveCount(6);
+  await expect(page.locator('.ptile')).toHaveCount(7);
   await expect(page.locator('.pgroup')).toHaveCount(2);
   await expect(page.locator('.pgroup .pg-name')).toHaveText(['Vạn Lý Trường Thành · Mộ Điền Dụ', 'Di Hòa Viên']);
   await expect(page.locator('.pgroup .pg-time')).toHaveText(['09:00', '14:45']);
@@ -256,10 +267,10 @@ test('tab Chụp ảnh: điểm có số ảnh lẻ thì ô đầu chiếm cả 
 
 // Dữ liệu giả: khung 01 của Cố Cung có thêm 2 ảnh (mượn ảnh khung 02, 03) — kiểm nhiều ảnh mỗi khung.
 async function withMore(context) {
-  const fs = await import('node:fs');
-  const data = JSON.parse(fs.readFileSync('data/tour.json', 'utf8'));
+  const data = await baseData();
   data.places.find(p => p.id === 'co-cung').photo.shots[0].more = ['co-cung-2', 'co-cung-3'];
-  await context.route('**/data/tour.json', r => r.fulfill({ status: 200, contentType: 'application/json', body: JSON.stringify(data) }));
+  await context.unroute('**/data/tour.json');
+  await serve(context, data);
 }
 
 test('khung nhiều ảnh: nhãn +N, story xem hết ảnh trong khung rồi sang khung sau', async ({ page, context }) => {
