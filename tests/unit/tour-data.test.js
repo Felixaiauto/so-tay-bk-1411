@@ -58,7 +58,7 @@ test('địa điểm có đủ thông tin thẻ tài xế và bộ ảnh', () =>
   for (const p of data.places) {
     assert.ok(p.zhFull && p.pinyin && p.addressZh && p.addressVi, p.id);
     assert.ok(p.hero, p.id);
-    assert.ok(p.photo.shots.length >= 2, p.id);
+    assert.ok(p.photo.shots.length >= 1, p.id);
     for (const s of p.photo.shots) assert.ok(s.id && s.title && s.searchZh, s.id);
   }
 });

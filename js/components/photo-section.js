@@ -20,7 +20,7 @@ export function photoSectionHtml(place) {
       <h2 class="psec-h" id="h-chup-anh-${esc(place.id)}">${esc(P.headline)}</h2>
       ${P.bestTime ? `<p class="psec-tip"><b>Giờ đẹp</b><span>${esc(P.bestTime)}</span></p>` : ''}</div>
     <button type="button" class="psec-lead" data-story="0" aria-label="Xem toàn màn hình khung 01: ${esc(shots[0].title)}${moreLabel(shots[0])}">${imgTag(shotImg(place, shots[0]), 900, '', '', 'eager')}${moreBadge(shots[0])}<span class="psec-num">01</span><span class="psec-exp" aria-hidden="true">⤢</span></button>
-    <div class="psec-strip">${shots.map((s, i) => `<button type="button" data-story="${i}" aria-label="Khung ${num(i)}: ${esc(s.title)}${moreLabel(s)}">${imgTag(shotImg(place, s), 160, '')}${moreBadge(s)}<span>${num(i)}</span></button>`).join('')}</div>`;
+    ${shots.length < 2 ? '' : `<div class="psec-strip">${shots.map((s, i) => `<button type="button" data-story="${i}" aria-label="Khung ${num(i)}: ${esc(s.title)}${moreLabel(s)}">${imgTag(shotImg(place, s), 160, '')}${moreBadge(s)}<span>${num(i)}</span></button>`).join('')}</div>`}`;
   shots.forEach((s, i) => {
     h += `<article class="pframe"><span class="pframe-k">Khung ${num(i)}</span><h3 class="pframe-h">${esc(s.title)}</h3>
       <div class="pcols"><div><b>Đứng ở đâu</b>${esc(s.where)}</div><div><b>Cầm máy</b>${esc(s.camera)}</div><div><b>Dáng</b>${esc(s.pose)}</div></div>

@@ -90,7 +90,7 @@ test('tab Chụp ảnh: dải ngày, các điểm trong ngày, ô khung, mở st
   await expect(page.locator('.day')).toHaveCount(5);
   await expect(page.locator('.day[data-date="2026-11-17"]')).toHaveAttribute('aria-pressed', 'true');
   await expect(page.locator('.pgroup')).toHaveCount(4);
-  await expect(page.locator('.ptile')).toHaveCount(9);
+  await expect(page.locator('.ptile')).toHaveCount(8);
   await expect(page.locator('.pgroup').first().locator('.pg-name')).toHaveText('Cố Cung');
   await expect(page.locator('.pgroup').first().locator('.pg-time')).toHaveText('08:30');
   const co = page.locator('.pgroup', { hasText: 'Cố Cung' }).locator('.ptile');
@@ -306,4 +306,12 @@ test('tab Chụp ảnh: ô khung nhiều ảnh có +N, mở story từ ảnh đ�
   await expect(co.first()).toHaveAttribute('aria-label', /3 ảnh/);
   await co.first().click();
   await expect(page.locator('.story .st-hd span')).toHaveText('Cố Cung · Khung 1/3 · ảnh 1/3');
+});
+
+test('điểm chỉ có 1 khung: không hiện dải ảnh nhỏ lặp lại ảnh lớn', async ({ page }) => {
+  await page.goto('./?now=2026-11-17T09:40#dd-bao-tang-khoa-hoc');
+  const s = page.locator('[data-sec="chup-anh"]');
+  await expect(s.locator('.psec-lead')).toHaveCount(1);
+  await expect(s.locator('.psec-strip')).toHaveCount(0);
+  await expect(s.locator('.pframe')).toHaveCount(1);
 });

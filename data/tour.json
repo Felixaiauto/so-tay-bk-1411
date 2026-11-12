@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-12m",
+  "version": "2026-11-12n",
   "tour": {
     "id": "bac-kinh-2026-11",
     "title": "Bắc Kinh",
@@ -937,19 +937,6 @@
             ]
           },
           {
-            "id": "thien-dan-3",
-            "title": "Con đường Đan Bệ Kiều",
-            "img": "thien-dan-3",
-            "where": "Giữa đường lát đá, hai hàng bách ở hai bên.",
-            "camera": "Máy dọc, hạ thấp gần mặt đất để con đường hút về xa.",
-            "pose": "Dang hai tay, mặt hơi ngửa lên trời. Hợp với ảnh quay lưng.",
-            "poseKey": "dangtay",
-            "clip": "",
-            "clipDur": "",
-            "clipTitle": "",
-            "searchZh": "天坛 丹陛桥 拍照"
-          },
-          {
             "id": "thien-dan-4",
             "title": "Ngồi trên bậc đá",
             "img": "thien-dan-4",
@@ -1007,23 +994,6 @@
         "headline": "Nhỏ bé bên bộ xương khủng long",
         "bestTime": "Vào sảnh bò sát cổ ngay khi qua cổng, trước khi đông.",
         "shots": [
-          {
-            "id": "bao-tang-tu-nhien-1",
-            "title": "Nhỏ bé bên bộ xương khủng long",
-            "img": "bao-tang-tu-nhien-1",
-            "where": "Đứng sát chân bệ trưng bày, lệch về một đầu của bộ xương.",
-            "camera": "Máy ngang, hạ thấp và ngửa lên để thấy độ cao. Tắt flash.",
-            "pose": "Một tay chỉ lên cao, mặt ngước theo tay.",
-            "poseKey": "giotay",
-            "clip": "",
-            "clipDur": "",
-            "clipTitle": "",
-            "searchZh": "国家自然博物馆 恐龙 拍照",
-            "more": [
-              "bao-tang-tu-nhien-1-2",
-              "bao-tang-tu-nhien-1-3"
-            ]
-          },
           {
             "id": "bao-tang-tu-nhien-2",
             "title": "Ngắm hiện vật qua tủ kính",
@@ -1108,11 +1078,7 @@
             "clip": "",
             "clipDur": "",
             "clipTitle": "",
-            "searchZh": "前门大街 箭楼 拍照",
-            "more": [
-              "tien-mon-1-2",
-              "tien-mon-1-3"
-            ]
+            "searchZh": "前门大街 箭楼 拍照"
           },
           {
             "id": "tien-mon-2",
@@ -1125,23 +1091,7 @@
             "clip": "",
             "clipDur": "",
             "clipTitle": "",
-            "searchZh": "杨梅竹斜街 拍照",
-            "more": [
-              "tien-mon-2-2"
-            ]
-          },
-          {
-            "id": "tien-mon-3",
-            "title": "Cả nhóm dưới cổng bài lâu",
-            "img": "tien-mon-3",
-            "where": "Đầu phía bắc của phố, đứng lùi ra để lấy hết cổng.",
-            "camera": "Máy ngang, hạ thấp ngang hông để cổng cao lên.",
-            "pose": "Đứng so le trước sau, người thấp đứng trước. Mỗi người nhìn một hướng tự nhiên hơn xếp hàng ngang.",
-            "poseKey": "nhom",
-            "clip": "",
-            "clipDur": "",
-            "clipTitle": "",
-            "searchZh": "前门 五牌楼 拍照"
+            "searchZh": "杨梅竹斜街 拍照"
           }
         ]
       }
@@ -1223,7 +1173,7 @@
           {
             "id": "universal-3",
             "title": "Cả nhóm trên phố CityWalk",
-            "img": "universal-3",
+            "img": "universal-3-2",
             "where": "Phố CityWalk lúc 17:30, đèn bảng hiệu đã bật.",
             "camera": "Máy ngang, đo sáng theo mặt người để nền đèn không cháy.",
             "pose": "Khoác vai nhau bước về phía máy, vừa đi vừa cười.",
@@ -1233,7 +1183,6 @@
             "clipTitle": "",
             "searchZh": "北京环球城市大道 拍照",
             "more": [
-              "universal-3-2",
               "universal-3-3"
             ]
           }
@@ -1721,7 +1670,7 @@
           {
             "id": "bao-tang-khoa-hoc-1",
             "title": "Ngước nhìn giữa sảnh thông tầng",
-            "img": "bao-tang-khoa-hoc-1",
+            "img": "bao-tang-khoa-hoc-1-2",
             "where": "Giữa sảnh chính, dưới mô hình treo.",
             "camera": "Máy dọc, hạ thấp ngang gối và ngửa hẳn lên.",
             "pose": "Ngước mặt, một tay chỉ lên mô hình.",
@@ -1731,24 +1680,7 @@
             "clipTitle": "",
             "searchZh": "中国科技馆 拍照",
             "more": [
-              "bao-tang-khoa-hoc-1-2",
               "bao-tang-khoa-hoc-1-3"
-            ]
-          },
-          {
-            "id": "bao-tang-khoa-hoc-2",
-            "title": "Đang chơi với thí nghiệm",
-            "img": "bao-tang-khoa-hoc-2",
-            "where": "Bên một mô hình tương tác ở tầng 2.",
-            "camera": "Máy ngang, đứng ngang tầm trẻ em. Chụp khi mọi người đang chăm chú.",
-            "pose": "Không cần nhìn máy. Ảnh lúc đang thử nghiệm tự nhiên hơn ảnh đứng tạo dáng.",
-            "poseKey": "nhom",
-            "clip": "",
-            "clipDur": "",
-            "clipTitle": "",
-            "searchZh": "中国科技馆 亲子 拍照",
-            "more": [
-              "bao-tang-khoa-hoc-2-2"
             ]
           }
         ]
@@ -2145,14 +2077,6 @@
       "personalUseOnly": true
     },
     {
-      "file": "bao-tang-tu-nhien-1",
-      "title": "snow.js.org",
-      "author": "Shiro (blog: 自然的怀抱——北京自然博物馆参观随感)",
-      "license": "không rõ (dùng cá nhân)",
-      "url": "https://snow.js.org/notes-nnhm/",
-      "personalUseOnly": true
-    },
-    {
       "file": "tien-mon-1",
       "title": "www.aihanfu.com",
       "author": "",
@@ -2169,14 +2093,6 @@
       "personalUseOnly": true
     },
     {
-      "file": "tien-mon-3",
-      "title": "xinwen.bjd.com.cn",
-      "author": "京报网 / Beijing Daily (Qianmen Guofeng Festival)",
-      "license": "không rõ (dùng cá nhân)",
-      "url": "https://xinwen.bjd.com.cn/content/s662dc613e4b0fa9ed6b97d6a.html",
-      "personalUseOnly": true
-    },
-    {
       "file": "universal-1",
       "title": "www.yourdisney.com.tw",
       "author": "",
@@ -2190,14 +2106,6 @@
       "author": "Taobao travel-photographer listing (Beijing Universal)",
       "license": "không rõ (dùng cá nhân)",
       "url": "https://bk.taobao.com/k/jingneilvxingpaizhao_3562/c1751f54a9d95e37d75707f13586365e.html",
-      "personalUseOnly": true
-    },
-    {
-      "file": "universal-3",
-      "title": "www.universalbeijingresort.com",
-      "author": "Universal Beijing Resort official website (universalbeijingresort.com)",
-      "license": "không rõ (dùng cá nhân)",
-      "url": "https://www.universalbeijingresort.com/zh_CN/Summer_fun",
       "personalUseOnly": true
     },
     {
@@ -2273,22 +2181,6 @@
       "personalUseOnly": true
     },
     {
-      "file": "bao-tang-khoa-hoc-1",
-      "title": "vip.people.com.cn",
-      "author": "",
-      "license": "không rõ (dùng cá nhân)",
-      "url": "http://vip.people.com.cn/albumsDetail?aid=1417065",
-      "personalUseOnly": true
-    },
-    {
-      "file": "bao-tang-khoa-hoc-2",
-      "title": "www.mindyn.com",
-      "author": "",
-      "license": "không rõ (dùng cá nhân)",
-      "url": "https://www.mindyn.com/blog/l-23bf4cf4-4fd7-48d9-aacd-92b67889e291",
-      "personalUseOnly": true
-    },
-    {
       "file": "bao-tang-tu-nhien-2",
       "title": "unsplash",
       "author": "Phuong Nguyen",
@@ -2311,14 +2203,6 @@
       "license": "Pexels License",
       "url": "https://www.pexels.com/photo/illuminated-beijing-national-stadium-at-night-30027099/",
       "personalUseOnly": false
-    },
-    {
-      "file": "thien-dan-3",
-      "title": "touch.travel.qunar.com",
-      "author": "Qunar/Ctrip user travel note (去哪儿攻略)",
-      "license": "không rõ (dùng cá nhân)",
-      "url": "https://touch.travel.qunar.com/comment/10093149382",
-      "personalUseOnly": true
     },
     {
       "file": "mo-dien-du-3",
@@ -2553,46 +2437,6 @@
       "personalUseOnly": false
     },
     {
-      "file": "bao-tang-tu-nhien-1-2",
-      "title": "Beijing Museum of Natural History Dinosaur Hall.jpg",
-      "author": "BleachedRice",
-      "license": "CC BY-SA 4.0",
-      "url": "https://commons.wikimedia.org/wiki/File:Beijing_Museum_of_Natural_History_Dinosaur_Hall.jpg",
-      "personalUseOnly": false
-    },
-    {
-      "file": "bao-tang-tu-nhien-1-3",
-      "title": "Tuojiangosaurus multispinus IMG 5137 Beijing Museum of Natural History.jpg",
-      "author": "Bjoertvedt",
-      "license": "CC BY-SA 4.0",
-      "url": "https://commons.wikimedia.org/wiki/File:Tuojiangosaurus_multispinus_IMG_5137_Beijing_Museum_of_Natural_History.jpg",
-      "personalUseOnly": false
-    },
-    {
-      "file": "tien-mon-1-2",
-      "title": "Qianmen street, Beijing, China - 北京，中国 (10226037583).jpg",
-      "author": "Romain Pontida",
-      "license": "CC BY-SA 2.0",
-      "url": "https://commons.wikimedia.org/wiki/File:Qianmen_street,_Beijing,_China_-_%E5%8C%97%E4%BA%AC%EF%BC%8C%E4%B8%AD%E5%9B%BD_(10226037583).jpg",
-      "personalUseOnly": false
-    },
-    {
-      "file": "tien-mon-1-3",
-      "title": "201902 Qianmen Street in snow.jpg",
-      "author": "Zheng sun",
-      "license": "CC BY-SA 4.0",
-      "url": "https://commons.wikimedia.org/wiki/File:201902_Qianmen_Street_in_snow.jpg",
-      "personalUseOnly": false
-    },
-    {
-      "file": "tien-mon-2-2",
-      "title": "Yangmeizhu Xiejie (20240210151543).jpg",
-      "author": "N509FZ",
-      "license": "CC BY-SA 4.0",
-      "url": "https://commons.wikimedia.org/wiki/File:Yangmeizhu_Xiejie_(20240210151543).jpg",
-      "personalUseOnly": false
-    },
-    {
       "file": "universal-1-2",
       "title": "Universal Beijing Resort.jpg",
       "author": "Hhhh2",
@@ -2726,14 +2570,6 @@
       "author": "XiaYZ2023",
       "license": "CC BY-SA 4.0",
       "url": "https://commons.wikimedia.org/wiki/File:China_Science_and_Technology_Museum_exterior_(east)_20171110151456.jpg",
-      "personalUseOnly": false
-    },
-    {
-      "file": "bao-tang-khoa-hoc-2-2",
-      "title": "China Science and Technology Museum.jpg",
-      "author": "IvanWalsh.com",
-      "license": "CC BY 2.0",
-      "url": "https://commons.wikimedia.org/wiki/File:China_Science_and_Technology_Museum.jpg",
       "personalUseOnly": false
     },
     {
