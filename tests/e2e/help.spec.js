@@ -92,39 +92,3 @@ test('khách sạn thật của đoàn: nút Về khách sạn có tên chữ H�
   await page.locator('[data-hotel]').click();
   await expect(page.locator('.overlay')).toContainText('北京市丰台区郭公庄中街16号院1号楼112室');
 });
-
-// Ảnh PNG 2×2 làm giấy tờ giả.
-const PNG = Buffer.from('iVBORw0KGgoAAAANSUhEUgAAAAIAAAACCAIAAAD91JpzAAAAFklEQVR4nGP8z8DAwMDAxMDAwMDAAAANHQEDasKb6QAAAABJRU5ErkJggg==', 'base64');
-
-test('giấy tờ của tôi: thêm ảnh lưu trong máy, tải lại vẫn còn, mở to, đổi tên, xóa', async ({ page }) => {
-  await go(page);
-  const sec = page.locator('[data-docs]');
-  await expect(sec.locator('h2')).toHaveText('Giấy tờ của tôi');
-  await expect(sec.locator('.doc')).toHaveCount(0);
-  await sec.locator('[data-docs-input]').setInputFiles([
-    { name: 'to-khai.png', mimeType: 'image/png', buffer: PNG },
-    { name: 'voucher.pdf', mimeType: 'application/pdf', buffer: Buffer.from('%PDF-1.4') },
-  ]);
-  await expect(sec.locator('.docs-msg')).toContainText('Đã lưu 1 ảnh vào máy.');
-  await expect(sec.locator('.docs-msg')).toContainText('Bỏ qua 1 tệp');
-  await expect(sec.locator('.doc')).toHaveCount(1);
-  await expect(sec.locator('.doc span')).toHaveText('Giấy tờ 1');
-  await page.reload();
-  await expect(page.locator('[data-docs] .doc')).toHaveCount(1);
-  await page.locator('[data-docs] .doc').click();
-  const ov = page.locator('.ov-doc');
-  await expect(ov.locator('img')).toBeVisible();
-  await ov.locator('[data-name]').fill('Tờ khai Gia Hân');
-  await ov.locator('[data-name]').press('Enter');
-  await ov.locator('[data-name]').blur();
-  await ov.locator('[data-close]').click();
-  await expect(page.locator('.ov-doc')).toHaveCount(0);
-  await expect(page.locator('[data-docs] .doc span')).toHaveText('Tờ khai Gia Hân');
-  await page.locator('[data-docs] .doc').click();
-  page.once('dialog', d => d.accept());
-  await page.locator('.ov-doc [data-del]').click();
-  await expect(page.locator('.ov-doc')).toHaveCount(0);
-  await expect(page.locator('[data-docs] .doc')).toHaveCount(0);
-  await page.reload();
-  await expect(page.locator('[data-docs] .doc')).toHaveCount(0);
-});

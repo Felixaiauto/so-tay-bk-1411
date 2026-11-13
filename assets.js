@@ -1,6 +1,6 @@
 self.ASSETS = {
  "app": {
-  "version": "d811ebf444",
+  "version": "f5e106f3cf",
   "files": [
    "./",
    "./index.html",
@@ -36,11 +36,9 @@ self.ASSETS = {
    "./icons/apple-touch-icon.png",
    "./icons/icon-192.png",
    "./icons/icon-512.png",
-   "./js/components/docs.js",
    "./js/components/driver-card.js",
    "./js/components/photo-section.js",
    "./js/components/story.js",
-   "./js/docs-store.js",
    "./js/dom.js",
    "./js/hero.js",
    "./js/links.js",
