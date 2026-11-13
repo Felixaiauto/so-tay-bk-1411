@@ -27,6 +27,7 @@ export function renderHelp(ctx) {
     : '';
   h += carHtml(c.driver);
   const rows = [];
+  if (hasHotel(c.hotel) && c.hotel.phone) rows.push(`<a class="help-row" href="${telHref(c.hotel.phone)}"><b>Gọi khách sạn</b><span>${esc(c.hotel.phone)}</span></a>`);
   if (c.hotline) rows.push(`<a class="help-row" href="${telHref(c.hotline)}"><b>Gọi hotline</b><span>${esc(c.hotline)}</span></a>`);
   if (c.zalo) rows.push(`<a class="help-row" href="${esc(c.zalo)}" target="_blank" rel="noopener"><b>Nhóm Zalo của đoàn</b><span>Mở Zalo</span></a>`);
   if (rows.length) h += `<div class="card help-list">${rows.join('')}</div>`;

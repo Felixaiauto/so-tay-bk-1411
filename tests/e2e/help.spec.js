@@ -8,7 +8,8 @@ test('khẩn cấp gọi được', async ({ page }) => {
   await expect(page.locator('.sos a').first()).toHaveAttribute('href', 'tel:110');
 });
 
-test('chưa có khách sạn: không hiện khối "Về khách sạn", không có nút', async ({ page }) => {
+test('chưa có khách sạn: không hiện khối "Về khách sạn", không có nút', async ({ page, context }) => {
+  await withContacts(context, { hotel: { name: '', zh: '', addressZh: '', addressVi: '', lat: null, lng: null, phone: '' } });
   await go(page);
   await expect(page.locator('h1')).toHaveText('Trợ giúp');
   await expect(page.locator('#app')).not.toContainText('Về khách sạn');
@@ -82,4 +83,12 @@ test('có khách sạn: nút "Về khách sạn" mở thẻ tài xế chữ Trun
   await go(page);
   await page.locator('[data-hotel]').click();
   await expect(page.getByRole('dialog')).toContainText('北京市东城区测试路1号');
+});
+
+test('khách sạn thật của đoàn: nút Về khách sạn có tên chữ Hán, gọi khách sạn bằng số trên voucher', async ({ page }) => {
+  await go(page);
+  await expect(page.locator('[data-hotel] b')).toHaveText('如家商旅酒店(北京花乡桥郭公庄地铁站店)');
+  await expect(page.locator('.help-row', { hasText: 'Gọi khách sạn' })).toHaveAttribute('href', 'tel:+861083705580');
+  await page.locator('[data-hotel]').click();
+  await expect(page.locator('.overlay')).toContainText('北京市丰台区郭公庄中街16号院1号楼');
 });
