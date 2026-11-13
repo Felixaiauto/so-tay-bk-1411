@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-13a",
+  "version": "2026-11-13b",
   "tour": {
     "id": "bac-kinh-2026-11",
     "title": "Bắc Kinh",
@@ -11,9 +11,9 @@
   "contacts": {
     "hotel": {
       "name": "Home Inn Business, ga Quách Công Trang",
-      "zh": "如家商旅酒店(北京花乡桥郭公庄地铁站店)",
-      "addressZh": "北京市丰台区郭公庄中街16号院1号楼",
-      "addressVi": "Tòa 1, khu số 16 phố Quách Công Trang Trung, quận Phong Đài",
+      "zh": "如家商旅酒店（北京花乡桥郭公庄地铁站店）",
+      "addressZh": "北京市丰台区郭公庄中街16号院1号楼112室",
+      "addressVi": "Phòng 112, tòa 1, khu số 16 phố Quách Công Trang Trung, quận Phong Đài",
       "lat": null,
       "lng": null,
       "phone": "+861083705580"

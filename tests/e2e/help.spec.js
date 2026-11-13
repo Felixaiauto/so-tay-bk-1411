@@ -87,10 +87,10 @@ test('có khách sạn: nút "Về khách sạn" mở thẻ tài xế chữ Trun
 
 test('khách sạn thật của đoàn: nút Về khách sạn có tên chữ Hán, gọi khách sạn bằng số trên voucher', async ({ page }) => {
   await go(page);
-  await expect(page.locator('[data-hotel] b')).toHaveText('如家商旅酒店(北京花乡桥郭公庄地铁站店)');
+  await expect(page.locator('[data-hotel] b')).toHaveText('如家商旅酒店（北京花乡桥郭公庄地铁站店）');
   await expect(page.locator('.help-row', { hasText: 'Gọi khách sạn' })).toHaveAttribute('href', 'tel:+861083705580');
   await page.locator('[data-hotel]').click();
-  await expect(page.locator('.overlay')).toContainText('北京市丰台区郭公庄中街16号院1号楼');
+  await expect(page.locator('.overlay')).toContainText('北京市丰台区郭公庄中街16号院1号楼112室');
 });
 
 // Ảnh PNG 2×2 làm giấy tờ giả.

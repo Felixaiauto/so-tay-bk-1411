@@ -1,6 +1,6 @@
 self.ASSETS = {
  "app": {
-  "version": "0d3e12fe2a",
+  "version": "ac32413a0a",
   "files": [
    "./",
    "./index.html",
