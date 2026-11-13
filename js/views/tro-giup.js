@@ -2,6 +2,7 @@ import { esc } from '../dom.js';
 import { telHref } from '../links.js';
 import { openOverlay } from '../overlay.js';
 import { openDriverCard, hotelTarget, hasHotel } from '../components/driver-card.js';
+import { docsHtml, mountDocs } from '../components/docs.js';
 
 // Xe của đoàn: biển số to để tìm xe ở bãi đỗ; gọi điện hoặc gọi WeChat (SIM khách thường không gọi thoại được).
 export function carHtml(d) {
@@ -26,6 +27,7 @@ export function renderHelp(ctx) {
     ? `<button type="button" class="help-big" data-hotel><span class="eyebrow">Về khách sạn</span><b lang="zh-CN">${esc(c.hotel.zh)}</b><span class="sub">${esc(c.hotel.name)} · mở thẻ cho tài xế</span></button>`
     : '';
   h += carHtml(c.driver);
+  h += docsHtml();
   const rows = [];
   if (hasHotel(c.hotel) && c.hotel.phone) rows.push(`<a class="help-row" href="${telHref(c.hotel.phone)}"><b>Gọi khách sạn</b><span>${esc(c.hotel.phone)}</span></a>`);
   if (c.hotline) rows.push(`<a class="help-row" href="${telHref(c.hotline)}"><b>Gọi hotline</b><span>${esc(c.hotline)}</span></a>`);
@@ -42,6 +44,7 @@ export function renderHelp(ctx) {
 
 export function mountHelp(root, ctx) {
   const c = ctx.data.contacts;
+  mountDocs(root);
   root.querySelector('[data-hotel]')?.addEventListener('click', () => openDriverCard(hotelTarget(c.hotel), null));
   // Khách và tài xế ở chung nhóm WeChat của đoàn: mở WeChat, gọi từ nhóm.
   root.querySelector('[data-wechat]')?.addEventListener('click', () => {
